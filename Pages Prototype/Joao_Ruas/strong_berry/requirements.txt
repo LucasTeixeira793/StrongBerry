@@ -1,0 +1,14 @@
+Home Page:
+    Color Palette:     
+        #ffc857 - Yellow;
+        #e9724c - Orange;
+        #c5283d - Red;
+        #481d24 - Brown;
+        #255f85 - Black Cyan;
+
+    Design:
+        Loading Based in (https://blindsight.space/);
+        Home Page Based in (https://stykka.com/);
+        Video Background Based in (https://www.couroazul.com/) ;
+        Dynamic of Navigation Based in (https://www.hugeinc.com/);
+        Fonts Based in (https://www.couroazul.com/);
