@@ -1,6 +1,6 @@
-/* ---------------------------------------------------------------------- */
-                        /* index.html e geral */
-/* ---------------------------------------------------------------------- */
+/* ------------------------------------------------------------------ */
+                            /* GERAL */
+/* ------------------------------------------------------------------ */
 
 
 *{
@@ -13,18 +13,19 @@ html {
     scroll-behavior: smooth;
 }
 
+    /* Cabeçalho */
 .header{
     /* position: -webkit-sticky;
-    position: sticky; */
+     position: sticky; */ /* Essas 2 Linhas servem pra deixar o cabeçalho fixado  */
     top:0;
     height: 80px;
     width: 100%;
     background: #fff;
     border-bottom: #800202 solid 3px;
-    z-index: 1000000;
+    z-index: 100;
 }
 
-.header img{
+.header img{ /* Logo StrongBerry */
     margin-top: 5px;
     margin-left: 20px;
     padding: 5px;
@@ -49,12 +50,12 @@ html {
     color: black;
     text-transform: uppercase;
     text-decoration: none;
-    -webkit-transition: 0.5s;
+    -webkit-transition: 0.5s; /* Transição de volta (pra entender melhor tira essa linha e passa o mouse, vc vai entender) */
 }
 
-.header ul li a:hover{
+.header ul li a:hover{ /* Efeito da navbar quando passa o mouse por cima */
     color: red;
-    transition: all 0.5s;
+    transition: all 0.5s; /* Transição de ida */
     text-decoration: underline;
 }
 
@@ -63,58 +64,185 @@ html {
     font-weight: bold;
 }
 
-.destaque{
-    height: 550px;
+    /* Fim Cabeçalho */
+
+    /* Rodapé */
+
+.container-footer{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    display: block;
+    height: auto;
+}
+
+.footer{
+    /* border-top: #740202 4px solid; */
+    background-color: #10341c;
+    padding-top: 30px;
+    padding-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #666;
+    bottom: 0;
 }
 
-.img-destaque{
-    width: 100%;
-    height: 550px;
-    object-fit: cover;
-    filter: brightness(30%);
-    display: flex;
-    z-index: 1;
+.footer img{
+    width: 90%;
+    float: left;
 }
 
-.texto-top{
-    color: white;
-    font-size: 60px;
-    position: absolute;
-    animation-name: texto-top;
-    animation-duration: 2s;
-    animation-timing-function: ease-out;
-    z-index: 1;
+.footer ul{
+    float: right;
+    list-style: none;
+    justify-content: center;
 }
 
-@keyframes texto-top{
-    from {top: 250px; color: transparent;font-size: 1px;}
-    to {top: 325px}
+.footer ul li{
+    margin: 5px;
+    color: #fff;
 }
 
-
-.botao-destaque{
-    margin-top: 150px;
+.footer a{
     text-decoration: none;
-    position: absolute;
-    padding: 10px 30px 10px 30px;
-    background-color: transparent;
-    color: white;
-    font-size: 40px ;
-    border: 1px white solid;
-    border-radius: 40px;
-    cursor: pointer;
-    -webkit-transition: 0.3s;
-    z-index: 1;
+    color: rgb(255, 255, 255);
 }
 
-.botao-destaque:hover{
-    background-color: #5e5e5e7a;
-    transform: scale(1.1);
-    transition: 0.3s;
+.footer a:hover{
+    text-decoration: underline;
 }
+
+.footer i{
+    font-size: 45px;
+    margin: 20px;
+    -webkit-transition: 0.2s; /* Transição de volta */
+}
+
+.footer i:hover{ /* Efeito quando passa o mouse no icone das redes sociais */
+    transform: scale(1.1); /* Faz o icone almentar 10% de tamanho */
+    transition: 0.2s;
+}
+
+.footer span{
+    font-weight: bold;
+    color: #fff;
+}
+
+.copyright{
+    width: 100%;
+    background-color: #0e2b17;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    height: 30px;
+    margin: 0;
+}
+
+ .copyright a {     /* Link da parte do Copyright */
+    color: #e43131;
+}
+    /* Fim do Rodapé */
+
+    /* Ancora (Botão que volta pro início da página) */
+
+.ancora{
+    left: 100%;
+    bottom: 10px;
+    position: -webkit-sticky; 
+    position: sticky; /* Fixa a ancora na posição nas linhas de cima */
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border: 2px solid #740202;
+    border-radius: 100%;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-transition: 0.4s; /* Transição de volta */
+}
+
+.ancora:hover{ /* Efeito quando o mouse passa pela ancora */
+    transform: scale(1.08);
+    transition: 0.4s;
+}
+
+.ancora img{
+    width: 40px;
+}
+
+    /* Fim da Ancora */
+
+
+/* ------------------------------------------------------------------ */
+                            /* FIM GERAL */
+/* ------------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------------ */
+                            /* INDEX */
+/* ------------------------------------------------------------------ */
+/* BANNER */
+    .destaque{ /* Div banner */
+        height: 550px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img-destaque{ /* Imagem banner */
+        width: 100%;
+        height: 550px;
+        object-fit: cover;
+        filter: brightness(30%);
+        display: flex;
+        z-index: 1;
+    }
+
+    .texto-top{ /* texto banner */
+        color: white;
+        font-size: 60px;
+        position: absolute;
+        animation-name: texto-top; /* Nome da animação que vai usar */
+        animation-duration: 2s; /* Duração da animação */
+        animation-timing-function: ease-out; /* Efeito de entrata-saída */
+        z-index: 1;
+    }
+
+    @keyframes texto-top{
+        from {top: 250px; color: transparent;font-size: 1px;}
+        to {top: 325px}
+    }
+
+
+    .botao-destaque{
+        margin-top: 150px;
+        text-decoration: none;
+        position: absolute;
+        padding: 10px 30px 10px 30px;
+        background-color: transparent;
+        color: white;
+        font-size: 40px ;
+        border: 1px white solid;
+        border-radius: 40px;
+        cursor: pointer;
+        -webkit-transition: 0.3s;
+        z-index: 1;
+    }
+
+    .botao-destaque:hover{
+        background-color: #5e5e5e7a;
+        transform: scale(1.1);
+        transition: 0.3s;
+    }
+
+/* FIM BANNER */
 
 .icone{
     background-color: #f8f8f8;
@@ -270,112 +398,6 @@ html {
     width: 100%;
     text-align: center;
     font-weight: bold;    
-}
-
-.container-footer{
-    width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    margin-bottom: 10px;
-    display: block;
-    height: auto;
-}
-
-.footer{
-    /* border-top: #740202 4px solid; */
-    background-color: #10341c;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #666;
-    bottom: 0;
-}
-
-.footer img{
-    width: 90%;
-    float: left;
-}
-
-.footer ul{
-    float: right;
-    list-style: none;
-    justify-content: center;
-}
-
-.footer ul li{
-    margin: 5px;
-    color: #fff;
-}
-
-.footer a{
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-}
-
-.footer a:hover{
-    text-decoration: underline;
-}
-
-.footer i{
-    font-size: 45px;
-    margin: 20px;
-    -webkit-transition: 0.2s;
-}
-
-.footer i:hover{
-    transform: scale(1.1);
-    transition: 0.2s;
-}
-
-.footer span{
-    font-weight: bold;
-    color: #fff;
-}
-
-.copyright{
-    width: 100%;
-    background-color: #0e2b17;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgb(255, 255, 255);
-    height: 30px;
-    margin: 0;
-}
-
-.copyright a {
-    color: #e43131;
-}
-
-.ancora{
-    left: 100%;
-    bottom: 10px;
-    position: -webkit-sticky;
-    position: sticky;
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    border: 2px solid #740202;
-    border-radius: 100%;
-    margin: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    -webkit-transition: 0.4s;
-}
-
-.ancora:hover{
-    transform: scale(1.08);
-    transition: 0.4s;
-}
-
-.ancora img{
-    width: 40px;
 }
 
 
