@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap%27');
+
 /* GERAL */
 
 .container{
@@ -27,7 +32,13 @@ body{
 
 .header h1{
     float: left;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
+    -webkit-transition: 0.5s;
+}
+
+.header h1:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 
 .header h1, .header ul{
@@ -55,8 +66,12 @@ body{
     font-size: 18px;
 }
 
-.header .text-a ul li a {
-    font-weight: bold;
+.header ul li a:hover{
+    text-decoration: underline;
+}
+
+.header .text-a{
+    font-weight: bold;    
 }
 
 .header img{
@@ -188,7 +203,7 @@ body{
 }
 
 .footer ul{
-    float: right;
+    float: left;
     list-style: none;
     justify-content: center;
 }
@@ -467,10 +482,96 @@ body{
     transition: 0.5s;
 }
 
-/* Fim mail */
+/* Fim email */
 
+/* Contato */
+.contato-equipe{
+    margin-top: 50px;
+}
 
+.titulo-contato{
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
 
+.contato-imagem{
+    width: 100%;
+    height: 600px;
+    background-image: url("img/morango-contato.jpg");
+    background-size: cover;
+}
+
+.contato-contorno img{
+    width: 10%;
+    transform: rotate(45deg);
+}
+
+.contato-contorno a{
+    text-decoration: none;
+    -webkit-transition: 0.5s;
+}
+
+.contato-contorno a:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.contato-imagem h1{
+    font-size: 50px;
+    color: #fff;
+    font-family: 'Mulish';
+    text-shadow: 3px 3px 5px #313131;
+}
+
+.contato-contorno{
+    width: 85%;
+    height: 85%;
+    border: 1px #fff solid;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 5px 5px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #787c80;
+    border-radius: 5px;
+  }
+.form-group {
+    margin-bottom: 1rem;
+  }
+
+.form-group textarea{
+    font-size: 20px;
+    padding: 10px 5px;
+    height: 240px;
+    font-family: 'Poppins', sans-serif;
+    resize: none;
+}
+
+.contato-button{
+    font-family: 'Poppins', sans-serif;
+    height: 40px;
+    padding: 8px 20px 10px 20px;
+    border: none;
+    background-color: #e43131;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition: 2s;
+}
+
+.contato-button:hover{
+    box-shadow: 3px 3px 3px #666;
+    transition: 0.3s;
+}
+
+/* Fim Contato */
 
 
 
