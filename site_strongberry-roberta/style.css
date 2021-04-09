@@ -125,9 +125,10 @@ body{
     margin: auto;
     margin-top: 30px;
     align-items: center;
+    border-radius: 10px;
     justify-content: center;
     display: flex;
-    background-color: rgb(240, 240, 240);
+    background-color: #f0f0f0;
 }
 
 .conteudo3{
@@ -215,7 +216,7 @@ body{
 
 .footer a{
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
 }
 
 .footer a:hover{
@@ -310,10 +311,10 @@ body{
     margin: 10px;
 }
 
-::placeholder{
+.container_login input::placeholder{
     padding: 10px;
     font-size: 15px;
-    color: rgb(141, 141, 141);
+    color: #8d8d8d;
 }
 
 .container_login hr{
@@ -376,15 +377,7 @@ body{
 /* Fim da Ancora */
 
 /* cards */
-.container-cards{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    display: block;
-    height: auto;
-}
+
 .icone{
     background-color: #f8f8f8;
     padding: 50px;
@@ -489,6 +482,12 @@ body{
     margin-top: 50px;
 }
 
+.contato-equipe h3{
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: 'Mulish';
+}
+
 .titulo-contato{
     width: 100%;
     text-align: center;
@@ -530,28 +529,35 @@ body{
     border: 1px #fff solid;
 }
 
-.form-control {
+.input-padrao {
     display: block;
     width: 100%;
     height: 40px;
-    padding: 5px 5px;
-    font-size: 20px;
+    padding: 5px 15px;
     font-weight: 400;
     color: #495057;
     background-color: #fff;
     border: 1px solid #787c80;
     border-radius: 5px;
-  }
+
+}
+
+.input-padrao::placeholder{
+    padding: 0;
+    padding-top: 1px;
+    font-size: 15px;
+}
+
 .form-group {
     margin-bottom: 1rem;
-  }
+}
 
 .form-group textarea{
     font-size: 20px;
-    padding: 10px 5px;
+    padding: 10px 15px;
     height: 240px;
-    font-family: 'Poppins', sans-serif;
     resize: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .contato-button{
@@ -582,21 +588,19 @@ body{
                             /* GRID */
 /* ---------------------------------------------------------------------- */
 
-/* .container{
-    width: 1000px;
+.container-geral{
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
     display: block;
     height: auto;
-} */
+}
 
 .linha{
     display: flex;
     flex-wrap: wrap;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .col-1{
