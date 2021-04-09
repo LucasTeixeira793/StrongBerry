@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap%27');
+
 /* GERAL */
 
 .container{
@@ -8,6 +13,10 @@
 *{
     margin: 0;
     padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 body{
@@ -25,7 +34,13 @@ body{
 
 .header h1{
     float: left;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
+    -webkit-transition: 0.5s;
+}
+
+.header h1:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 
 .header h1, .header ul{
@@ -53,8 +68,12 @@ body{
     font-size: 18px;
 }
 
-.header .text-a ul li a {
-    font-weight: bold;
+.header ul li a:hover{
+    text-decoration: underline;
+}
+
+.header .text-a{
+    font-weight: bold;    
 }
 
 .header img{
@@ -135,10 +154,15 @@ body{
     margin: auto;
     margin-top: 30px;
     align-items: center;
+    border-radius: 10px;
     justify-content: center;
     display: flex;
+<<<<<<< HEAD
     background-color: rgb(240, 240, 240);
     border-radius: 10px;
+=======
+    background-color: #f0f0f0;
+>>>>>>> a45215594d135e0795b29c863e0901accf9ef1ac
 }
 
 .conteudo3{
@@ -152,6 +176,7 @@ body{
     border-radius: 50%;
     width: 300px;
     height: 300px;
+    object-fit: cover;
     margin: 50px;
     opacity: 0.95;
 }
@@ -184,6 +209,7 @@ body{
 .como_trabalhamos_img img{
     float: left;
     border-radius: 50%;
+    object-fit: cover;
     width: 250px;
     height: 250px;
     margin: 50px;
@@ -203,28 +229,87 @@ body{
 
 /* -------------------Footer------------------- */
 
-.footer{
-    width: 100%;
-    margin: auto;
-    margin-top: 30px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    background-color: rgb(23, 46, 23);
+.container-footer{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    display: block;
+    height: auto;
 }
 
-.footer_text{
-    color: rgb(207, 207, 207);
-    padding: 20px;
+.footer{
+    /* border-top: #740202 4px solid; */
+    background-color: #10341c;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    bottom: 0;
+}
+
+.footer img{
+    width: 90%;
     float: left;
 }
 
-.footer_text2{
-    color: rgb(207, 207, 207);
-    padding: 50px;
-    float: right;
+.footer ul{
+    float: left;
+    list-style: none;
+    justify-content: center;
 }
 /*-------------------Fim Footer-------------------*/
+
+.footer ul li{
+    margin: 5px;
+    color: #fff;
+}
+
+.footer a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.footer a:hover{
+    text-decoration: underline;
+}
+
+.footer i{
+    font-size: 45px;
+    margin: 20px;
+    -webkit-transition: 0.2s; /* Transição de volta */
+}
+
+.footer i:hover{ /* Efeito quando passa o mouse no icone das redes sociais */
+    transform: scale(1.1); /* Faz o icone almentar 10% de tamanho */
+    transition: 0.2s;
+}
+
+.footer span{
+    font-weight: bold;
+    color: #fff;
+}
+
+.copyright{
+    width: 100%;
+    background-color: #0e2b17;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    height: 30px;
+    margin: 0;
+}
+
+ .copyright a {     /* Link da parte do Copyright */
+    color: #e43131;
+}
+    /* Fim do Rodapé */
 
 
 
@@ -286,10 +371,10 @@ body{
     margin: 10px;
 }
 
-::placeholder{
+.container_login input::placeholder{
     padding: 10px;
     font-size: 15px;
-    color: rgb(141, 141, 141);
+    color: #8d8d8d;
 }
 
 .container_login hr{
@@ -537,6 +622,7 @@ body{
     border-bottom: solid rgb(27, 54, 30);
 }
 
+<<<<<<< HEAD
 .box_integrantes h2{
     margin: auto;
     width: 400px;
@@ -569,3 +655,295 @@ body{
 }
 /* Fim Integrantes */
 /*-------------------Fim sobre-------------------*/
+=======
+ /* Ancora (Botão que volta pro início da página) */
+
+ .ancora{
+    left: 100%;
+    bottom: 10px;
+    position: -webkit-sticky; 
+    position: sticky; /* Fixa a ancora na posição nas linhas de cima */
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border: 2px solid #740202;
+    border-radius: 100%;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-transition: 0.4s; /* Transição de volta */
+}
+
+.ancora:hover{ /* Efeito quando o mouse passa pela ancora */
+    transform: scale(1.08);
+    transition: 0.4s;
+}
+
+.ancora img{
+    width: 40px;
+}
+
+/* Fim da Ancora */
+
+/* cards */
+
+.icone{
+    background-color: #f8f8f8;
+    padding: 50px;
+    margin: 10px;
+    border-radius: 1000px;
+    box-shadow: 3px 3px 3px #9c9c9c;
+    -webkit-transition: 0.5s;
+    width: 200px;
+    height: 200px;
+}
+
+.icone:hover{
+    transform: scale(1.03);
+    transition: 0.5s;
+    box-shadow: 8px 8px 15px #9c9c9c;
+}
+
+.icone h3{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 20px;
+    color: #740202;
+}
+
+.icone img{
+    width: 30%;
+    margin: 0 35% 0 35%;
+}
+
+/* Fim cards */
+
+/* Email */
+
+.contato{
+    width: 100%;
+    height: 300px;
+    background-image: url(img/estufa-wpp.jpg);
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.emailContato{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contato h2{
+    color: white;
+    font-size: 30px;
+}
+
+.contato input{
+    background-color: transparent;
+    width: 70%;
+    color: white;
+    margin: 10px;
+    height: 45px;
+    border: 2px solid white;
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 25px;
+    border-radius: 10px;
+    float: left;
+}
+
+.contato button{
+    width: 20%;
+    height: 70px;
+    color: white;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.26);
+    border-radius: 10px;
+    border: 4px solid #740202;
+    font-size: 25px;
+    padding: 10px;
+    cursor: pointer;
+    float: left;
+    -webkit-transition: 0.5s;
+}
+
+.contato button:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+/* Fim email */
+
+/* Contato */
+.contato-equipe{
+    margin-top: 50px;
+}
+
+.contato-equipe h3{
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: 'Mulish';
+}
+
+.titulo-contato{
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.contato-imagem{
+    width: 100%;
+    height: 600px;
+    background-image: url("img/morango-contato.jpg");
+    background-size: cover;
+}
+
+.contato-contorno img{
+    width: 10%;
+    transform: rotate(45deg);
+}
+
+.contato-contorno a{
+    text-decoration: none;
+    -webkit-transition: 0.5s;
+}
+
+.contato-contorno a:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.contato-imagem h1{
+    font-size: 50px;
+    color: #fff;
+    font-family: 'Mulish';
+    text-shadow: 3px 3px 5px #313131;
+}
+
+.contato-contorno{
+    width: 85%;
+    height: 85%;
+    border: 1px #fff solid;
+}
+
+.input-padrao {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 5px 15px;
+    font-weight: 400;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #787c80;
+    border-radius: 5px;
+
+}
+
+.input-padrao::placeholder{
+    padding: 0;
+    padding-top: 1px;
+    font-size: 15px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group textarea{
+    font-size: 20px;
+    padding: 10px 15px;
+    height: 240px;
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contato-button{
+    font-family: 'Poppins', sans-serif;
+    height: 40px;
+    padding: 8px 20px 10px 20px;
+    border: none;
+    background-color: #e43131;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition: 2s;
+}
+
+.contato-button:hover{
+    box-shadow: 3px 3px 3px #666;
+    transition: 0.3s;
+}
+
+/* Fim Contato */
+
+
+
+
+
+
+/* ---------------------------------------------------------------------- */
+                            /* GRID */
+/* ---------------------------------------------------------------------- */
+
+.container-geral{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: auto;
+}
+
+.linha{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.col-1{
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.col-2{
+    width: 50%;
+    flex: 0 0 auto;
+}
+
+.col-3{
+    width: 33.3333333333%;
+    flex: 0 0 auto;
+}
+
+.col-3-3{
+    width: 66.666666666%;
+    flex: 0 0 auto;
+}
+
+.col-4{
+    width: 25%;
+    flex: 0 0 auto;
+}
+
+.col-5{
+    width: 20%;
+    flex: 0 0 auto;
+}
+
+/* ---------------------------------------------------------------------- */
+                            /* FIM GRID */
+/* ---------------------------------------------------------------------- */
+>>>>>>> a45215594d135e0795b29c863e0901accf9ef1ac
