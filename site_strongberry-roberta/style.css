@@ -1,7 +1,6 @@
 /* GERAL */
 
 .container{
-    background-color: rgb(214, 194, 219);
     width: 80%;
     margin: auto;
 }
@@ -13,9 +12,12 @@
 
 body{
     font-family: 'Poppins', sans-serif;
+    background-image: url('https://i.pinimg.com/originals/be/95/a3/be95a3e821ee0479d70599b5c344cb1d.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-/* INICIO ESTILO HEADER */
+/* ------------------INICIO ESTILO HEADER-------------------- */
 .header{
     width: 100%;
     height: 80px;
@@ -64,8 +66,18 @@ body{
     background-size: 100%;
 
 }
+/* ------------------FIM INICIO ESTILO HEADER-------------------- */
 
-/* Div do texto de bem vindos */
+
+
+
+
+
+
+
+
+
+/* -------------------Div do texto de bem vindos------------------- */
 .bem_vindos_text{
     width: 80%;
     margin: auto;
@@ -74,8 +86,17 @@ body{
     justify-content: center;
     display: flex;
 }
+/* -------------------Fim Div do texto de bem vindos------------------- */
 
-/* Div segundo container */
+
+
+
+
+
+
+
+
+/* -------------------Div segundo container------------------- */
 .container2{
     width: 80%;
     margin: auto;
@@ -99,8 +120,16 @@ body{
 .conteudo_text{
     text-align: center;
 }
+/* -------------------Div segundo container------------------- */
 
-/* Div do terceiro container */
+
+
+
+
+
+
+
+/* -------------------Div do terceiro container------------------- */
 .container3{
     width: 80%;
     margin: auto;
@@ -109,6 +138,7 @@ body{
     justify-content: center;
     display: flex;
     background-color: rgb(240, 240, 240);
+    border-radius: 10px;
 }
 
 .conteudo3{
@@ -125,8 +155,16 @@ body{
     margin: 50px;
     opacity: 0.95;
 }
+/* -------------------Div do terceiro container------------------- */
 
-/* Div do quarto container */
+
+
+
+
+
+
+
+/* -------------------Div do quarto container------------------- */
 .container4{
     width: 80%;
     margin: auto;
@@ -151,8 +189,19 @@ body{
     margin: 50px;
     opacity: 0.95;
 }
+/* -------------------Fim Div do quarto container------------------- */
 
-/* Footer */
+
+
+
+
+
+
+
+
+
+
+/* -------------------Footer------------------- */
 
 .footer{
     width: 100%;
@@ -175,9 +224,16 @@ body{
     padding: 50px;
     float: right;
 }
+/*-------------------Fim Footer-------------------*/
 
 
-/* Login */
+
+
+
+
+
+
+/* -------------------Login------------------- */
 /* .back{
     margin: 15px;
     margin-top: 10px;
@@ -264,4 +320,252 @@ body{
 .span_login a{
     color: white;
 }
+/*-------------------Fim Login-------------------*/
 
+
+
+
+
+
+
+
+
+
+/* -------------------Cadastro------------------- */
+/* .back{
+    margin: 15px;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+}
+
+.back img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+} */
+
+.body_cadastro{
+    background-image: url(img/wallpaper_strawberry.jpg);
+    background-position: left;
+    background-size: 40%;
+}
+
+.container_cadastro{
+    border-radius: 10px 10px 10px 10px;
+    height: 550px;
+    background-color: rgba(248, 248, 248, 0.8);
+    width: 50%;
+    margin: 40px;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;  
+    float: right;  
+}
+
+.container_cadastro h1{
+    font-size: 45px;
+    margin: 30px;
+    color: rgb(0, 0, 0);
+    height: 50px;
+}
+
+.container_cadastro input{
+    background-image: url();
+    width: 300px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 15px 15px 15px 15px;
+    border: none;
+    height: 30px;
+    margin: 10px;
+}
+
+::placeholder{
+    padding: 10px;
+    font-size: 15px;
+    color: rgb(141, 141, 141);
+}
+
+.container_cadastro hr{
+    color: white;
+    width: 50%;
+}
+
+.container_cadastro button{
+    color: whitesmoke;
+    width: 100px;
+    background-color: rgb(23, 46, 23);
+    border-radius: 15px 15px 15px 15px;
+    border: none;
+    height: 30px;
+    margin: 10px;
+}
+
+.container_cadastro button a{
+    text-decoration: none;
+    color: white;
+}
+
+.span_cadastro{
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+}
+
+.span_login a{
+    color: white;
+}
+/*-------------------Fim Login-------------------*/
+
+
+
+
+
+
+
+
+
+/* -------------------Início Body Sobre------------------- */
+/* .body_sobre{
+    font-family: 'Poppins', sans-serif;
+    background-image: url('https://i.pinimg.com/originals/be/95/a3/be95a3e821ee0479d70599b5c344cb1d.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+/* Fim Body Sobre */
+
+/* Início Quem somos */
+.conteudo_quem_somos{
+    width: 80%;
+    margin: auto;
+    margin-top: 350px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+}
+
+.quem_somos{
+    float: right;
+    position: relative;
+    text-align: center;
+    padding: 50px;
+}
+
+.quem_somos_img img{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 50px;
+    opacity: 0.95;
+    object-fit: cover;
+}
+/* Fim quem_somos */
+
+/* Início conteúdo sobre */
+.div_sobre{
+    width: 80%;
+    height: 330px;
+    text-align: center;
+    margin: auto;
+}
+
+.box_sobre{
+    margin: 40px;
+    border-radius: 10px;
+    padding: 15px;
+    display: inline-block;
+    width: 30%;
+    background-color: whitesmoke;
+    box-shadow: 0px  3px 9px rgb(27, 54, 30);
+    border-bottom: solid rgb(27, 54, 30);
+}
+
+.box_sobre img{
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+}
+
+.box_sobre h3, .box_sobre p {
+    margin-top: 15px;
+    object-fit: cover;
+}
+/* Fim conteúdo sobre */
+
+/* Início Nosso objetivo */
+.nosso_objetivo{
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+}
+
+.objetivo_texto{
+    float: left;
+    position: relative;
+    text-align: center;
+    padding: 50px;
+}
+
+.objetivo_img img{
+    object-fit: cover;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+    opacity: 0.95;
+}
+/* Fim Nosso objetivo */
+
+/* Início Integrantes */
+.box_integrantes{
+    width: 100%;
+    height: 300px;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(240, 240, 240);
+    border-bottom: solid rgb(27, 54, 30);
+}
+
+.box_integrantes h2{
+    margin: auto;
+    width: 400px;
+    color: rgb(0, 0, 0);
+    margin-top: 50px;
+    padding: 15px;
+}
+
+.box-int{
+    margin: 15px;
+    height: 150px;
+    margin-top: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0px  1px 7px rgb(27, 54, 30);
+    border-bottom: 6px solid rgb(27, 54, 30);
+    align-items: center;
+    justify-content: center;
+}
+
+.box-int img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.box-int h3{
+    margin-top: 15px;
+    color: rgb(0, 0, 0);
+}
+/* Fim Integrantes */
+/*-------------------Fim sobre-------------------*/
