@@ -1,0 +1,419 @@
+/* GERAL */
+
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.btn-red{
+    background-color: #80b46c;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* INICIO ESTILO HEADER */
+.header{
+    background-color: rgb(12, 12, 12);
+    width: 100%;
+    height: 80px;
+    border-bottom: solid #80b46c;
+}
+
+.header h1{
+    float: left;
+    color: rgb(255, 255, 255);
+}
+
+.header h1, .header ul{
+    margin-top: 20px;
+}
+
+.header li{
+    display: inline-block;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 6px;
+    border-radius: 5px;
+    color: white;
+}
+
+.header ul{
+    list-style: none;
+    float: right;
+}
+
+.header ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.text-green2 {
+    color: #80b46c;
+    font-weight: bold;
+}
+
+.header .text-green{
+    color: #80b46c;
+    font-weight: bold;
+}
+
+/* Início banner */
+.banner{
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    background-image: url('img/wallpaper_green4.jfif');
+}
+
+.banner h1{
+    padding-top: 150px;
+    font-size: 40px;
+    color: #fafafa;
+}
+
+.banner h3{
+    width: 100%;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: lighter;
+    color: rgb(240, 240, 240);
+}
+/* Fim banner */
+
+/* Início novidades */
+.news{
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    text-align: center;
+}
+
+.news button{
+    margin-top: 20px;
+}
+
+/* Fim novidades */
+
+/* Início Missão visão valores */
+.box{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(80, 80, 80);
+}
+
+.box-item{
+    margin: 10px;
+    border-radius: 10px;
+    padding: 15px;
+    display: inline-block;
+    width: 20%;
+    box-shadow: 0px  3px 9px rgb(27, 54, 30);
+    border-bottom: solid #80b46c;
+    background-color: white;
+}
+
+.box-item img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.box-item h3, .box-item p {
+    margin-top: 15px;
+}
+/* Fim Missão visão valores */
+
+/* Início Footer */
+.footer{
+    width: 100%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: black;
+}
+
+.footer_text{
+    color: rgb(207, 207, 207);
+    padding: 20px;
+    float: left;
+}
+
+.footer_text2{
+    color: rgb(207, 207, 207);
+    padding: 50px;
+    float: right;
+}
+/* Fim Footer */
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+/* Início Body Sobre */
+.body_sobre{
+    background-image: url('img/wallpaper_green4.jfif');
+    background-repeat: no-repeat;
+}
+/* Fim Body Sobre */
+
+/* Início Quem somos */
+.conteudo_quem_somos{
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: rgb(80, 80, 80);
+    opacity: 0.9;
+    color: white;
+    border-radius: 10px;
+}
+
+.quem_somos{
+    float: right;
+    position: relative;
+    text-align: center;
+    padding: 50px;
+}
+
+.quem_somos_img img{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 50px;
+    opacity: 0.95;
+}
+/* Fim quem_somos */
+
+/* Início conteúdo sobre */
+.div_sobre{
+    width: 80%;
+    height: 330px;
+    text-align: center;
+    margin: auto;
+}
+
+.box_sobre{
+    margin: 40px;
+    border-radius: 10px;
+    padding: 15px;
+    display: inline-block;
+    width: 30%;
+    background-color: whitesmoke;
+    box-shadow: 0px  3px 9px rgb(27, 54, 30);
+    border-bottom: solid #80b46c;
+}
+
+.box_sobre img{
+    border-radius: 50%;
+    width: 130px;
+}
+
+.box_sobre h3, .box_sobre p {
+    margin-top: 15px;
+}
+/* Fim conteúdo sobre */
+
+/* Início Nosso objetivo */
+.nosso_objetivo{
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: rgb(80, 80, 80);
+    opacity: 0.9;
+    color: white;
+    border-radius: 10px;
+}
+
+.objetivo_texto{
+    float: left;
+    position: relative;
+    text-align: center;
+    padding: 50px;
+}
+
+.objetivo_img img{
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+    opacity: 0.95;
+}
+/* Fim Nosso objetivo */
+
+/* Início Integrantes */
+.box_integrantes{
+    width: 100%;
+    height: 300px;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(80, 80, 80);
+    border-bottom: solid #80b46c;
+}
+
+.box_integrantes h2{
+    margin: auto;
+    width: 400px;
+    color: white;
+    margin-top: 50px;
+    padding: 15px;
+}
+
+.box-int{
+    margin: 15px;
+    height: 150px;
+    margin-top: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0px  1px 7px rgb(56, 56, 56);
+    border-bottom: 5px solid #80b46c;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-int img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.box-int h3{
+    margin-top: 15px;
+    color: white;
+}
+/* Fim Integrantes */
+
+/* Início Login */
+/* Login */
+/* .back{
+    margin: 15px;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+}
+
+.back img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+} */
+
+.body_login{
+    background-image: url('img/wallpaper_green4.jfif');
+    background-repeat: no-repeat;
+} 
+
+.container_login{
+    border-radius: 10px 10px 10px 10px;
+    height: 400px;
+    background-color: rgb(228, 228, 228, 0.25);
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;    
+}
+
+.container_login h1{
+    font-size: 45px;
+    margin: 30px;
+    color: white;
+    height: 50px;
+}
+
+.container_login input{
+    width: 300px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 15px 15px 15px 15px;
+    border: none;
+    height: 30px;
+    margin: 10px;
+}
+
+::placeholder{
+    padding: 10px;
+    font-size: 15px;
+    color: rgb(141, 141, 141);
+}
+
+.container_login hr{
+    color: white;
+    width: 50%;
+}
+
+.container_login button{
+    color: whitesmoke;
+    width: 100px;
+    background-color: rgb(23, 46, 23);
+    border-radius: 15px 15px 15px 15px;
+    border: none;
+    height: 30px;
+    margin: 10px;
+}
+
+.container_login button a{
+    text-decoration: none;
+    color: white;
+}
+
+.span_login{
+    color: white;
+    font-size: 13px;
+}
+
+.span_login a{
+    color: white;
+}
+
+/* Início Footer Login */
+.footer_login{
+    width: 100%;
+    margin: auto;
+    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: black;
+}
+
+.footer_text_login{
+    color: rgb(207, 207, 207);
+    padding: 20px;
+    float: left;
+}
+
+.footer_text2_login{
+    color: rgb(207, 207, 207);
+    padding: 50px;
+    float: right;
+}
+/* Fim Footer Login */
+
+/* Fim Login */

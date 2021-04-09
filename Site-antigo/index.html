@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>StrongBerry</title>
+        <link rel="shortcut icon" href="img/morango.png" /><!--  Icone que aparece na aba do navegador -->
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+
+  <!-- HEADER -->
+        <div id="navbar" class="header">
+            <a href="index.html"><img class="imagem-logo" src="img/Logo_strongberry.png" alt="Logo StrongBerry"></a>
+            <ul>
+                <li>
+                    <a href="index.html"><span class="selected">Home</span></a>
+                </li>
+                <li><a href="solucoes.html">Soluções</a></li>
+                <li><a href="simulador.html">Para seu negócio</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    <!-- FIM HEADER -->
+
+    <!-- BANNER DESTAQUE -->
+        <div class="destaque">
+            <img class="img-destaque" src="img/imagem_header5.0.jpg" alt="" />
+            <label class="texto-top">Somos a StrongBerry</label><br />
+            <a href="index.html#proposta" class="botao-destaque">Saiba mais!!!</a>
+        </div>
+    <!-- FIM BANNER DESTAQUE -->
+
+    <!-- CARDS -->
+        <div class="container">
+            <div class="linha">
+                <!-- Card 1 -->
+                <div class="col-3">
+                    <div class="icone">
+                        <img src="img/umidade.png" alt="" class="img-icone" />
+                        <h3>Sensor de Umidade</h3>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-3">
+                    <div class="icone">
+                        <img src="img/estufa.png" alt="" class="img-icone" />
+                        <h3>Controle de Estufas</h3>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-3">
+                    <div class="icone">
+                        <img src="img/temperatura.png" alt="" class="img-icone" />
+                        <h3>Sensor de Temperatura</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- FIM CARDS -->
+
+    <!-- TEXTO NOSSA PROPOSTA -->
+        <div class="container" id="proposta">
+            <h1 style="text-align: center; margin-bottom: 20px;">Nossa Proposta</h1>
+            <p class="pSaibaMais">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis
+                  nulla non risus gravida eleifend sed et dui. Vivamus facilisis eros
+                  ut consequat finibus. Quisque iaculis rutrum purus. Phasellus non
+                  elit sed tortor hendrerit venenatis. Ut mauris ex, cursus porttitor
+                  scelerisque aliquet, sodales vel ligula. Sed vitae nulla vitae est
+                  lacinia fringilla. Ut tincidunt justo ut venenatis rhoncus. Sed
+                  faucibus arcu diam, id scelerisque diam efficitur eget. Nam egestas
+                  velit faucibus metus vulputate facilisis nec suscipit nisl. Nunc
+                  porttitor felis porttitor, malesuada orci id, ultrices est. Fusce at
+                  sollicitudin diam.Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis
+                  nulla non risus gravida eleifend sed et dui. Vivamus facilisis eros
+                  ut consequat finibus. Quisque iaculis rutrum purus.
+            </p><br>
+            <div class="flex">
+                <a href="#" class="buttonSaibaMais">Saiba Mais!</a><!-- Botão Saiba mais -->
+            </div>
+        </div>
+    <!-- FIM TEXTO NOSSA PROPOSTA -->
+
+    <!-- CONTATO EMAIL -->
+        <div id="noticias" class="contato">
+            <div class="container">
+                <div class="linha flex">
+                    <h2 style="margin-top: 70px;">Receba notícias sobre nossa empresa via Email</h2>
+                </div>
+                <div class="linha">
+                    <input type="text" placeholder="Email" id="inputEmailNoticias">
+                    <button class="contatoButton" onclick="adicionarEmail()">Enviar</button>
+                </div>
+            </div>
+        </div>
+    <!-- FIM CONTATO EMAIL  -->
+
+    <!-- QUEM SOMOS -->
+        <div class="container">      
+            <h1 id="quemSomos" style="margin: 20px; text-align: center;">Quem somos?</h1>
+            <div class="linha">
+                <p class="pEquipe">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis
+                    nulla non risus gravida eleifend sed et dui. Vivamus facilisis eros
+                    ut consequat finibus. Quisque iaculis rutrum purus. Phasellus non
+                    elit sed tortor hendrerit venenatis. Ut mauris ex, cursus porttitor
+                    scelerisque aliquet, sodales vel ligula. Sed vitae nulla vitae est
+                    lacinia fringilla. Ut tincidunt justo ut venenatis rhoncus. Sed
+                    faucibus arcu diam, id scelerisque diam efficitur eget. Nam egestas
+                    velit faucibus metus vulputate facilisis nec suscipit nisl. Nunc
+                    porttitor felis porttitor, malesuada orci id, ultrices est. Fusce at
+                    sollicitudin diam.
+                </p>
+                <img class="imgEquipe" src="img/equipe.jpg" alt="Morango" />
+            </div>
+        </div>
+        <div class="container">
+            <p class="pEquipe">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis nulla
+                non risus gravida eleifend sed et dui. Vivamus facilisis eros ut
+                consequat finibus. Quisque iaculis rutrum purus. Phasellus non elit sed
+                tortor hendrerit venenatis. Ut mauris ex, cursus porttitor scelerisque
+                aliquet, sodales vel ligula. Sed vitae nulla vitae est lacinia
+                fringilla. Ut tincidunt justo ut venenatis rhoncus. Sed faucibus arcu
+                diam, id scelerisque diam efficitur eget. Nam egestas velit faucibus
+                metus vulputate facilisis nec suscipit nisl. Nunc porttitor felis
+                porttitor, malesuada orci id, ultrices est. Fusce at sollicitudin diam.
+            </p>
+        </div>
+    <!-- FIM CONTATO EMAIL -->
+
+    <!-- FOTOS NOSSA EQUIPE  -->
+        <div class="container">
+            <h1 style="text-align: center;">Nossa equipe</h1>
+            <div class="linha equipe">
+                <div class="col-5">
+                    <a href="" target="_blank"><img src="img/equipe/perfil.jpg" alt="" class="fotoEquipe">
+                    <p class="labelEquipe">Enan Oliveira</p></a>
+                </div>
+                <div class="col-5">
+                    <a href="" target="_blank"><img src="img/equipe/perfil.jpg" alt="" class="fotoEquipe">
+                    <p class="labelEquipe">Henrique Piassi</p></a>
+                </div>
+                <div class="col-5">
+                    <a href="" target="_blank"><img src="img/equipe/perfil.jpg" alt="" class="fotoEquipe">
+                    <p class="labelEquipe">João Victor Ruas</p></a>
+                </div>
+                <div class="col-5">
+                    <a href="" target="_blank"><img src="img/equipe/lucas.jpg" alt="" class="fotoEquipe">
+                    <p class="labelEquipe">Lucas Teixeira</p></a>
+                </div>
+                <div class="col-5">
+                    <a href="" target="_blank"><img src="img/equipe/perfil.jpg" alt="" class="fotoEquipe">
+                    <p class="labelEquipe">Roberta Pires</p></a>
+                </div>
+            </div>
+        </div>
+    <!-- FIM FOTOS NOSSA EQUIPE -->
+
+    <!-- ANCORA (Botão que fica no canto inferior esquedo da página) -->
+        <a href="index.html#navbar">
+            <div class="ancora">
+                <img src="img/seta.png" alt="">
+            </div>
+        </a>
+    <!-- FIM ANCORA -->
+
+    <!-- RODAPÉ -->
+        <div class="footer">
+            <div class="container-footer">              
+                <div class="linha">
+                    <div class="col-5">
+                      <a href="index.html"><img src="img/logo-light-text.png" alt=""></a>
+                    </div>
+                    <div class="col-5">
+                        <ul>
+                            <li><a href="index.html#navbar"><b>Início:</b></a></li><br>
+                            <li><a href="index.html#quemSomos">Quem somos?</a></li>
+                            <li><a href="index.html#proposta">Nossa proposta</a></li>
+                            <li><a href="index.html#noticias">Receba notícias</a></li>
+                        </ul>   
+                    </div>
+                    <div class="col-5">
+                        <ul>
+                            <li><b>Páginas:</b></li><br>
+                            <li><a href="">Para seu negócio</a></li>
+                            <li><a href="">Contato</a></li>
+                            <li><a href="">Login</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-5">
+                        <ul><br><br>
+                            <li><a href="">Termos de uso</a></li>
+                            <li><a href="">Contratar nosso serviço</a></li>
+                            <!-- <li><a href=""></a></li>
+                            <li><a href=""></a></li> -->
+                        </ul>
+                    </div>
+                    <div class="col-5">
+                        <ul>
+                            <li><b>Informações:</b></li><br>
+                            <li><span>Email: </span><a href="">strongberry@email.com</a></li>
+                            <li><span>Contato: </span><a href="">11 91111-2222</a></li>                            
+                            <li></li>
+                        </ul>
+                    </div>
+                </div> 
+                <div class="linha">
+                    <div class="col-1">
+                       <center>
+                        <a href="" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                        <a href="" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                    </center> 
+                    </div>
+                    
+                </div>               
+            </div>            
+        </div>
+        <div class="copyright">
+            <div  class="linha">
+                <label>Copyright <a href="#">StrongBerry</a>, 2021</label>
+            </div>
+        </div>
+    <!-- FIM RODAPÉ -->
+    </body>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/47509d94ad.js" crossorigin="anonymous"></script>
+</html>
