@@ -331,28 +331,31 @@ body{
 } */
 
 .body_login{
-    background-image: url(img/imagem_header6.0.png);
-    background-repeat: no-repeat; 
-    background-size: 100%;
+    background-image: url('img/bemvindo-img.png');
+    background-position: left;
+    background-size: 40%;
+    background-repeat: no-repeat;
 }
 
 .container_login{
+    background-image: url('img/background-white2.jpg');
     border-radius: 10px 10px 10px 10px;
-    height: 400px;
-    background-color: rgb(228, 228, 228, 0.1);
+    height: 550px;
+    background-color: rgba(248, 248, 248, 0.8);
     width: 50%;
-    margin: auto;
-    margin-top: 80px;
+    margin: 40px;
+    margin-top: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;    
+    flex-direction: column;  
+    float: right;  
 }
 
 .container_login h1{
     font-size: 45px;
     margin: 30px;
-    color: white;
+    color: rgb(0, 0, 0);
     height: 50px;
 }
 
@@ -369,7 +372,7 @@ body{
 .container_login input::placeholder{
     padding: 10px;
     font-size: 15px;
-    color: #8d8d8d;
+    color: rgb(141, 141, 141);
 }
 
 .container_login hr{
@@ -393,12 +396,12 @@ body{
 }
 
 .span_login{
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 13px;
 }
 
 .span_login a{
-    color: white;
+    color: rgb(0, 0, 0);
 }
 /*-------------------Fim Login-------------------*/
 
@@ -429,12 +432,14 @@ body{
 } */
 
 .body_cadastro{
-    background-image: url(img/wallpaper_strawberry.jpg);
+    background-image: url('img/wallpaper_strawberry.jpg');
     background-position: left;
     background-size: 40%;
+    background-repeat: no-repeat;
 }
 
 .container_cadastro{
+    background-image: url('img/background-white2.jpg');
     border-radius: 10px 10px 10px 10px;
     height: 550px;
     background-color: rgba(248, 248, 248, 0.8);
@@ -496,10 +501,124 @@ body{
     font-size: 13px;
 }
 
-.span_login a{
+.span_cadastro a{
     color: white;
 }
-/*-------------------Fim Login-------------------*/
+/*-------------------Fim Cadastro-------------------*/
+
+
+
+
+
+
+
+
+
+/* -------------------Cadastro 2------------------- */
+/* .back{
+    margin: 15px;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+}
+
+.back img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+} */
+
+.body_cadastro2{
+    background-image: url('img/wallpaper_strawberry.jpg');
+    background-position: left;
+    background-size: 40%;
+    background-repeat: no-repeat;
+}
+
+.container_cadastro2{
+    background-image: url('img/background-white2.jpg');
+    border-radius: 10px 10px 10px 10px;
+    height: 600px;
+    background-color: rgba(248, 248, 248, 0.8);
+    width: 50%;
+    margin: 40px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;  
+    float: right;  
+}
+
+.container_cadastro2 h1{
+    font-size: 45px;
+    margin: 30px;
+    color: rgb(0, 0, 0);
+}
+
+.container_cadastro2 input{
+    background-image: url();
+    width: 300px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 15px 15px 15px 15px;
+    border: none;
+    height: 30px;
+    margin: 10px;
+}
+
+.container_cadastro2 input::placeholder{
+    padding: 10px;
+    font-size: 15px;
+    color: rgb(141, 141, 141);
+}
+
+.container_cadastro2 select{
+    background-image: url();
+    width: 300px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 15px 15px 15px 15px;
+    border: none;
+    height: 30px;
+    margin: 10px;
+    color: rgb(141, 141, 141);
+}
+
+.container_cadastro2 hr{
+    color: white;
+    width: 50%;
+}
+
+.container_cadastro2 button{
+    color: whitesmoke;
+    width: 100px;
+    background-color: rgb(23, 46, 23);
+    border-radius: 15px 15px 15px 15px;
+    border: none;
+    height: 30px;
+    margin: 10px;
+}
+
+.container_cadastro2 button a{
+    text-decoration: none;
+    color: white;
+}
+
+.span_cadastro2{
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+}
+
+.span_cadastro2 a{
+    color: white;
+}
+/*-------------------Fim Cadastro2-------------------*/
+
+
+
+
 
 
 /* -------------------Início Body Sobre------------------- */
