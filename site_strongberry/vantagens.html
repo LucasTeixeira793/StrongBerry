@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/favicon.png" /><!--  Icone que aparece na aba do navegador -->
+    <title>StrongBerry - Vantagens</title>
+</head>
+<body>
+    <div class="header" id="navbar">
+        <img src="img/header-vatagens.jpg" alt="Header Image Strawnberry">
+        <div class="container">
+            <a href="index.html"><h1>StrongBerry</h1></a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="vantagens.html"><span class="text-a">Vantagens</span></a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="bem_vindos_text">
+        <h1>Vantagens</h1>
+    </div>
+    <div class="linha">
+        <div class="container-geral">
+            <div class="texto-vantagens">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ea voluptates eius veniam ducimus et iusto facere inventore perspiciatis ex! Recusandae aliquid magni nulla asperiores debitis autem enim facere cum!
+                Enim molestias omnis, quidem quos cum veniam tenetur, modi voluptatem ducimus nesciunt adipisci eveniet possimus ipsam libero aperiam ipsum eaque commodi dicta non repellat hic fuga aliquid consequuntur! Accusantium, nisi.
+                Earum nemo ullam deleniti culpa sapiente obcaecati necessitatibus. Fuga ad a repellat quidem dolorum minima expedita voluptatum magni sed rerum aliquid nobis repudiandae, animi commodi minus repellendus doloribus! Saepe, veniam.</p>
+                <br>    
+                <p>Com base nisso criamos um simulador financeiro para te mostrar o quão vantajoso o nosso projeto pode ser!!!</p>
+            </div>
+        </div>
+    </div>
+    <div class="vantagens-inicio" id="camposSimulador">
+        <div class="flex">
+            <h1>Simulador:</h1>
+            <div class="vantagens-input flex" >
+                <div class="form-group">
+                    <label for="inputMetros">Quantos metros² tem sua estufa?</label>
+                    <input type="text" id="inputMetros2" placeholder="Metros²" class="input-padrao">
+                </div>
+                <div class="form-group">
+                    <label for="inputMorangosPorM2">Quantidade de morangos por m²?</label><br>
+                    <input type="text" id="inputMudasPorM2" placeholder="Morangos por m²" class="input-padrao">
+                </div>
+                <button class="contato-button" onclick="mostrarCalculo()">Calcular lucro</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="resultado-simulador" id="resultadoSimulador">
+        <div class="container-geral">
+            <div class="linha">
+                <div class="col-3 flex">
+                    <div class="card-simulador1 flex">
+                        <h2>Dados digitados:</h2><br>
+                        <span><b>Metros² da estufa: </b><u id="uEstufaM"></u></span> 
+                        <span><b>Morangos por metro²: </b><u id="uMorangoM"></u></span> 
+                    </div>
+                </div>
+                <div class="col-3 flex">
+                    <div class="card-simulador flex">
+                        <h3>Quantidade aproximada de mudas</h3><br>
+                        <sub>(Metros² de estufa x Mudas p/ metro²)</sub>
+                        <span><u id="uEstufaM2"></u> x <u id="uMorangoM2"></u></span>
+                        <b class="simulador-result"><b id="bQtdMudas"></b> mudas</b>
+                    </div>
+                </div>
+                <div class="col-3 flex">
+                    <div class="card-simulador flex">
+                        <h3>Peso aproximado</h3><br>
+                        <sub>Uma muda pode gerar até 800g de morango</sub>
+                        <sub>(Quantidade de mudas x 800g)</sub><br>
+                        <b class="simulador-result"><b id="bGramas"></b>g ou</b>
+                        <b class="simulador-result"><b id="bKg"></b>Kg</b>
+                    </div>
+                </div>
+            </div>
+            <div class="linha">
+                <div class="col-3-3 flex">
+                    <div class="card-simulador flex">
+                        <span>
+                            <b>
+                                Segundo nossas pesquisas vimos q a média do preço do Kg do <br>
+                                morango é de aproximadamente R$10 então:
+                            </b>
+                        </span>
+                        <br>
+                        <span><span class="texto-azul"><span id="spanKgMorango"></span>Kg</span> x <span class="texto-azul">R$10,00</span></span><br>
+                        <b class="simulador-result-ruim">R$<b id="bGanhoSem"></b></b>
+                    </div>
+                </div>
+                <div class="col-3 flex">
+                    <div class="card-simulador5 flex">
+                        <label class="texto-azul">Sabia que um Morango <br>orgânico, saudável e em <br>boas condições pode ter <br>uma valorização de até 60%<br> no seu valor?</label>
+                    </div>
+                </div>
+            </div>
+            <div class="linha">
+                <div class="col-3 flex">
+                    <div class="card-simulador5 flex">
+                        <label class="texto-azul">E você sabia que com a StrongBerry você pode ter <br> essa valorização através do monitoramento de estufas?</label>
+                    </div>
+                </div>
+                <div class="col-3-3 flex">
+                    <div class="card-simulador flex">
+                        <h2>Recapitulando...</h2><br>
+                        <span>Da forma tradicional você arrecadará aproximadamente:</span>
+                        <span class="texto-vermelho">R$ <label id="labelGanhoSem"></label></span><br>
+                        <span>Possível lucro a partir do monitoramento da StrongBerry (60%):</span>
+                        <span class="texto-verde">R$<label id="labelLucro"></label></span><br>                        
+                    </div>
+                </div>
+            </div>
+            <div class="linha">
+                <div class="col-2 flex">
+                    <div class="card-simulador flex">
+                        <h3>Olha só o que você está perdendo...</h3><br>
+                        <span><span class="texto-azul">R$<label id="labelGanhoSem2"></label></span> + <span class="texto-azul">R$<label id="labelLucro2"></label></span></span>
+                        <sub>(Valor atual arrecadado + Lucro proposto pela StrongBerry)</sub><br>
+                        <b class="simulador-result">R$<label id="labelGanhoCom"></label></b>
+                    </div>
+                </div>
+                <div class="col-2 flex">
+                    <div class="card-simulador flex">
+                        <h1>Contrate nosso<br>serviço já :)</h1><br>
+                        <button class="contato-button">Clique aqui e saiba mais</button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex">
+                <button class="contato-button" onclick="esconderCalculo()">Faça outra simulação</button><br>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+    <!-- RODAPÉ -->
+    <div class="footer">
+        <div class="container-footer">              
+            <div class="linha">
+                <div class="col-5">
+                    <!-- <a href="index.html"><img src="img/logo-light-text.png" alt=""></a> -->
+                    <a href="index.html"><h1>StrongBerry</h1></a>
+                </div>
+                <div class="col-5">
+                    <ul>
+                        <li><a href="index.html#navbar"><b>Início:</b></a></li><br>
+                        <li><a href="index.html#quemSomos">Quem somos?</a></li>
+                        <li><a href="index.html#proposta">Nossa proposta</a></li>
+                        <li><a href="index.html#noticias">Receba notícias</a></li>
+                    </ul>   
+                </div>
+                <div class="col-5">
+                    <ul>
+                        <li><b>Páginas:</b></li><br>
+                        <li><a href="">Para seu negócio</a></li>
+                        <li><a href="">Contato</a></li>
+                        <li><a href="">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-5">
+                    <ul><br><br>
+                        <li><a href="">Termos de uso</a></li>
+                        <li><a href="">Contratar</a></li>
+                        <!-- <li><a href=""></a></li>
+                        <li><a href=""></a></li> -->
+                    </ul>
+                </div>
+                <div class="col-5">
+                    <ul>
+                        <li><b>Informações:</b></li><br>
+                        <li><span>Email: </span><a href="">strongberry@email.com</a></li>
+                        <li><span>Contato: </span><a href="">11 91111-2222</a></li>                            
+                        <li></li>
+                    </ul>
+                </div>
+            </div> 
+            <div class="linha">
+                <div class="col-1">
+                    <center>
+                    <a href="" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                    <a href="" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                </center> 
+                </div>                    
+            </div>               
+        </div>            
+    </div>
+    <div class="copyright">
+        <div  class="linha">
+            <label>Copyright <a href="#">StrongBerry</a>, 2021</label>
+        </div>
+    </div>
+    <!-- FIM RODAPÉ -->
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/47509d94ad.js" crossorigin="anonymous"></script>
+</body>
+</html>

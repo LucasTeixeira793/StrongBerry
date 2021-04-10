@@ -28,8 +28,8 @@ function calcularLucro(){
         var porcentagem2 = 100 - porcentagem1;
     
         div1.innerHTML = `<b>Dados digitados:</b><br>
-                        Metros de área plantada: <b>${metros}m²</b><br>
-                        Média de mudas por metro: <b>${mudas} mudas</b>`;
+                         Metros de área plantada: <b>${metros}m²</b><br>
+                         Média de mudas por metro: <b>${mudas} mudas</b>`;
         
         div2.innerHTML = `Segundo nossas pesquisas cada muda de morango pode gerar até <b>800g</b> de morango durante sua vida, ou seja, sua plantação pode gerar até <b>${gramasMorango}g</b>, ou <b>${kgMorango}kg</b> de morangos<br><br>
         
