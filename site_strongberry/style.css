@@ -80,6 +80,7 @@ body{
 .header img{
     width: 100%;
     height: 400px;
+    object-fit: cover;
     position: absolute;
     opacity: 0.95;
     background-repeat: no-repeat; 
@@ -643,6 +644,10 @@ body{
     transition: 0.5s;
 }
 
+.box-int a{
+    text-decoration: none;
+}
+
 .box-int h3{
     margin-top: 15px;
     color: rgb(0, 0, 0);
@@ -679,6 +684,107 @@ body{
 }
 
 /* Fim da Ancora */
+
+
+
+
+
+
+/* Simulador Financeiro */
+
+.texto-vantagens{
+    text-indent: 40px;;
+    text-align: justify;
+}
+
+.vantagens-inicio{
+    height: 500px;
+}
+
+.vantagens-input{
+    background-color: rgba(196, 194, 194, 0.699);
+    border-radius: 10px;
+    width: 30%;
+    height: 300px;
+    margin-top: 30px;
+}
+
+.vantagens-input label{
+    text-align: center;
+}
+
+.vantagens-input input{
+    width: 90%;
+    text-align: center;
+}
+
+.card-simulador{
+    background-color: rgba(196, 194, 194, 0.699);
+    border-radius: 10px;
+    height: 300px;
+    width: 90%;
+    text-align: center;
+}
+
+.card-simulador1{
+    background-color: rgba(75, 121, 63, 0.699);
+    border-radius: 10px;
+    height: 300px;
+    width: 90%;
+    text-align: center;
+}
+
+.card-simulador5{
+    background-color: rgba(69, 190, 238, 0.493);
+    border-radius: 10px;
+    height: 300px;
+    width: 90%;
+    text-align: center;
+}
+
+.simulador-result{
+    font-size: 30px;
+    color: #10341c;
+}
+
+.simulador-result-ruim{
+    font-size: 30px;
+    color: #7a0b0b;
+}
+
+.texto-azul{
+    color: #0f2091;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.texto-vermelho{
+    color: #7a0b0b;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.texto-verde{
+    color: #10341c;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-simulador span{
+    font-size: 15px;
+}
+
+.card-simulador sub{
+    font-size: 10px;
+}
+
+/* Fim Simulador Financeiro */
+
+
+
+
+
+
 
 /* cards */
 
@@ -787,6 +893,7 @@ body{
 }
 
 .contato-equipe h3{
+    font-size: 28px;
     margin-bottom: 50px;
     text-align: center;
     font-family: 'Mulish';
@@ -845,7 +952,7 @@ body{
     background-color: #fff;
     box-shadow: #666 3px 3px 6px;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     -webkit-transition: 0.3s;
 }
 
