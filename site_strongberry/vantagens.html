@@ -39,19 +39,19 @@
             </div>
         </div>
     </div>
-    <div class="vantagens-inicio">
+    <div class="vantagens-inicio" id="camposSimulador">
         <div class="flex">
             <h1>Simulador:</h1>
-            <div class="vantagens-input flex" id="CamposSimulador">
+            <div class="vantagens-input flex" >
                 <div class="form-group">
                     <label for="inputMetros">Quantos metros² tem sua estufa?</label>
-                    <input type="text" id="inputMetros" placeholder="Metros²" class="input-padrao">
+                    <input type="text" id="inputMetros2" placeholder="Metros²" class="input-padrao">
                 </div>
                 <div class="form-group">
                     <label for="inputMorangosPorM2">Quantidade de morangos por m²?</label><br>
-                    <input type="text" id="inputMorangosPorM2" placeholder="Morangos por m²" class="input-padrao">
+                    <input type="text" id="inputMudasPorM2" placeholder="Morangos por m²" class="input-padrao">
                 </div>
-                <button class="contato-button" onclick="">Calcular lucro</button>
+                <button class="contato-button" onclick="mostrarCalculo()">Calcular lucro</button>
             </div>
         </div>
     </div>
@@ -62,16 +62,16 @@
                 <div class="col-3 flex">
                     <div class="card-simulador1 flex">
                         <h2>Dados digitados:</h2><br>
-                        <span><b>Metros² da estufa: </b><u id="uEstufaM2">10</u></span> 
-                        <span><b>Morangos por metro²: </b><u id="uMorangoM2">10</u></span> 
+                        <span><b>Metros² da estufa: </b><u id="uEstufaM"></u></span> 
+                        <span><b>Morangos por metro²: </b><u id="uMorangoM"></u></span> 
                     </div>
                 </div>
                 <div class="col-3 flex">
                     <div class="card-simulador flex">
                         <h3>Quantidade aproximada de mudas</h3><br>
                         <sub>(Metros² de estufa x Mudas p/ metro²)</sub>
-                        <span><u id="uEstufaM2">10</u> x <u id="uMorangoM2">10</u></span>
-                        <b class="simulador-result"><b id="bQtdMudas">100</b> mudas</b>
+                        <span><u id="uEstufaM2"></u> x <u id="uMorangoM2"></u></span>
+                        <b class="simulador-result"><b id="bQtdMudas"></b> mudas</b>
                     </div>
                 </div>
                 <div class="col-3 flex">
@@ -79,8 +79,8 @@
                         <h3>Peso aproximado</h3><br>
                         <sub>Uma muda pode gerar até 800g de morango</sub>
                         <sub>(Quantidade de mudas x 800g)</sub><br>
-                        <b class="simulador-result"><b id="bGramas">80000</b>g ou</b>
-                        <b class="simulador-result"><b id="bKg">800</b>Kg</b>
+                        <b class="simulador-result"><b id="bGramas"></b>g ou</b>
+                        <b class="simulador-result"><b id="bKg"></b>Kg</b>
                     </div>
                 </div>
             </div>
@@ -94,8 +94,8 @@
                             </b>
                         </span>
                         <br>
-                        <span><span class="texto-azul"><span id="spanKgMorango">800</span>Kg</span> x <span class="texto-azul">R$10,00</span></span><br>
-                        <b class="simulador-result-ruim">R$<b>8000,00</b></b>
+                        <span><span class="texto-azul"><span id="spanKgMorango"></span>Kg</span> x <span class="texto-azul">R$10,00</span></span><br>
+                        <b class="simulador-result-ruim">R$<b id="bGanhoSem"></b></b>
                     </div>
                 </div>
                 <div class="col-3 flex">
@@ -114,9 +114,9 @@
                     <div class="card-simulador flex">
                         <h2>Recapitulando...</h2><br>
                         <span>Da forma tradicional você arrecadará aproximadamente:</span>
-                        <span class="texto-vermelho">R$8000</span><br>
+                        <span class="texto-vermelho">R$ <label id="labelGanhoSem"></label></span><br>
                         <span>Possível lucro a partir do monitoramento da StrongBerry (60%):</span>
-                        <span class="texto-verde">R$4800</span><br>                        
+                        <span class="texto-verde">R$<label id="labelLucro"></label></span><br>                        
                     </div>
                 </div>
             </div>
@@ -124,9 +124,9 @@
                 <div class="col-2 flex">
                     <div class="card-simulador flex">
                         <h3>Olha só o que você está perdendo...</h3><br>
-                        <span><span class="texto-azul">R$8000</span> + <span class="texto-azul">R$4800</span></span>
+                        <span><span class="texto-azul">R$<label id="labelGanhoSem2"></label></span> + <span class="texto-azul">R$<label id="labelLucro2"></label></span></span>
                         <sub>(Valor atual arrecadado + Lucro proposto pela StrongBerry)</sub><br>
-                        <b class="simulador-result">R$12800</b>
+                        <b class="simulador-result">R$<label id="labelGanhoCom"></label></b>
                     </div>
                 </div>
                 <div class="col-2 flex">
@@ -137,7 +137,7 @@
                 </div>
             </div>
             <div class="flex">
-                <button class="contato-button">Faça outra simulação</button><br>
+                <button class="contato-button" onclick="esconderCalculo()">Faça outra simulação</button><br>
             </div>
         </div>
     </div>

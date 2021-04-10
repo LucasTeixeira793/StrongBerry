@@ -774,6 +774,21 @@ body{
     font-size: 15px;
 }
 
+#camposSimulador{
+    display: block;
+    -webkit-animation: animate-div 1.5s;
+}
+
+#resultadoSimulador{
+    display: none;
+    -webkit-animation: animate-div 1.5s;
+}
+
+@-webkit-keyframes animate-div {
+    from { opacity: 0; margin-top: -150px;}
+    to { opacity: 1;margin-top: 0px;}
+}
+
 .card-simulador sub{
     font-size: 10px;
 }
