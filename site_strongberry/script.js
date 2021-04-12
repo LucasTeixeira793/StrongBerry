@@ -38,7 +38,6 @@ function calcularLucro(){
     var lucro = ganhoSem * 0.6;
     var ganhoCom = ganhoSem + lucro;
     var dados = [ganhoSem, ganhoCom];
-
     // Card 1
     uEstufaM.innerHTML = metros;
     uMorangoM.innerHTML = mudas;

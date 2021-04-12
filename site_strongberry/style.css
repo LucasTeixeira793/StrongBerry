@@ -41,7 +41,7 @@ body{
     font-weight: 400;
     color: #495057;
     background-color: #fff;
-    box-shadow: #666 3px 3px 6px;
+    box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 6px;
     border: none;
     border-radius: 15px;
     -webkit-transition: 0.3s;
@@ -49,7 +49,7 @@ body{
 
 .input-padrao:hover{
     transition: 0.3s;
-    box-shadow: #666 5px 5px 6px;
+    box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 6px;
 }
 
 .input-padrao:focus{
@@ -75,7 +75,7 @@ body{
 }
 
 .button-padrao:hover{
-    box-shadow: 3px 3px 3px #666;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
     transition: 0.3s;
 }
 
@@ -1207,62 +1207,6 @@ body{
 
 
 
-/* ---------------------------------------------------------------------- */
-                            /* GRID */
-/* ---------------------------------------------------------------------- */
-
-.container-geral{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    height: auto;
-}
-
-.linha{
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.col-1{
-    width: 100%;
-    flex: 0 0 auto;
-}
-
-.col-2{
-    width: 50%;
-    flex: 0 0 auto;
-}
-
-.col-3{
-    width: 33.3333333333%;
-    flex: 0 0 auto;
-}
-
-.col-3-3{
-    width: 66.666666666%;
-    flex: 0 0 auto;
-}
-
-.col-4{
-    width: 25%;
-    flex: 0 0 auto;
-}
-
-.col-5{
-    width: 20%;
-    flex: 0 0 auto;
-}
-
-/* ---------------------------------------------------------------------- */
-                            /* FIM GRID */
-/* ---------------------------------------------------------------------- */
-
-
-
-
 
 
 
@@ -1336,3 +1280,234 @@ body{
     width: 90%;
 }
 /* ------------------------------Fim Sensors------------------------- */
+
+
+
+
+
+/* ---------------------------------------------------------------------- */
+                            /* GRID */
+/* ---------------------------------------------------------------------- */
+
+.container-geral{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: auto;
+}
+
+.linha{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.linha-dashboard{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-1{
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.col-2{
+    width: 50%;
+    flex: 0 0 auto;
+}
+
+.col-3{
+    width: 33.3333333333%;
+    flex: 0 0 auto;
+}
+
+.col-3-3{
+    width: 66.666666666%;
+    flex: 0 0 auto;
+}
+
+.col-4{
+    width: 25%;
+    flex: 0 0 auto;
+}
+
+.col-5{
+    width: 20%;
+    flex: 0 0 auto;
+}
+
+.col-80{
+    width: 80%;
+    flex: 0 0 auto;
+}
+
+/* ---------------------------------------------------------------------- */
+                            /* FIM GRID */
+/* ---------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Teste dashboard */
+.navbar-dashboard{
+    background-color: #fff;   
+    box-shadow: 5px 0 5px #888;
+}
+
+.navbar-dashboard h1{
+    margin-bottom: 20px;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.navbar-dashboard ul{
+    list-style: none;
+}
+
+.navbar-dashboard ul li{
+    height: 40px;
+    padding-left: 30px;
+    padding-top: 10px;
+    font-size: 15px;
+    margin-top: 2px;
+}
+
+.navbar-dashboard ul .selected{
+    border-left: #7a0b0b solid 3px;
+    padding-left: 25px;
+}
+
+.navbar-dashboard ul a{
+    text-decoration: none;
+    color: #313131;
+}
+
+.navbar-dashboard ul a li i{
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+.header-dashboard{
+    height: 60px;
+    background-color: #7a0b0b;
+    width: 100%;
+    display: inline-block;
+    padding-top: 20px;
+}
+
+
+.input-busca-dashboard{
+    width: 30%;    
+    float: right;
+}
+
+.input-busca-dashboard input{
+    height: 30px; 
+    width: 85%;
+}
+
+.header-dashboard button{
+    float: right;
+}
+
+.header-dashboard img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    float: right;
+    margin-left: 15px;
+}
+
+.header-dashboard span{
+    float: right;
+    color: white;
+    margin-top: 8px;
+    margin-left: 10px;
+    margin-right: 50px;
+}
+
+.grafico-meses-dashboard{
+    background-color: rgb(223, 223, 223);
+    width: 90%;
+    height: 150px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.grafico-meses-dashboard canvas{
+    width: 50%;
+    float: left;
+}
+
+.destaque-dashboard{
+    height: 400px;
+}
+
+.historico-dashboard{
+    height: auto;
+}
+
+.historico-dashboard select{
+    width: 30%;
+    float: right;
+    margin-right: 30px;
+}
+
+.table-historico-dashboard{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-historico-dashboard td, th{
+    border-bottom: 1px solid rgb(160, 160, 160);
+    text-align: center;
+}
+
+.table-historico-dashboard th{
+    font-weight: bold;
+}
+
+.table-historico-dashboard td{
+    color: #313131;
+}
+
+.table-historico-dashboard tr{
+    height: 50px;
+}
+
+.id-historico-dashboard{
+    font-weight: bold;
+}
