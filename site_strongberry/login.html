@@ -7,26 +7,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="shortcut icon" href="img/favicon.png" /><!--  Icone que aparece na aba do navegador -->
+    <title>StrongBerry - Login</title>
 </head>
 <body class="body_login">
+    
+    <div class="header" id="navbar">
+        <div class="container">
+            <a href="index.html"><h1>StrongBerry</h1></a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="vantagens.html">Vantagens</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="login.html"><span class="text-a">Login</span></a></li>
+                </ul>
+        </div>
+    </div>
     <!-- <button class="back">
        <a href="index.html"><img src="back3.jpg" alt=""></a>
     </button> -->
-    <div class="container_login">
+    <div class="login">
+        <div class="container_login">
             <h1>
                 Bem vindo novamente
             </h1>
-                <input type="text" id="id_email" placeholder="Email">
-                <input type="password" id="id_senha" placeholder="Password">
-                <hr>
-            <button>
-                <a href="dashboard.html">SIGN IN</a>
-            </button>
+            
+            <div class="form-group">
+                <input type="text" id="id_email" class="input-padrao" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input type="password" id="id_senha" class="input-padrao" placeholder="Senha">
+            </div>
+            <hr>
+            <button class="button-padrao"><a href="dashboard.html">LOGIN</a></button>
             <span class="span_login">Não possui cadastro? <a href="cadastro.html">Entre aqui.</a><br>
                                                         <a href="">Esqueceu sua senha?</a></span>
+        </div>
     </div>
-        
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/47509d94ad.js" crossorigin="anonymous"></script>
 </body>
 </html>
 

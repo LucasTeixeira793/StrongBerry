@@ -5,29 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <title>StrongBerry - Cadastro</title>
 </head>
 <body class="body_cadastro2">
-    <!-- <button class="back">
-       <a href="index.html"><img src="back3.jpg" alt=""></a>
-    </button> -->
-    <div class="container_cadastro2">
+    <div class="header" id="navbar">
+        <div class="container">
+            <a href="index.html">
+                <h1>StrongBerry</h1>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="vantagens.html">Vantagens</a></li>
+                <li><a href="cadastro.html"><span class="text-a">Cadastro</span></a></li>                
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="login">
+        <div class="container_login">
             <h1>
-                Preenchar os campos para endereço
+                Campos de Endereço
             </h1>
-                <input type="text" id="id_rua" placeholder="Rua">
-                <input type="text" id="id_numero" placeholder="Número">
-                <input type="text" id="id_cep" placeholder="Cep">
-                <input type="text" id="id_empresa" placeholder="Nome Empresa">
-                <input type="text" id="id_telefone" placeholder="Telefone">
+            <div class="form-group">
+                <input type="text" id="id_rua" class="input-padrao" placeholder="Rua">
+            </div>
+            <div class="form-group">
+                <input type="text" id="id_numero" class="input-padrao" placeholder="Número">
+            </div>
+            <div class="form-group">
+                <input type="text" id="id_cep" class="input-padrao" placeholder="Cidade">
+            </div>
+            <div class="form-group">
+                <input type="text" id="id_empresa" class="input-padrao" placeholder="Bairro">
+            </div>
+            <div class="form-group">
+                <input type="text" id="id_telefone" class="input-padrao" placeholder="CEP">
+            </div>
                 <hr>
-            <button>
-                <a href="cadastro3.html">NEXT</a>
-            </button>
-            <!-- <span class="span_cadastro2">Não possui cadastro? <a href="cadastro.html">Entre aqui.</a><br>
-                                                        <a href="">Esqueceu sua senha?</a></span> -->
+                <a href="cadastro3.html"><button class="button-padrao">Continuar</button></a>
+        </div>
     </div>
         
 </body>

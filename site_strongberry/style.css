@@ -83,6 +83,11 @@ body{
     font-weight: bold;    
 }
 
+.disabled{
+    color: #666;
+    cursor:initial;
+}
+
 .header img{
     width: 100%;
     height: 400px;
@@ -337,18 +342,26 @@ body{
     border: none;
 } */
 
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .body_login{
     background-image: url('img/bemvindo-img.png');
-    background-position: left;
-    background-size: 40%;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 .container_login{
     background-image: url('img/background-white2.jpg');
     border-radius: 10px 10px 10px 10px;
-    height: 550px;
     background-color: rgba(248, 248, 248, 0.8);
+    padding-bottom: 50px;
     width: 50%;
     margin: 40px;
     margin-top: 60px;
@@ -387,7 +400,7 @@ body{
     width: 50%;
 }
 
-.container_login button{
+/* .container_login button{
     color: whitesmoke;
     width: 100px;
     background-color: rgb(23, 46, 23);
@@ -395,7 +408,12 @@ body{
     border: none;
     height: 30px;
     margin: 10px;
-}
+} */
+
+.container_login button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+} 
 
 .container_login button a{
     text-decoration: none;
@@ -438,12 +456,30 @@ body{
     border: none;
 } */
 
+.pg_cadastro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.body_cadastro{
+    background-image: url('img/wallpaper_sobre.png');
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*  
 .body_cadastro{
     background-image: url('img/wallpaper_strawberry.jpg');
     background-position: left;
     background-size: 40%;
     background-repeat: no-repeat;
-}
+}  */
+
+
 
 .container_cadastro{
     background-image: url('img/background-white2.jpg');
@@ -488,15 +524,6 @@ body{
     width: 50%;
 }
 
-.container_cadastro button{
-    color: whitesmoke;
-    width: 100px;
-    background-color: rgb(23, 46, 23);
-    border-radius: 15px 15px 15px 15px;
-    border: none;
-    height: 30px;
-    margin: 10px;
-}
 
 .container_cadastro button a{
     text-decoration: none;
@@ -539,9 +566,11 @@ body{
 } */
 
 .body_cadastro2{
-    background-image: url('img/wallpaper_strawberry.jpg');
-    background-position: left;
-    background-size: 40%;
+    background-image: url('img/imagem_header6.0.png');
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -1101,6 +1130,10 @@ body{
     box-shadow: #666 5px 5px 6px;
 }
 
+.input-padrao:focus{
+    border-radius: 15px;
+}
+
 .input-padrao::placeholder{
     padding: 0;
     padding-top: 1px;
@@ -1119,7 +1152,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.contato-button{
+.button-padrao{
     font-family: 'Poppins', sans-serif;
     height: 40px;
     padding: 8px 20px 10px 20px;
@@ -1131,7 +1164,7 @@ body{
     -webkit-transition: 2s;
 }
 
-.contato-button:hover{
+.button-padrao:hover{
     box-shadow: 3px 3px 3px #666;
     transition: 0.3s;
 }
