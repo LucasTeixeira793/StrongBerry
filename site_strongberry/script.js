@@ -89,3 +89,48 @@ function calcularLucro(){
     var graficoLucro = new Chart(document.getElementById("graficoLucro"), config);
     
 }
+
+/* ---------------------------------------------------------------------- */
+                    // INÍCIO DA LÓGICA DE ALERTAS NO **LOGIN**
+/* ---------------------------------------------------------------------- */
+
+function verificar_login() {
+    var email = id_email.value;
+    var senha = id_senha.value;
+
+    if (email == "") { // CAMPO DE E-MAIL VAZIO
+        alert("Insira algum e-mail !")
+    }
+
+    else if (email.indexOf("@") < 0) {  // E-MAIL NÃO TEM ARROBA
+        alert("E-mail inválido: Não possui @");
+    }
+
+    else if (email.indexOf(".com.br") < 0) { //E-MAIL NÃO POSSUI A FRASE (.com.br)
+        alert("E-mail inválido: Não possui (.com.br)");
+    }
+
+    else if (email.length < 15) { //E-MAIL CURTO COM MENOS DE 15 CARACTERES
+        alert("E-mail muito curto !");
+    }
+
+    else if (senha == "") { // CAMPO DE SENHA VAZIO
+        alert('Insira alguma senha !')
+    }
+
+    else if(senha.length < 8) { //SENHA CURTA COM MENOS DE 8 CARACTERES
+        alert("A senha deve conter no mínimo 8 caracteres !")
+    }
+
+    else if (senha.indexOf("@") < 0 && senha.indexOf("!") < 0 && senha.indexOf("#") < 0 ){ // VERIFICACAO DE CARACTERE ESPECIAL NA SENHA
+        alert ("Insira algum caractere especial em sua senha, como:  @ ou ! ou #");
+    }
+
+    else {
+        window.location.href= "dashboard.html"; //REDIRECIONAMENTO PARA A PÁGINA DASHBOARD
+    }
+}
+
+/* ---------------------------------------------------------------------- */
+                    // FIM DA LÓGICA DE ALERTAS NO **LOGIN**
+/* ---------------------------------------------------------------------- */
