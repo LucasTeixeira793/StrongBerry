@@ -1,3 +1,6 @@
+var ganhoSem = 0;
+var ganhoCom = 0;
+
 function adicionarEmail(){
     var email = inputEmailNoticias.value;
     if (email != "" && email.indexOf("@") > -1 && email.indexOf(".com") > -1) {
@@ -34,6 +37,7 @@ function calcularLucro(){
     var ganhoSem = kgMorango * 10;
     var lucro = ganhoSem * 0.6;
     var ganhoCom = ganhoSem + lucro;
+    var dados = [ganhoSem, ganhoCom];
 
     // Card 1
     uEstufaM.innerHTML = metros;
@@ -61,4 +65,27 @@ function calcularLucro(){
     labelLucro2.innerHTML = lucro.toFixed(2);
     labelGanhoCom.innerHTML = ganhoCom.toFixed(2);
 
+    // Gráfico
+
+    const labels = ["Sem a StrongBerry", "Com a StrongBerry"];
+    const data = {
+    labels: labels,
+    datasets: [
+        {
+            label: "Gráfico lucro",
+            backgroundColor: ["brown", "#10341c"],
+            borderColor: "rgb(255, 99, 132)",
+            data: dados,
+        },
+    ],
+    };
+
+    const config = {
+    type: "bar",
+    data,
+    options: {maintainAspectRatio: false},
+    };
+
+    var graficoLucro = new Chart(document.getElementById("graficoLucro"), config);
+    
 }

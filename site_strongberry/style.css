@@ -33,6 +33,65 @@ body{
     to { opacity: 1;margin-top: 0px;}
 }
 
+.input-padrao {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 5px 15px;
+    font-weight: 400;
+    color: #495057;
+    background-color: #fff;
+    box-shadow: #666 3px 3px 6px;
+    border: none;
+    border-radius: 15px;
+    -webkit-transition: 0.3s;
+}
+
+.input-padrao:hover{
+    transition: 0.3s;
+    box-shadow: #666 5px 5px 6px;
+}
+
+.input-padrao:focus{
+    border-radius: 15px;
+}
+
+.input-padrao::placeholder{
+    padding: 0;
+    padding-top: 1px;
+    font-size: 15px;
+}
+
+.button-padrao{
+    font-family: 'Poppins', sans-serif;
+    height: 40px;
+    padding: 8px 20px 10px 20px;
+    border: none;
+    background-color: #e43131;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition: 2s;
+}
+
+.button-padrao:hover{
+    box-shadow: 3px 3px 3px #666;
+    transition: 0.3s;
+}
+
+.select-padrao{
+    width: 100%;
+    height: 40px;
+    padding: 5px 15px;
+    font-weight: 400;
+    color: #495057;
+    background-color: #fff;
+    box-shadow: #666 3px 3px 6px;
+    border: none;
+    border-radius: 15px;
+    -webkit-transition: 0.3s;
+}
+
 /* ------------------INICIO ESTILO HEADER-------------------- */
 .header{
     width: 100%;
@@ -574,6 +633,15 @@ body{
     background-repeat: no-repeat;
 }
 
+.body_cadastro3{
+    background-image: url('img/wallpaper_geometric.jpg');
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .container_cadastro2{
     background-image: url('img/background-white2.jpg');
     border-radius: 10px 10px 10px 10px;
@@ -897,6 +965,15 @@ body{
     text-align: center;
 }
 
+.card-simulador9{
+    background-color: rgba(196, 194, 194, 0.699);
+    border-radius: 10px;
+    height: 300px;
+    width: 90%;
+    text-align: center;
+    padding: 15px;
+}
+
 .simulador-result{
     font-size: 30px;
     color: #10341c;
@@ -949,7 +1026,6 @@ body{
 }
 
 /* Fim Simulador Financeiro */
-
 
 
 
@@ -1112,35 +1188,6 @@ body{
     border-radius: 0px 10px 10px 0px;
 }
 
-.input-padrao {
-    display: block;
-    width: 100%;
-    height: 40px;
-    padding: 5px 15px;
-    font-weight: 400;
-    color: #495057;
-    background-color: #fff;
-    box-shadow: #666 3px 3px 6px;
-    border: none;
-    border-radius: 15px;
-    -webkit-transition: 0.3s;
-}
-
-.input-padrao:hover{
-    transition: 0.3s;
-    box-shadow: #666 5px 5px 6px;
-}
-
-.input-padrao:focus{
-    border-radius: 15px;
-}
-
-.input-padrao::placeholder{
-    padding: 0;
-    padding-top: 1px;
-    font-size: 15px;
-}
-
 .form-group {
     margin-bottom: 1rem;
 }
@@ -1151,23 +1198,6 @@ body{
     height: 240px;
     resize: none;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-.button-padrao{
-    font-family: 'Poppins', sans-serif;
-    height: 40px;
-    padding: 8px 20px 10px 20px;
-    border: none;
-    background-color: #e43131;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    -webkit-transition: 2s;
-}
-
-.button-padrao:hover{
-    box-shadow: 3px 3px 3px #666;
-    transition: 0.3s;
 }
 
 /* Fim Contato */
