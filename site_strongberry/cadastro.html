@@ -1,34 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <title>StrongBerry - Cadastro</title>
 </head>
+
 <body class="body_cadastro">
-    <!-- <button class="back">
-       <a href="index.html"><img src="back3.jpg" alt=""></a>
-    </button> -->
-    <div class="container_cadastro">
+    <div class="header" id="navbar">
+        <div class="container">
+            <a href="index.html">
+                <h1>StrongBerry</h1>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="vantagens.html">Vantagens</a></li>
+                <li><a href="cadastro.html"><span class="text-a">Cadastro</span></a></li>                
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="login">
+        <div class="container_login">
             <h1>
                 Comece seu cadastro
             </h1>
-                <input type="text" id="id_user_name" placeholder="User Name">
-                <input type="text" id="id_email" placeholder="Email">
-                <input type="password" id="id_senha" placeholder="Password">
-                <input type="text" id="id_empresa" placeholder="Nome Empresa">
-                <input type="text" id="id_telefone" placeholder="Telefone">
-                <hr>
-            <button>
-                <a href="cadastro2.html">NEXT</a>
-            </button>
+            <div class="form-group">
+                <input type="text" id="id_user_name" class="input-padrao" placeholder="Nome de usuário">
+            </div>                      
+            <div class="form-group">
+                <input type="text" id="id_empresa" class="input-padrao" placeholder="Nome da empresa">
+            </div>
+            <div class="form-group">
+                <input type="text" id="id_telefone" class="input-padrao" placeholder="Telefone">
+            </div>
+            <div class="form-group">
+                <input type="text" id="id_email" class="input-padrao" placeholder="Email">
+            </div>  
+            <div class="form-group">
+                <input type="password" id="id_senha" class="input-padrao" placeholder="Senha">
+            </div>
+            <div class="form-group">
+                <input type="password" id="id_senha" class="input-padrao" placeholder="Repetir senha">
+            </div>
+
+            <hr>
+            <a href="cadastro2.html"><button class="button-padrao">Continuar</button></a>
+
+            <span class="span_login">Já possui cadastro? <a href="login.html">Clique aqui.</a><br>
             <!-- <span class="span_cadastro">Não possui cadastro? <a href="cadastro.html">Entre aqui.</a><br>
                                                         <a href="">Esqueceu sua senha?</a></span> -->
+        </div>
     </div>
-        
+
 </body>
+
 </html>

@@ -19,6 +19,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="vantagens.html"><span class="text-a">Vantagens</span></a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
         </div>
@@ -51,7 +52,7 @@
                     <label for="inputMorangosPorM2">Quantidade de morangos por m²?</label><br>
                     <input type="text" id="inputMudasPorM2" placeholder="Morangos por m²" class="input-padrao">
                 </div>
-                <button class="contato-button" onclick="mostrarCalculo()">Calcular lucro</button>
+                <button class="button-padrao" onclick="mostrarCalculo()">Calcular lucro</button>
             </div>
         </div>
     </div>
@@ -131,23 +132,29 @@
                 </div>
                 <div class="col-2 flex">
                     <div class="card-simulador flex">
-                        <h1>Contrate nosso<br>serviço já :)</h1><br>
-                        <button class="contato-button">Clique aqui e saiba mais</button>
+                        <canvas id="graficoLucro"></canvas>
                     </div>
                 </div>
             </div>
-            <div class="flex">
-                <button class="contato-button" onclick="esconderCalculo()">Faça outra simulação</button><br>
+            <div class="linha">
+                <div class="col-1 flex">
+                    <div class="card-simulador flex">
+                        <h1>Contrate nosso<br>serviço já :)</h1><br>
+                        <button class="button-padrao">Clique aqui e saiba mais</button><br>
+                        <button class="button-padrao" onclick="esconderCalculo()">Faça outra simulação</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    
 
-
-
-
-
-
+    <!-- ANCORA (Botão que fica no canto inferior esquedo da página) -->
+    <a href="vantagens.html#navbar">
+        <div class="ancora">
+            <img src="img/seta.png" alt="">
+        </div>
+    </a>
+    <!-- FIM ANCORA -->
 
 
     <!-- RODAPÉ -->
