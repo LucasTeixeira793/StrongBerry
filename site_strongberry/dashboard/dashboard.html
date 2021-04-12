@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- Da acesso a lib -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="body_dashboard">
+  <!-- Header -->
+  <div class="header" id="navbar">
+    <div class="container">
+        <a href="index.html"><h1>StrongBerry</h1></a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="vantagens.html">Vantagens</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="login.html"><span class="text-a">Login</span></a></li>
+            </ul>
+    </div>
+</div>
+
+  <div class="dash">
+    <!-- Farol de temperatura -->
+    <div class="graph">
+      <div class="box color">
+        <h1>00°</h1>
+        <h3>STATUS</h3>
+        <p>Descrição do status</p>
+      </div>
+      <div class="box color">
+        <h1>00°</h1>
+        <h3>STATUS</h3>
+        <p>Descrição do status</p>
+      </div>
+      <div class="box color">
+        <h1>00°</h1>
+        <h3>STATUS</h3>
+        <p>Descrição do status</p>
+      </div>
+    </div>
+
+    <!-- Gráfico de Linhas -->
+    <div class="graph">
+      <canvas id="myChartLine"></canvas>
+    </div>
+
+    <!-- Gráfico de Barras -->
+    <div class="graph">
+      <canvas id="myChartBar"></canvas>
+    </div>
+
+    <!-- Grafico Pizza -->
+    <div class="graph">
+      <canvas id="myChartPizza"></canvas>
+    </div>
+  </div>
+</body>
+
+<!-- Inserir JS do Gráfico -->
+<script>
+  //GRÁFICO DE LINHAS - TEMPERATURAS DIÁRIAS
+  // Dados do gráfico
+  const labels = ['07:00', '10:00', '13:00', '16:00', '19:00', '21:00',];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Temperatura Diária',
+      backgroundColor: 'rgb(27, 54, 30)',
+      borderColor: 'rgb(27, 54, 30)',
+      tension: 0.2,
+      data: [21, 23, 27, 19, 20, 19],
+    }]
+  };
+
+  // Configurações do gráfico
+  const config = {
+    type: 'line',
+    data,
+    options: { maintainAspectRatio: false, }
+  };
+
+  var myChart = new Chart(
+    document.getElementById('myChartLine'), config
+  );
+
+
+
+  //GRÁFCO DE BARRAS - QUANTIDADE POR ESPECIE
+  const labelsBar = ['Colisa', 'Tetra', 'Coridora', 'Molinésia', 'Arco-íris', 'Betta'];
+
+  const dataBar = {
+    labels: labelsBar,
+    datasets: [{
+      label: 'Quantidade por espécie',
+      backgroundColor: [
+        'rgb(27, 54, 30)',
+        'rgb(63, 119, 69)',
+        'rgb(114, 207, 123)',
+      ],
+      data: [10, 70, 50, 5, 30, 65],
+    }]
+  };
+
+  // Configurações do gráfico
+  const configBar = {
+    type: 'bar',
+    data: dataBar,
+    options: { maintainAspectRatio: false, },
+  };
+
+  var myChartBar = new Chart(
+    document.getElementById('myChartBar'), configBar
+  );
+
+
+
+  //GRÁFCO DE PIZZA - IDADE
+  const labelsPizza = ['Jovem', 'Adulto', 'Idoso'];
+
+  const dataPizza = {
+    labels: labelsPizza,
+    datasets: [{
+      label: 'Idade',
+      backgroundColor: [
+        'rgb(27, 54, 30)',
+        'rgb(63, 119, 69)',
+        'rgb(114, 207, 123)',
+      ],
+      data: [153, 60, 17],
+    }]
+  };
+
+  // Configurações do gráfico
+  const configPizza = {
+    type: 'pie',
+    data: dataPizza,
+    options: { maintainAspectRatio: false, },
+  };
+
+  var myChartPizza = new Chart(
+    document.getElementById('myChartPizza'), configPizza
+  );
+</script>
+
+</html>
