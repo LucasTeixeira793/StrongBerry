@@ -121,9 +121,9 @@ function verificar_login() {
         alert("A senha deve conter no mínimo 8 caracteres !")
     }
 
-    else if (senha.indexOf("@") < 0 && senha.indexOf("!") < 0 && senha.indexOf("#") < 0 ){ // VERIFICACAO DE CARACTERE ESPECIAL NA SENHA
-        alert ("Insira algum caractere especial em sua senha, como:  @ ou ! ou #");
-    }
+    // else if (senha.indexOf("@") < 0 && senha.indexOf("!") < 0 && senha.indexOf("#") < 0 ){ // VERIFICACAO DE CARACTERE ESPECIAL NA SENHA
+    //     alert ("Insira algum caractere especial em sua senha, como:  @ ou ! ou #");
+    // }
 
     else {
         window.location.href= "dashboard.html"; //REDIRECIONAMENTO PARA A PÁGINA DASHBOARD
