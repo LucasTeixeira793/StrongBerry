@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="shortcut icon" href="../img/favicon.png" />
+    <!--  Icone que aparece na aba do navegador -->
+    <title>Gráficos Sensores</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header" id="navbar">
+        <img src="../img/header-vatagens.jpg" alt="Header Image Strawnberry" />
+        <div class="container">
+            <a href="../index.html">
+                <h1>StrongBerry</h1>
+            </a>
+            <ul>
+                <li><a href="">Dashboard</a></li>
+                <li>
+                    <a href="./Graph_lm35_dht11.html"><span class="text-a">Gráficos Sensores</span></a>
+                </li>
+                <li><a href="../login.html">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- End Header -->
+
+
+
+    <!-- Div DashBoard -->
+    <div class="linha">
+        <div class="container-geral sectionDashBoard">
+            <!-- Grafico LM35 Temperatura -->
+            <div class="graphSensor col-2">
+                <h1>Sensor LM35 - Temperatura</h1>
+                <section>
+                    <h2>Média: <label id='average'>0.00</label></h2>
+                    <h2>Média Hora: <label id='averageHour'>0.00</label></h2>
+                </section>
+                <section style="width:100%">
+                    <canvas id="chart"></canvas>
+                    <section>
+            </div>
+    
+            <!-- Grafico DHT11 Umidade e Temperatura -->
+            <div class="graphSensor col-2">
+                <h1>Sensor DHT11 - Umidade</h1>
+                <section>
+                    <h2>Média: <label id='averageHumidity'>0.00</label></h2>
+                    <h2>Média Hora: <label id='averageHourHumidity'>0.00</label></h2>
+                </section>
+                <section style="width:100%">
+                    <canvas id="chart-humidity"></canvas>
+                    <section>
+            </div>
+        </div>
+    </div>
+
+    <!-- ANCORA (Botão que fica no canto inferior esquedo da página) -->
+    <a href="#navbar">
+        <div class="ancora">
+            <img src="../img/seta.png" alt="" />
+        </div>
+    </a>
+    <!-- FIM ANCORA -->
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container-footer">
+            <div class="linha">
+                <div class="col-5">
+                    <!-- <a href="index.html"><img src="img/logo-light-text.png" alt=""></a> -->
+                    <a href="../index.html">
+                        <h1>StrongBerry</h1>
+                    </a>
+                </div>
+                <div class="col-5">
+                    <ul>
+                        <li>
+                            <a href="../index.html#navbar"><b>Início:</b></a>
+                        </li>
+                        <br />
+                        <li>
+                            <a href="../index.html#quemSomos">Quem somos?</a>
+                        </li>
+                        <li>
+                            <a href="../index.html#proposta">Nossa proposta</a>
+                        </li>
+                        <li>
+                            <a href="../index.html#noticias">Receba notícias</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-5">
+                    <ul>
+                        <li><b>Páginas:</b></li>
+                        <br />
+                        <li><a href="">Para seu negócio</a></li>
+                        <li><a href="">Contato</a></li>
+                        <li><a href="">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-5">
+                    <ul>
+                        <br /><br />
+                        <li><a href="">Termos de uso</a></li>
+                        <li><a href="">Contratar</a></li>
+                        <!-- <li><a href=""></a></li>
+                            <li><a href=""></a></li> -->
+                    </ul>
+                </div>
+                <div class="col-5">
+                    <ul>
+                        <li><b>Informações:</b></li>
+                        <br />
+                        <li>
+                            <span>Email: </span><a href="">strongberry@email.com</a>
+                        </li>
+                        <li>
+                            <span>Contato: </span><a href="">11 91111-2222</a>
+                        </li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="linha">
+                <div class="col-1">
+                    <center>
+                        <a href="" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                        <a href="" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="linha">
+            <label>Copyright <a href="#">StrongBerry</a>, 2021</label>
+        </div>
+    </div>
+    <!-- End Footer -->
+</body>
+
+</html>
+<script>
+/* Definindo a Largura e Altura do Canvas, além de que 
+    seu espaço será definido como contexto 2d para o Grafico
+    do Sensor LM35 - Temperatura */
+
+    var context = document.getElementById("chart").getContext("2d");
+    context.canvas.width = 1000;
+    context.canvas.height = 300;
+
+    /* Configurando Parametros do Tipo
+        e Visual do Grafico do Sensor LM35 - Temperatura */
+    var configuration = {
+        type: 'line',
+        data: {
+            datasets: [{
+                label: "Temperature x Time",
+                type: 'line',
+                borderColor: ['#ff3232'],
+                backgroundColor: ['rgba(255, 127, 127, 0.4)']
+            }]
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                    //type: 'value',
+                    distribution: 'series',
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }],
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Temperature'
+                    },
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+            animation: {
+                duration: 0
+            }
+        }
+    };
+
+    /* Adcionando o Contexto e o Configuration dentro do Canvas no HTML
+        do Grafico do Sensor LM35 - Temperatura*/
+    var chart = new Chart(context, configuration);
+
+    /* Variaveis Globais Definidas para guardar os valores durante o tempo
+        e estão a a partir de Zero para defini-las como Number */
+    this.lastIndexTemp = 0;
+    this.time = 0;
+
+    /* Função que faz um HttpRequest para a porta 3000/api para conseguir os dados
+        gerados lá em relação ao Sensor LM35, além disso essa função também 
+        trata esses mesmos dados para que possam ser organizados no grafico
+        e ser atualizado no grafico a partir do ultimo valor gerado */
+
+    function get_data() {
+
+        var http = new XMLHttpRequest();
+        http.open('GET', 'http://localhost:3000/api', false);
+        http.send(null);
+
+        var obj = JSON.parse(http.responseText);
+        if (obj.data.length == 0) {
+            return;
+        }
+
+        var _lastIndexTemp = this.lastIndexTemp;
+        this.lastIndexTemp = obj.data.length;
+        listTemp = obj.data.slice(_lastIndexTemp);
+
+        listTemp.forEach(data => {
+            //Máximo de 60 itens exibidos no gráfico
+            if (chart.data.labels.length == 10 && chart.data.datasets[0].data.length == 10) {
+                chart.data.labels.shift();
+                chart.data.datasets[0].data.shift();
+            }
+
+            chart.data.labels.push(this.time++);
+            chart.data.datasets[0].data.push(parseFloat(data));
+            chart.update();
+        });
+
+        document.getElementById('average').textContent = obj.average;
+        document.getElementById('averageHour').textContent = obj.averageHour;
+    }
+
+    /* Definindo a Largura e Altura do Canvas, além de que 
+        seu espaço será definido como contexto 2d para o Grafico
+        do Sensor DHT11 - Umidade e Temperatura */
+
+    var context2 = document.getElementById("chart-humidity").getContext("2d");
+    context2.canvas.width = 1000;
+    context2.canvas.height = 300;
+
+    /* Configurando Parametros do Tipo e Visual do 
+        Grafico do Sensor DHT11 - Umidade e Temperatura */
+
+    var humidity = {
+        type: 'line',
+        data: {
+            datasets: [{
+                label: "Humidity x Time",
+                type: 'line',
+                borderColor: ['#3232ff'],
+                backgroundColor: ['rgba(153, 153, 255, 0.4)']
+            }]
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                    //type: 'value',
+                    distribution: 'series',
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }],
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Humidity'
+                    },
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+            animation: {
+                duration: 0
+            }
+        }
+    };
+
+    /* Adcionando o Contexto e o Configuration dentro do Canvas no HTML
+        do Grafico do Sensor DHT11 - Umidade e Temperatura*/
+
+    var chartHumidity = new Chart(context2, humidity);
+
+    /* Variaveis Globais Definidas para guardar os valores durante o tempo
+        e estão a a partir de Zero para defini-las como Number */
+    this.lastIndexTempHumidity = 0;
+    this.timeHumidity = 0;
+
+    /* Função que faz um HttpRequest para a porta 3000/api/humidity para conseguir os dados
+        gerados lá em relação ao Sensor DHT11, além disso essa função também 
+        trata esses mesmos dados para que possam ser organizados no grafico
+        e ser atualizado no grafico a partir do ultimo valor gerado */
+
+    function get_dataHumidity() {
+
+        var http = new XMLHttpRequest();
+        http.open('GET', 'http://localhost:3000/api/humidity', false);
+        http.send(null);
+
+        var obj = JSON.parse(http.responseText);
+        if (obj.data.length == 0) {
+            return;
+        }
+
+        var _lastIndexTemp = this.lastIndexTempHumidity;
+        this.lastIndexTempHumidity = obj.data.length;
+        listTemp = obj.data.slice(_lastIndexTemp);
+
+        listTemp.forEach(data => {
+            //Máximo de 60 itens exibidos no gráfico
+            if (chartHumidity.data.labels.length == 10 && chartHumidity.data.datasets[0].data.length == 10) {
+                chartHumidity.data.labels.shift();
+                chartHumidity.data.datasets[0].data.shift();
+            }
+
+            chartHumidity.data.labels.push(this.time++);
+            chartHumidity.data.datasets[0].data.push(parseFloat(data));
+            chartHumidity.update();
+        });
+
+        document.getElementById('averageHumidity').textContent = obj.average;
+        document.getElementById('averageHourHumidity').textContent = obj.averageHour;
+    }
+    get_dataHumidity();
+
+    /* setInterval da get (pega) os dados dispostos na porta 3000/api
+        relevantes ao Sensor LM35 em um loop de tempo pre-determinado 
+        no caso de 0.5s, pois é a sensibilidade parametrizada do Sensor Real LM35 */
+
+    setInterval(() => {
+        get_data();
+    }, 500);
+
+    /* setInterval da get (pega) os dados dispostos na porta 3000/api/humidity
+        relevantes ao Sensor DHT11 em um loop de tempo pre-determinado 
+        no caso de 2.0s, pois é a sensibilidade parametrizada do Sensor Real DHT11 */
+
+    setInterval(() => {
+        get_dataHumidity();
+    }, 2000);
+
+</script>
