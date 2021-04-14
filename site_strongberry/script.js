@@ -196,9 +196,9 @@ function verificar_cadastro_parte1() {
         alert("A senha deve conter no mínimo 8 caracteres !")
     }
 
-    else if (senha.indexOf("@") < 0 && senha.indexOf("!") < 0 && senha.indexOf("#") < 0 ){ // VERIFICACAO DE CARACTERE ESPECIAL NA SENHA
-        alert ("Insira algum caractere especial em sua senha, como:  @ ou ! ou #");
-    }
+    // else if (senha.indexOf("@") < 0 && senha.indexOf("!") < 0 && senha.indexOf("#") < 0 ){ // VERIFICACAO DE CARACTERE ESPECIAL NA SENHA
+    //     alert ("Insira algum caractere especial em sua senha, como:  @ ou ! ou #");
+    // }
 
     else if (senha != senha2) {
         alert("As confirmação de senha deve ser igual a primeira !");

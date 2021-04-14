@@ -408,7 +408,7 @@ body{
 }
 
 .body_login{
-    background-image: url('img/bemvindo-img.png');
+    background-image: url('img/bemvindo-img.jpg');
     width: 100%;
     height: 100%;
     background-position: center;
@@ -417,9 +417,9 @@ body{
 }
 
 .container_login{
-    background-image: url('img/background-white2.jpg');
+    /* background-image: url('img/background-white2.jpg'); */
     border-radius: 10px 10px 10px 10px;
-    background-color: rgba(248, 248, 248, 0.8);
+    background-color: #f8f8f894;
     padding-bottom: 50px;
     width: 50%;
     margin: 40px;
@@ -434,7 +434,7 @@ body{
 .container_login h1{
     font-size: 45px;
     margin: 30px;
-    color: rgb(0, 0, 0);
+    color: #000000;
     height: 50px;
 }
 
@@ -449,7 +449,6 @@ body{
 }
 
 .container_login input::placeholder{
-    padding: 10px;
     font-size: 15px;
     color: rgb(141, 141, 141);
 }
