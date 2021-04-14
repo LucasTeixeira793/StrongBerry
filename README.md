@@ -60,8 +60,10 @@
 ### Prints
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center; flex-direction:column;">
-  <img alt="print" title="#print" src="./prints/print1.jpeg" width="400px">
-  <img alt="print2" title="#print2" src="./prints/printSimulador.jpeg" width="400px">
+  <img alt="print" title="#print" src="./prints/home.jpeg" width="300px">
+  <img alt="print2" title="#print2" src="./prints/printSimulador.jpeg" width="300px">
+  <img alt="print" title="#print" src="./prints/dashboard.jpeg" width="300px">
+  
 </p>
 
 ---
