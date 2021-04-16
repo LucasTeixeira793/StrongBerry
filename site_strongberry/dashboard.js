@@ -20,7 +20,7 @@ const dataMiniTemp = {
             label: "Variação de Temperatura",
             backgroundColor: "green",
             borderColor: "green",
-            data: [20, 21, 19, 26, 18, 22, 24],
+            data: [17, 21, 19, 26, 18, 22, 24],
             tension: 0.4
         },
         {
@@ -70,7 +70,7 @@ const dataMiniUmi = {
             label: "Variação de Umidade",
             backgroundColor: "orangered",
             borderColor: "orangered",
-            data: [50, 61, 69, 66, 73, 82, 94],
+            data: [55, 61, 69, 66, 73, 82, 84],
             tension: 0.4
         },
         {

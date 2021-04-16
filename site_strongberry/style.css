@@ -789,7 +789,10 @@ body{
 
 .box_sobre h3, .box_sobre p {
     margin-top: 15px;
-    object-fit: cover;
+}
+
+.box_sobre p{
+    font-size: 15px;
 }
 /* Fim conteúdo sobre */
 
