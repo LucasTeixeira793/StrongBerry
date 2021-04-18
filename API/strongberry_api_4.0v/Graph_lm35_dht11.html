@@ -319,7 +319,7 @@
         var _lastIndexTemp = this.lastIndexTempHumidity;
         this.lastIndexTempHumidity = obj.data.length;
         listTemp = obj.data.slice(_lastIndexTemp);
-
+ 
         listTemp.forEach(data => {
             //Máximo de 60 itens exibidos no gráfico
             if (chartHumidity.data.labels.length == 10 && chartHumidity.data.datasets[0].data.length == 10) {
