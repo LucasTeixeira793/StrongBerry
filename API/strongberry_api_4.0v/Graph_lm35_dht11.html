@@ -10,69 +10,69 @@
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../../site_strongberry/style.css">
     <link rel="shortcut icon" href="../img/favicon.png" />
     <!--  Icone que aparece na aba do navegador -->
-    <title>Gráficos Sensores</title>
+    <title>StrongBerry - Sensores</title>
 </head>
 
 <body>
-    <!-- Header -->
-    <div class="header" id="navbar">
-        <img src="../img/header-vatagens.jpg" alt="Header Image Strawnberry" />
-        <div class="container">
-            <a href="../index.html">
-                <h1>StrongBerry</h1>
-            </a>
-            <ul>
-                <li><a href="">Dashboard</a></li>
-                <li>
-                    <a href="./Graph_lm35_dht11.html"><span class="text-a">Gráficos Sensores</span></a>
-                </li>
-                <li><a href="../login.html">Logout</a></li>
-            </ul>
+
+
+    <div class="linha-dashboard">
+        <!-- Navbar -->
+        <div class="col-5 navbar-dashboard">
+            <div class="navbar-fixed">
+                <h1><a href="../../site_strongberry/dashboard.html">StrongBerry</a></h1>
+                <ul>
+                    <a href="../../site_strongberry/dashboard.html"><li><i class="fa fa-signal" aria-hidden="true"></i> Dashboard </li></a>
+                    <a href=""><li><i class="fa fa-user" aria-hidden="true"></i> Perfil </li></a>
+                    <a href=""><li class="selected"><i class="fa fa-tint" aria-hidden="true"></i> Sensores</li></a> 
+                    <a href=""><li><i class="fa fa-history" aria-hidden="true"></i> Histórico</li></a> 
+                    <a href=""><li><i class="fa fa-plus" aria-hidden="true"></i> Abrir chamado </li></a>
+                    <a href=""><li><i class="fa fa-cog" aria-hidden="true"></i> Configurações</li></a>
+                    <a href="../../site_strongberry/index.html"><li class="sair"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</li></a>
+                </ul>               
+            </div>
+        </div>
+        <!-- Conteudo -->
+        <div class="col-80">
+            <div class="header-dashboard">
+                <a href="">
+                    <span>Nome</span>
+                    <img src="../../site_strongberry/img/perfil.jpg" alt="">
+                </a>
+                <button class="button-padrao">Buscar</button>
+                <div class="input-busca-dashboard">
+                    <input type="text" placeholder="Buscar" class="input-padrao">
+                </div>
+            </div>
+
+            <div class="linha">
+                <div class="container-geral sectionDashBoard">
+                    <!-- Grafico LM35 Temperatura -->
+                    <div class="graphSensor">
+                        <h1>Sensor LM35 - Temperatura</h1>
+                            <h2>Média: <label id='average'>0.00</label></h2>
+                            <h2>Média Hora: <label id='averageHour'>0.00</label></h2>
+                            <canvas id="chart"></canvas>
+                    </div>
+            
+                    <!-- Grafico DHT11 Umidade e Temperatura -->
+                    <div class="graphSensor">
+                        <h1>Sensor DHT11 - Umidade</h1>
+                            <h2>Média: <label id='averageHumidity'>0.00</label></h2>
+                            <h2>Média Hora: <label id='averageHourHumidity'>0.00</label></h2>
+                            <canvas id="chart-humidity"></canvas>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
     </div>
-    <!-- End Header -->
-
-
-
-    <!-- Div DashBoard -->
-    <div class="linha">
-        <div class="container-geral sectionDashBoard">
-            <!-- Grafico LM35 Temperatura -->
-            <div class="graphSensor col-2">
-                <h1>Sensor LM35 - Temperatura</h1>
-                <section>
-                    <h2>Média: <label id='average'>0.00</label></h2>
-                    <h2>Média Hora: <label id='averageHour'>0.00</label></h2>
-                </section>
-                <section style="width:100%">
-                    <canvas id="chart"></canvas>
-                    <section>
-            </div>
     
-            <!-- Grafico DHT11 Umidade e Temperatura -->
-            <div class="graphSensor col-2">
-                <h1>Sensor DHT11 - Umidade</h1>
-                <section>
-                    <h2>Média: <label id='averageHumidity'>0.00</label></h2>
-                    <h2>Média Hora: <label id='averageHourHumidity'>0.00</label></h2>
-                </section>
-                <section style="width:100%">
-                    <canvas id="chart-humidity"></canvas>
-                    <section>
-            </div>
-        </div>
-    </div>
-
-    <!-- ANCORA (Botão que fica no canto inferior esquedo da página) -->
-    <a href="#navbar">
-        <div class="ancora">
-            <img src="../img/seta.png" alt="" />
-        </div>
-    </a>
-    <!-- FIM ANCORA -->
     <!-- Footer -->
     <div class="footer">
         <div class="container-footer">
@@ -150,6 +150,7 @@
     </div>
     <!-- End Footer -->
 </body>
+<script src="https://kit.fontawesome.com/47509d94ad.js" crossorigin="anonymous"></script>
 
 </html>
 <script>
@@ -167,7 +168,7 @@
         type: 'line',
         data: {
             datasets: [{
-                label: "Temperature x Time",
+                label: "Temperatura x Tempo",
                 type: 'line',
                 borderColor: ['#ff3232'],
                 backgroundColor: ['rgba(255, 127, 127, 0.4)']
@@ -185,7 +186,7 @@
                 yAxes: [{
                     scaleLabel: {
                         display: true,
-                        labelString: 'Temperature'
+                        labelString: 'Temperatura'
                     },
                     ticks: {
                         beginAtZero: true
@@ -258,7 +259,7 @@
         type: 'line',
         data: {
             datasets: [{
-                label: "Humidity x Time",
+                label: "Umidade x Tempo",
                 type: 'line',
                 borderColor: ['#3232ff'],
                 backgroundColor: ['rgba(153, 153, 255, 0.4)']
@@ -276,7 +277,7 @@
                 yAxes: [{
                     scaleLabel: {
                         display: true,
-                        labelString: 'Humidity'
+                        labelString: 'Umidade'
                     },
                     ticks: {
                         beginAtZero: true

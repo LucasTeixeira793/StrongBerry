@@ -1267,18 +1267,15 @@ body{
 .sectionDashBoard {
     padding: 5%;
     display: block;
-    margin-top: 200px;
-    margin-bottom: 650px;
     justify-content: left;
     align-items: center;
-    height: 100vh;
     width: 100%;
 }
 .graphSensor {
     padding: 15px;
     border-radius: 50px;
     background-color: rgba(196, 194, 194, 0.699);
-    margin-top: 7.5%;
+    margin-bottom: 7.5%;
     width: 90%;
 }
 /* ------------------------------Fim Sensors------------------------- */
@@ -1383,6 +1380,12 @@ body{
 .navbar-dashboard{
     background-color: #fff;   
     box-shadow: 5px 0 5px #888;
+}
+
+.navbar-fixed{
+    top: 10px;
+    left:0;
+    position: sticky;
 }
 
 .navbar-dashboard a li:hover{
