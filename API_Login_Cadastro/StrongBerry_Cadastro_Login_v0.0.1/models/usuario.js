@@ -117,3 +117,42 @@ module.exports = (sequelize, DataTypes) => {
 
     return tblendereco;
 };
+
+module.exports = (sequelize, DataTypes) => {
+    let tblEstufa = sequelize.define(
+        "tblEstufa",
+        {
+            idEstufa: {
+                field: "idEstufa",
+                type: DataTypes.INTEGER,
+                primaryKey: true,
+                autoIncrement: true,
+            },
+            cliente: {
+                field: "cliente",
+                type: DataTypes.INTEGER,
+                allowNull: false,
+                foreignKey: true,
+            },
+            nomeEstufa: {
+                field: "nomeEstufa",
+                type: DataTypes.STRING,
+                allowNull: false,
+            },
+            tipoPlantio: {
+                field: "tipoPlantio",
+                type: DataTypes.INTEGER,
+                allowNull: false,
+                foreignKey: true,
+            },
+        },
+        {
+            tableName: "tblEstufa",
+            freezeTableName: true,
+            underscored: true,
+            timestamps: false,
+        }
+    );
+
+    return tblEstufa;
+};
