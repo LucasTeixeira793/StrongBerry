@@ -25,9 +25,9 @@ module.exports = {
     // Insira aqui seus dados do banco LOCAL - MySQL Workbench
     dev: {
         // altere APENAS username, password e database.
-        username: "root",
-        password: "arqueiro11",
-        database: "projetoiot",
+        username: "user-strongberry",
+        password: "strongberrysenha",
+        database: "bdStrongBerry",
         host: "localhost",
         dialect: "mysql",
         xuse_env_variable: "DATABASE_URL",
