@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var sequelize = require("../models").sequelize;
-var Usuario = require("../models").Usuario;
+var tblcliente = require("../models").tblcliente;
 
 let sessoes = [];
 
@@ -12,12 +12,12 @@ router.post("/autenticar", function (req, res, next) {
     var login = req.body.login; // depois de .body, use o nome (name) do campo em seu formulário de login
     var senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login
 
-    let instrucaoSql = `select * from usuario where login='${login}' and senha='${senha}'`;
+    let instrucaoSql = `select * from tblcliente where username='${login}' and password='${senha}'`;
     console.log(instrucaoSql);
 
     sequelize
         .query(instrucaoSql, {
-            model: Usuario,
+            model: tblcliente,
         })
         .then((resultado) => {
             console.log(`Encontrados: ${resultado.length}`);
@@ -44,10 +44,11 @@ router.post("/autenticar", function (req, res, next) {
 router.post("/cadastrar", function (req, res, next) {
     console.log("Criando um usuário");
 
-    Usuario.create({
+    tblcliente.create({
         nome: req.body.nome,
         login: req.body.login,
         senha: req.body.senha,
+        
     })
         .then((resultado) => {
             console.log(`Registro criado: ${resultado}`);
@@ -99,7 +100,7 @@ router.get("/sair/:login", function (req, res, next) {
 /* Recuperar todos os usuários */
 router.get("/", function (req, res, next) {
     console.log("Recuperando todos os usuários");
-    Usuario.findAndCountAll()
+    tblcliente.findAndCountAll()
         .then((resultado) => {
             console.log(`${resultado.count} registros`);
 

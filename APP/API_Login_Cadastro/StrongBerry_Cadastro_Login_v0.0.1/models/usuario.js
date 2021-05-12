@@ -73,7 +73,7 @@ module.exports = (sequelize, DataTypes) => {
 
 module.exports = (sequelize, DataTypes) => {
     let tblendereco = sequelize.define(
-        "tblendereco",
+        "tblEndereco",
         {
             idEndereco: {
                 field: "idEndereco",

@@ -32,7 +32,7 @@
                 <h1>Login</h1>
 
 
-
+                <!--  
                 <form id="form_login" method="post" onsubmit="return entrar()">
                     Usuário:
                     <input type="text" class="input-padrao" name="login">
@@ -47,8 +47,43 @@
                     <div id="div_erro" class="msg_erro">
                     </div>
 
-                    <img src="aguarde-orange.gif" id="img_aguarde"  > <!--style="display: none;"-->
+                    <img src="aguarde-orange.gif" id="img_aguarde">
                     
+                -->
+                    
+
+                    <div class="login">
+                        <div class="container_login">
+                            <h1>
+                                Bem vindo novamente
+                            </h1>
+                            <form id="form_login" method="post" onsubmit="return entrar()">
+                                <div class="form-group">
+                                    <input type="text" id="id_email" class="input-padrao" placeholder="Email" name="login">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" id="id_senha" class="input-padrao" placeholder="Senha" name="senha">
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" style="width: 15px; margin: 10px; float: left;"
+                                        id="idLembrar">
+                                    <label for="idLembrar" style="float: left; margin-top: 13px;">Lembrar de
+                                        mim?</label>
+                                </div>
+                                <hr>
+                                <a> <button id="btn_entrar" class="button-padrao"> FAZER LOGIN </button>
+                                </a>
+                            </form>
+
+                            <span class="span_login">
+                                Não possui cadastro? <a href="cadastro-parte-1.html">Entre aqui.</a><br>
+                                <a href="">Esqueceu sua senha?</a>
+                            </span>
+                        </div>
+                    </div>
+
+                    
+
                 </div>
             </div>
         </div>
