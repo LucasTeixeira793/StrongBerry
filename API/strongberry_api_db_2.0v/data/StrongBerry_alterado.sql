@@ -70,8 +70,6 @@ CREATE TABLE tblDadosUmi(
 	FOREIGN KEY (fkSensores) REFERENCES tblSensores(idSensores)
 );
 
-SHOW TABLES;
-
 -- SELECT idDadosTemp, temperatura, tblDadosTemp.dataColeta, idDadosUmi, umidade, tblDadosUmi.dataColeta, idEstufa, nomeEstufa, idCliente, nomeEmpresa
 -- 	FROM tblSensores 
 -- 	JOIN tblDadosTemp ON fkDadosTemp = idDadosTemp
