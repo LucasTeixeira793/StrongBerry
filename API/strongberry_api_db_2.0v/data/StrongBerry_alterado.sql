@@ -47,27 +47,30 @@ CREATE TABLE tblEstufa(
 );
 
 CREATE TABLE tblSensores(
-	fkDadosTemp INT,
-    FOREIGN KEY (fkDadosTemp) REFERENCES tblDadosTemp(idDadosTemp),
-    fkDadosUmi INT,
-    FOREIGN KEY (fkDadosUmi) REFERENCES tblDadosUmi(idDadosUmi),
     fkEstufa INT,
     FOREIGN KEY (fkEstufa) REFERENCES tblEstufa(idEstufa),
     fkCliente INT,
-    FOREIGN KEY (fkCliente) REFERENCES tblCliente(idCliente)
+    FOREIGN KEY (fkCliente) REFERENCES tblCliente(idCliente),
+    idSensores INT PRIMARY KEY
 );
 
 CREATE TABLE tblDadosTemp(
 	idDadosTemp INT PRIMARY KEY AUTO_INCREMENT,
     temperatura DOUBLE(10,2) NOT NULL,
-    dataColeta DATETIME NOT NULL
+    dataColeta DATETIME NOT NULL,
+    fkSensores INT,
+    FOREIGN KEY (fkSensores) REFERENCES tblSensores(idSensores)
 );
 
 CREATE TABLE tblDadosUmi(
 	idDadosUmi INT PRIMARY KEY AUTO_INCREMENT,
     umidade DOUBLE(10,2) NOT NULL,
-    dataColeta DATETIME NOT NULL
+    dataColeta DATETIME NOT NULL,
+    fkSensores INT,
+	FOREIGN KEY (fkSensores) REFERENCES tblSensores(idSensores)
 );
+
+SHOW TABLES;
 
 -- SELECT idDadosTemp, temperatura, tblDadosTemp.dataColeta, idDadosUmi, umidade, tblDadosUmi.dataColeta, idEstufa, nomeEstufa, idCliente, nomeEmpresa
 -- 	FROM tblSensores 
