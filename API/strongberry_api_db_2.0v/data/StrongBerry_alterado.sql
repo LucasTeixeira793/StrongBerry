@@ -1,4 +1,4 @@
--- CREATE DATABASE db_strongberry_api_version;
+CREATE DATABASE db_strongberry_api_version;
 USE db_strongberry_api_version;
 
 CREATE TABLE tblTipoPlantio(
@@ -46,29 +46,39 @@ CREATE TABLE tblEstufa(
     FOREIGN KEY (tipoPlantio) REFERENCES tblTipoPlantio(idTipoPlantio)
 );
 
-CREATE TABLE tblSensores(
-    fkEstufa INT,
+CREATE TABLE tblTempSensor(
+	idTempSensor INT PRIMARY KEY AUTO_INCREMENT,
+	fkEstufa INT,
     FOREIGN KEY (fkEstufa) REFERENCES tblEstufa(idEstufa),
     fkCliente INT,
-    FOREIGN KEY (fkCliente) REFERENCES tblCliente(idCliente),
-    idSensores INT PRIMARY KEY
+    FOREIGN KEY (fkCliente) REFERENCES tblCliente(idCliente)
+);
+
+CREATE TABLE tblUmiSensor(
+	idUmiSensor INT PRIMARY KEY AUTO_INCREMENT,
+	fkEstufa INT,
+    FOREIGN KEY (fkEstufa) REFERENCES tblEstufa(idEstufa),
+    fkCliente INT,
+    FOREIGN KEY (fkCliente) REFERENCES tblCliente(idCliente)
 );
 
 CREATE TABLE tblDadosTemp(
 	idDadosTemp INT PRIMARY KEY AUTO_INCREMENT,
     temperatura DOUBLE(10,2) NOT NULL,
     dataColeta DATETIME NOT NULL,
-    fkSensores INT,
-    FOREIGN KEY (fkSensores) REFERENCES tblSensores(idSensores)
+    fkTempSensor INT,
+    FOREIGN KEY (fkTempSensor) REFERENCES tblTempSensor(idTempSensor)
 );
 
 CREATE TABLE tblDadosUmi(
 	idDadosUmi INT PRIMARY KEY AUTO_INCREMENT,
     umidade DOUBLE(10,2) NOT NULL,
     dataColeta DATETIME NOT NULL,
-    fkSensores INT,
-	FOREIGN KEY (fkSensores) REFERENCES tblSensores(idSensores)
+    fkUmiSensor INT,
+	FOREIGN KEY (fkUmiSensor) REFERENCES tblUmiSensor(idUmiSensor)
 );
+
+
 
 -- SELECT idDadosTemp, temperatura, tblDadosTemp.dataColeta, idDadosUmi, umidade, tblDadosUmi.dataColeta, idEstufa, nomeEstufa, idCliente, nomeEmpresa
 -- 	FROM tblSensores 

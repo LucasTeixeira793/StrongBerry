@@ -23,8 +23,9 @@ router.get("/", (request, response, next) => {
 
     router.post("/sendTemp", (request, response) => {
         var temperature = ArduinoDataTemp.List[ArduinoDataTemp.List.length - 1];
+        var sensorIdTemp = parseInt(Math.random() * 5 + 1);
 
-        var sql = `INSERT INTO tblDadosTemp(dataColeta,temperatura) VALUES('${getDateTime()}',${temperature})`;
+        var sql = `INSERT INTO tblDadosTemp(dataColeta,temperatura, fkTempSensor) VALUES('${getDateTime()}',${temperature}, ${sensorIdTemp})`;
 
         db.query(sql, function (err, result) {
             if (err) throw err;
@@ -55,8 +56,9 @@ router.get("/humidity", (request, response, next) => {
     router.post("/sendHumidity", (request, response) => {
         var humidity =
             ArduinoDataHumidity.List[ArduinoDataHumidity.List.length - 1];
+        var sensorIdUmi = parseInt(Math.random() * 5 + 1);
 
-        var sql = `INSERT INTO tblDadosUmi(dataColeta,umidade) VALUES('${getDateTime()}',${humidity})`;
+        var sql = `INSERT INTO tblDadosUmi(dataColeta,umidade, fkUmiSensor) VALUES('${getDateTime()}',${humidity}, ${sensorIdUmi})`;
 
         db.query(sql, function (err, result) {
             if (err) throw err;
