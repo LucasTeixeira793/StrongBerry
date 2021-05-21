@@ -25,14 +25,14 @@ CREATE TABLE tblEndereco(
 
 CREATE TABLE tblCliente(
 	idCliente INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(45) NOT NULL,
-    `password` VARCHAR(45) NOT NULL,
-    nomeEmpresa VARCHAR(40) NOT NULL,
-    cnpj CHAR(14) UNIQUE KEY NOT NULL,
-    email VARCHAR(80) UNIQUE KEY NOT NULL,
-    telefone VARCHAR(11) UNIQUE KEY NOT NULL,
-    escalaProducao VARCHAR(40) NOT NULL,
-    endereco INT NOT NULL,
+    username VARCHAR(45),
+    `password` VARCHAR(45),
+    nomeEmpresa VARCHAR(40),
+    cnpj CHAR(14) UNIQUE KEY,
+    email VARCHAR(80) UNIQUE KEY,
+    telefone VARCHAR(11) UNIQUE,
+    escalaProducao VARCHAR(40),
+    endereco INT,
     FOREIGN KEY (endereco) REFERENCES tblEndereco(idEndereco)    
 );
 
@@ -112,3 +112,5 @@ SELECT * FROM tblCliente;
 SELECT * FROM tblEstufa;
 SELECT * FROM tblSensores;
 SELECT * FROM tblDados;
+
+desc tblCliente;
