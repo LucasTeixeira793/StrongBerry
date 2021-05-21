@@ -27,7 +27,7 @@ module.exports = {
     // altere APENAS username, password e database.
     username: 'user-strongberry',
     password: 'strongberrysenha',
-    database: 'bdStrongBerry',
+    database: 'bdstrongberry',
     host: 'localhost',
     dialect: 'mysql',
     xuse_env_variable: 'DATABASE_URL',

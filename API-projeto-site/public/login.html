@@ -1,44 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto IoT - Sobre</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/contato-e-login.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/favicon.png" /><!--  Icone que aparece na aba do navegador -->
+    <title>StrongBerry - Login</title>
 </head>
-
-<body>
-    <!--header inicio-->
-    <div class="header">
+<body class="body_login">
+    
+    <div class="header" id="navbar">
         <div class="container">
-            <h1 class="titulo"><span class="highlight">Projeto</span> IoT Revolucionário</h1>
-            <div class="nav">
+            <a href="index.html"><h1>StrongBerry</h1></a>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="cadastro.html">Cadastro</a></li>
-                    <li><a href="" class="current">Login</a></li>
+                    <li><a href="vantagens.html">Vantagens</a></li>
+                    <li><a href="cadastro-parte-1.html">Cadastro</a></li>
+                    <li><a href="login.html"><span class="text-a">Login</span></a></li>
                 </ul>
-            </div>
         </div>
     </div>
-    <!--header fim-->
-
-    <div class="pag-login">
+    <!-- <button class="back">
+       <a href="index.html"><img src="back3.jpg" alt=""></a>
+    </button> -->
+    <div class="pag-email">
         <div class="container">
-            <div class="box-login">
-                <h1>Login</h1>
+            <div class="box-email">
+                <h1>email</h1>
 
 
 
-                <form id="form_login" method="post" onsubmit="return entrar()">
+                <form id="form_email" method="post" onsubmit="return entrar()">
                     Usuário:
-                    <input type="text" class="input-padrao" name="login">
+                    <input type="text" class="input-padrao" name="email">
                     <br>
                     Senha:
-                    <input type="password" class="input-padrao" name="senha">
+                    <input type="password" class="input-padrao" name="password">
                     <br>
                     <button id="btn_entrar" class="btn-green">Entrar</button>
                 </form>
@@ -54,22 +55,16 @@
         </div>
     </div>
 
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <h4>Feito com carinho por um aluno BandTec. Copyright © 2021</h4>
-        </div>
-    </div>
-    <!--footer fim-->
-
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/47509d94ad.js" crossorigin="anonymous"></script>
 </body>
-
 </html>
+
 <script>
 
     function entrar() {
         aguardar();
-        var formulario = new URLSearchParams(new FormData(form_login));
+        var formulario = new URLSearchParams(new FormData(form_email));
         fetch("/usuarios/autenticar", {
             method: "POST",
             body: formulario
@@ -79,15 +74,15 @@
 
                 resposta.json().then(json => {
 
-                    sessionStorage.login_usuario_meuapp = json.login;
-                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    sessionStorage.email_usuario_meuapp = json.email;
+                    sessionStorage.username_usuario_meuapp = json.username;
 
-                    window.location.href = 'tempo-real.html';
+                    window.location.href = 'grafico-chartjs.html';
                 });
 
             } else {
 
-                console.log('Erro de login!');
+                console.log('Erro de email!');
 
                 resposta.text().then(texto => {
                     console.error(texto);
@@ -113,3 +108,9 @@
     }
 
 </script>
+
+
+
+
+
+
