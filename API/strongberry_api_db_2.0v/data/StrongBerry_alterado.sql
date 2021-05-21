@@ -126,11 +126,8 @@ INSERT INTO tblUmiSensor (fkEstufa, fkCliente)
             (4, 4),
             (5, 5);
             
-SELECT 	tblCliente.username, 
-		tblCliente.nomeEmpresa, 
-        tblCliente.cnpj, 
-        tblTipoPlantio.nomeTipoPlantio, 
-        tblDadosUmi.*,
+
+ SELECT tblDadosUmi.*,
         tblDadosTemp.*
         FROM tblDadosUmi
         JOIN tblUmiSensor ON fkUmiSensor = idUmiSensor 
@@ -138,9 +135,16 @@ SELECT 	tblCliente.username,
         JOIN tblCliente ON cliente = idCliente
         JOIN tblTipoPlantio ON tipoPlantio = idTipoPlantio
         JOIN tblTempSensor ON tblTempSensor.fkEstufa = tblEstufa.idEstufa AND tblTempSensor.fkCliente = tblCliente.idCliente
-        JOIN tblDadosTemp ON fkTempSensor = idTempSensor ORDER BY tblCliente.nomeEmpresa;
+        JOIN tblDadosTemp ON fkTempSensor = idTempSensor WHERE idTempSensor = 2 ORDER BY idDadosTemp DESC limit 1;
         
-        
+SELECT AVG(temperatura) FROM tblDadosTemp ORDER BY temperatura DESC limit 100;
+
+SELECT COUNT(*) FROM tblDadosTemp;
+
+
+-- 22.546045
+-- 22.544978
+-- 491
 
             
 
