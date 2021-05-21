@@ -1,4 +1,4 @@
-CREATE DATABASE db_strongberry_api_version;
+-- CREATE DATABASE db_strongberry_api_version;
 USE db_strongberry_api_version;
 
 CREATE TABLE tblTipoPlantio(
@@ -80,11 +80,13 @@ CREATE TABLE tblDadosUmi(
     dataColeta DATETIME NOT NULL
 );
 
+
 INSERT INTO tblTipoPlantio (nomeTipoPlantio, tempoPlantio, maxTemp, mediaTemp, minTemp, maxUmidade, mediaUmidade, minUmidade, descricao) 
 	VALUES	('Vertical','75 dias', 30.00, 22.00, 15.00, 99.00, 80.00, 60.00, 'Plantio vertical de morangos'),
 			('Solo','90 dias', 40.00, 28.00, 10.00, 99.00, 80.00, 60.00, 'Pantio de morangos no solo'),
             ('Hidroponico','60 dias', 30.00, 21.00, 18.00, 99.00, 80.00, 60.00, 'Pantio hidroponico de morangos'),
             ('Semi-Hidroponico','70 dias', 44.00, 30.00, 25.00, 99.00, 80.00, 60.00, 'Pantio semi-hidroponico de morangos');
+            
             
 INSERT INTO tblEndereco (rua, numero, bairro, cidade, cep) 
 	VALUES	('Rua das Pedras', '120A', 'Carrão', 'São Paulo', 09856070),
@@ -92,6 +94,7 @@ INSERT INTO tblEndereco (rua, numero, bairro, cidade, cep)
 			('Rua São Francisco', '200', 'Jardim São Francisco', 'Ribeirão Pires', 01254060),
 			('Rua Rachid Saldanha', '854', 'Centro-SP', 'São Paulo', 05412090),
 			('Rua Ruas João', '221B', 'Bakers', 'Santo André', 06589070);
+            
             
 INSERT INTO tblCliente (username, `password`, nomeEmpresa, email, cnpj, telefone, escalaProducao, endereco) 
 	VALUES	('João Runas', '125@j12154', 'DinosMorangos', 'RuasJoão.gmail.com', 15987423698745, 11954788547, 800, 1),
@@ -108,18 +111,7 @@ INSERT INTO tblEstufa (idEstufa, cliente, nomeEstufa, tipoPlantio)
            (4,4,'Moranguinho1',4),
            (5,5,'Safro1',1);
            
-
-
--- SELECT idDadosTemp, temperatura, tblDadosTemp.dataColeta, idDadosUmi, umidade, tblDadosUmi.dataColeta, idEstufa, nomeEstufa, idCliente, nomeEmpresa
--- 	FROM tblSensores 
--- 	JOIN tblDadosTemp ON fkDadosTemp = idDadosTemp
---  JOIN tblDadosUmi ON fkDadosUmi = idDadosUmi
---  JOIN tblEstufa ON fkEstufa = idEstufa
---  JOIN tblCliente ON fkCliente = idCliente;
-	
-SELECT * FROM tblEstufa;
-SELECT * FROM tblCliente JOIN tblEstufa ON cliente = idCliente;
-DESC tblTempSensor;
+           
 INSERT INTO tblTempSensor (fkEstufa, fkCliente)
 	VALUES	(1, 1),
 			(2, 2),
@@ -127,8 +119,6 @@ INSERT INTO tblTempSensor (fkEstufa, fkCliente)
             (4, 4),
             (5, 5);
             
-SELECT * FROM tblTempSensor;
-
 INSERT INTO tblUmiSensor (fkEstufa, fkCliente)
 	VALUES	(1, 1),
 			(2, 2),
@@ -136,7 +126,23 @@ INSERT INTO tblUmiSensor (fkEstufa, fkCliente)
             (4, 4),
             (5, 5);
             
-SELECT * FROM tblUmiSensor;
+SELECT 	tblCliente.username, 
+		tblCliente.nomeEmpresa, 
+        tblCliente.cnpj, 
+        tblTipoPlantio.nomeTipoPlantio, 
+        tblDadosUmi.*,
+        tblDadosTemp.*
+        FROM tblDadosUmi
+        JOIN tblUmiSensor ON fkUmiSensor = idUmiSensor 
+        JOIN tblEstufa ON idEstufa = fkEstufa 
+        JOIN tblCliente ON cliente = idCliente
+        JOIN tblTipoPlantio ON tipoPlantio = idTipoPlantio
+        JOIN tblTempSensor ON tblTempSensor.fkEstufa = tblEstufa.idEstufa AND tblTempSensor.fkCliente = tblCliente.idCliente
+        JOIN tblDadosTemp ON fkTempSensor = idTempSensor ORDER BY tblCliente.nomeEmpresa;
+        
+        
+
+            
 
 
 
