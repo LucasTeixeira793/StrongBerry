@@ -7,7 +7,6 @@ password: strongberrysenha;
 Privilegios: Insert/Select
 Tabelas:
   - tblCliente;
-  - tblEndereco;
   - tblEstufa;
   - tblTipoPlantio.
 ----------------------------------------------------

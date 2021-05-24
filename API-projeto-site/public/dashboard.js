@@ -1,6 +1,14 @@
 // Gráfico de Temperatura pequeno
 
-const labelsMiniTemp = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho"];
+const labelsMiniTemp = [
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "Junho",
+    "Julho",
+];
 const dataMiniTemp = {
     labels: labelsMiniTemp,
     datasets: [
@@ -11,8 +19,8 @@ const dataMiniTemp = {
             borderWidth: 1,
             elements: {
                 point: {
-                    radius: 0
-                }
+                    radius: 0,
+                },
             },
             data: [25, 25, 25, 25, 25, 25, 25],
         },
@@ -21,7 +29,7 @@ const dataMiniTemp = {
             backgroundColor: "green",
             borderColor: "green",
             data: [17, 21, 19, 26, 18, 22, 24],
-            tension: 0.4
+            tension: 0.4,
         },
         {
             label: "Controle",
@@ -30,8 +38,8 @@ const dataMiniTemp = {
             borderWidth: 1,
             elements: {
                 point: {
-                    radius: 0
-                }
+                    radius: 0,
+                },
             },
             data: [18, 18, 18, 18, 18, 18, 18],
         },
@@ -44,13 +52,24 @@ const configMiniTemp = {
     options: { maintainAspectRatio: false },
 };
 
-var miniGraficoTemp = new Chart(document.getElementById("miniGraficoTemp"), configMiniTemp);
+var miniGraficoTemp = new Chart(
+    document.getElementById("miniGraficoTemp"),
+    configMiniTemp
+);
 
 // Fim Gráfico de Temperatura pequeno
 
 // Gráfico de Umidade pequeno
 
-const labelsMiniUmi = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho"];
+const labelsMiniUmi = [
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "Junho",
+    "Julho",
+];
 const dataMiniUmi = {
     labels: labelsMiniUmi,
     datasets: [
@@ -61,8 +80,8 @@ const dataMiniUmi = {
             borderWidth: 1,
             elements: {
                 point: {
-                    radius: 0
-                }
+                    radius: 0,
+                },
             },
             data: [80, 80, 80, 80, 80, 80, 80],
         },
@@ -71,7 +90,7 @@ const dataMiniUmi = {
             backgroundColor: "orangered",
             borderColor: "orangered",
             data: [55, 61, 69, 66, 73, 82, 84],
-            tension: 0.4
+            tension: 0.4,
         },
         {
             label: "Controle",
@@ -80,8 +99,8 @@ const dataMiniUmi = {
             borderWidth: 1,
             elements: {
                 point: {
-                    radius: 0
-                }
+                    radius: 0,
+                },
             },
             data: [60, 60, 60, 60, 60, 60, 60],
         },
@@ -94,13 +113,10 @@ const configMiniUmi = {
     options: { maintainAspectRatio: false },
 };
 
-var miniGraficoUmi = new Chart(document.getElementById("miniGraficoUmi"), configMiniUmi);
-
-
-
-
-
-
+var miniGraficoUmi = new Chart(
+    document.getElementById("miniGraficoUmi"),
+    configMiniUmi
+);
 
 // Grafico destaque
 
@@ -120,7 +136,6 @@ const data = {
             borderColor: "#2f9395",
             data: [50, 61, 69, 66, 73, 82],
         },
-
     ],
 };
 
@@ -130,4 +145,7 @@ const config = {
     options: { maintainAspectRatio: false },
 };
 
-var graficoDestaque = new Chart(document.getElementById("graficoDestaque"), config);
+var graficoDestaque = new Chart(
+    document.getElementById("graficoDestaque"),
+    config
+);

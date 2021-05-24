@@ -2,9 +2,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
-        background-color: #ecf0f1;
+    background-color: #ecf0f1;
 }
-
 
 h1 {
     margin: 0;
@@ -26,7 +25,7 @@ a {
 }
 
 .header .container .highlight {
-    color: orangered
+    color: orangered;
 }
 
 .usuario {
@@ -76,7 +75,6 @@ a {
     font-weight: bold;
 }
 
-
 /* FOOTER */
 
 .footer {
@@ -91,8 +89,6 @@ a {
     margin: 0;
     padding-top: 40px;
 }
-
-
 
 /* dashboard */
 
@@ -117,7 +113,7 @@ a {
 .box-login {
     display: inline-block;
     background-color: white;
-    box-shadow:  3px 3px 5px 2px #ccc;
+    box-shadow: 3px 3px 5px 2px #ccc;
     padding: 60px 20px 0px 20px;
     border-radius: 20px;
     width: 400px;
@@ -159,13 +155,13 @@ a {
 }
 
 .extra img {
-  height: 50px;
-   visibility: hidden;
+    height: 50px;
+    visibility: hidden;
 }
 
 .extra .msg_erro {
-    background-color: sandybrown; 
-    color: black; 
+    background-color: sandybrown;
+    color: black;
     visibility: hidden;
 }
 
@@ -180,12 +176,11 @@ a {
     text-align: center;
 
     background-color: white;
-    box-shadow:  3px 3px 5px 2px #ccc;
-    
+    box-shadow: 3px 3px 5px 2px #ccc;
 }
 
 .caminhao .valores {
-    margin:auto;
+    margin: auto;
     overflow: auto;
 }
 
@@ -196,8 +191,8 @@ a {
 }
 
 .caminhao .alertas {
-    width:100%;
-    margin:auto;
+    width: 100%;
+    margin: auto;
     margin-top: 5px;
     overflow: auto;
 }
@@ -216,9 +211,9 @@ a {
 /* extra */
 
 .show-on-hover {
-    color:#232323
+    color: #232323;
 }
 
 .show-on-hover:hover {
-    color:white
+    color: white;
 }

@@ -1,27 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap%27');
-@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap%27');
-@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap%27');
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap%27');
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap%27");
+@import url("https://fonts.googleapis.com/css2?family=Varela&display=swap%27");
+@import url("https://fonts.googleapis.com/css2?family=Archivo&display=swap%27");
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap%27");
 
 /* GERAL */
 
-.container{
+.container {
     width: 80%;
     margin: auto;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
-    font-family: 'Poppins', sans-serif;
-    background-image: url('https://i.pinimg.com/originals/be/95/a3/be95a3e821ee0479d70599b5c344cb1d.jpg');
+body {
+    font-family: "Poppins", sans-serif;
+    background-image: url("https://i.pinimg.com/originals/be/95/a3/be95a3e821ee0479d70599b5c344cb1d.jpg");
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -29,8 +29,14 @@ body{
 }
 
 @-webkit-keyframes animate-body {
-    from { opacity: 0.5; margin-top: -50px;}
-    to { opacity: 1;margin-top: 0px;}
+    from {
+        opacity: 0.5;
+        margin-top: -50px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
 }
 
 .input-padrao {
@@ -47,23 +53,23 @@ body{
     -webkit-transition: 0.3s;
 }
 
-.input-padrao:hover{
+.input-padrao:hover {
     transition: 0.3s;
     box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 6px;
 }
 
-.input-padrao:focus{
+.input-padrao:focus {
     border-radius: 15px;
 }
 
-.input-padrao::placeholder{
+.input-padrao::placeholder {
     padding: 0;
     padding-top: 1px;
     font-size: 15px;
 }
 
-.button-padrao{
-    font-family: 'Poppins', sans-serif;
+.button-padrao {
+    font-family: "Poppins", sans-serif;
     height: 40px;
     padding: 8px 20px 10px 20px;
     border: none;
@@ -74,12 +80,12 @@ body{
     -webkit-transition: 2s;
 }
 
-.button-padrao:hover{
+.button-padrao:hover {
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
     transition: 0.3s;
 }
 
-.select-padrao{
+.select-padrao {
     width: 100%;
     height: 40px;
     padding: 5px 15px;
@@ -93,28 +99,29 @@ body{
 }
 
 /* ------------------INICIO ESTILO HEADER-------------------- */
-.header{
+.header {
     width: 100%;
     height: 80px;
 }
 
-.header h1{
+.header h1 {
     float: left;
     color: #ffffff;
     -webkit-transition: 0.5s;
 }
 
-.header h1:hover{
+.header h1:hover {
     transform: scale(1.1);
     transition: 0.5s;
 }
 
-.header h1, .header ul{
+.header h1,
+.header ul {
     margin-top: 20px;
     position: relative;
 }
 
-.header li{
+.header li {
     display: inline-block;
     font-size: 18px;
     text-transform: uppercase;
@@ -123,53 +130,43 @@ body{
     color: white;
 }
 
-.header ul{
+.header ul {
     list-style: none;
     float: right;
 }
 
-.header ul li a{
+.header ul li a {
     text-decoration: none;
     color: white;
     font-size: 18px;
 }
 
-.header ul li a:hover{
+.header ul li a:hover {
     text-decoration: underline;
 }
 
-.header .text-a{
-    font-weight: bold;    
+.header .text-a {
+    font-weight: bold;
 }
 
-.disabled{
+.disabled {
     color: #666;
-    cursor:initial;
+    cursor: initial;
 }
 
-.header img{
+.header img {
     width: 100%;
     height: 400px;
     object-fit: cover;
     position: absolute;
     opacity: 0.95;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: 100%;
-
 }
 /* ------------------FIM INICIO ESTILO HEADER-------------------- */
 
-
-
-
-
-
-
-
-
-
 /* -------------------Div do texto de bem vindos------------------- */
-.bem_vindos_text{
+.bem_vindos_text {
     width: 80%;
     margin: auto;
     margin-top: 350px;
@@ -179,16 +176,8 @@ body{
 }
 /* -------------------Fim Div do texto de bem vindos------------------- */
 
-
-
-
-
-
-
-
-
 /* -------------------Div segundo container------------------- */
-.container2{
+.container2 {
     width: 80%;
     margin: auto;
     align-items: center;
@@ -196,31 +185,25 @@ body{
     display: flex;
 }
 
-.conteudo{
+.conteudo {
     float: left;
     position: relative;
 }
 
-.conteudo img{
+.conteudo img {
     border-radius: 50%;
     width: 150px;
     height: 150px;
     margin: 90px;
 }
 
-.conteudo_text{
+.conteudo_text {
     text-align: center;
 }
 /* -------------------Div segundo container------------------- */
 
-
-
-
-
-
-
 /* -------------------Div do terceiro container------------------- */
-.container3{
+.container3 {
     width: 80%;
     margin: auto;
     margin-top: 30px;
@@ -232,14 +215,14 @@ body{
     font-size: 20px;
 }
 
-.conteudo3{
+.conteudo3 {
     float: left;
     position: relative;
     text-align: center;
     padding: 50px;
 }
 
-.conteudo3_img img{
+.conteudo3_img img {
     border-radius: 50%;
     width: 300px;
     height: 300px;
@@ -249,15 +232,8 @@ body{
 }
 /* -------------------Div do terceiro container------------------- */
 
-
-
-
-
-
-
-
 /* -------------------Div do quarto container------------------- */
-.container4{
+.container4 {
     width: 80%;
     margin: auto;
     margin-top: 30px;
@@ -266,14 +242,14 @@ body{
     display: flex;
 }
 
-.como_trabalhamos{
+.como_trabalhamos {
     float: right;
     position: relative;
     text-align: center;
     padding: 50px;
 }
 
-.como_trabalhamos_img img{
+.como_trabalhamos_img img {
     float: left;
     border-radius: 50%;
     object-fit: cover;
@@ -284,19 +260,9 @@ body{
 }
 /* -------------------Fim Div do quarto container------------------- */
 
-
-
-
-
-
-
-
-
-
-
 /* -------------------Footer------------------- */
 
-.container-footer{
+.container-footer {
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -306,7 +272,7 @@ body{
     height: auto;
 }
 
-.footer{
+.footer {
     /* border-top: #740202 4px solid; */
     background-color: #10341c;
     padding-top: 30px;
@@ -318,49 +284,50 @@ body{
     bottom: 0;
 }
 
-.footer img{
+.footer img {
     width: 90%;
     float: left;
 }
 
-.footer ul{
+.footer ul {
     float: left;
     list-style: none;
     justify-content: center;
 }
 /*-------------------Fim Footer-------------------*/
 
-.footer ul li{
+.footer ul li {
     margin: 5px;
     color: #fff;
 }
 
-.footer a{
+.footer a {
     text-decoration: none;
     color: #ffffff;
 }
 
-.footer a:hover{
+.footer a:hover {
     text-decoration: underline;
 }
 
-.footer i{
+.footer i {
     font-size: 45px;
     margin: 20px;
     -webkit-transition: 0.2s; /* Transição de volta */
 }
 
-.footer i:hover{ /* Efeito quando passa o mouse no icone das redes sociais */
+.footer i:hover {
+    /* Efeito quando passa o mouse no icone das redes sociais */
     transform: scale(1.1); /* Faz o icone almentar 10% de tamanho */
     transition: 0.2s;
 }
 
-.footer span{
+.footer span {
     font-weight: bold;
     color: #fff;
 }
 
-.copyright{
+.copyright {
     width: 100%;
     background-color: #0e2b17;
     padding-top: 20px;
@@ -373,17 +340,11 @@ body{
     margin: 0;
 }
 
- .copyright a {     /* Link da parte do Copyright */
+.copyright a {
+    /* Link da parte do Copyright */
     color: #e43131;
 }
-    /* Fim do Rodapé */
-
-
-
-
-
-
-
+/* Fim do Rodapé */
 
 /* -------------------Login------------------- */
 /* .back{
@@ -402,14 +363,14 @@ body{
     border: none;
 } */
 
-.login{
+.login {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.body_login{
-    background-image: url('img/wallpaper_sobre.png');
+.body_login {
+    background-image: url("img/wallpaper_sobre.png");
     width: 100%;
     height: 100%;
     background-position: center;
@@ -417,7 +378,7 @@ body{
     background-repeat: no-repeat;
 }
 
-.container_login{
+.container_login {
     /* background-image: url('img/background-white2.jpg'); */
     border-radius: 10px 10px 10px 10px;
     background-color: #f8f8f894;
@@ -428,18 +389,18 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;  
-    float: right;  
+    flex-direction: column;
+    float: right;
 }
 
-.container_login h1{
+.container_login h1 {
     font-size: 45px;
     margin: 30px;
     color: #000000;
     height: 50px;
 }
 
-.container_login input{
+.container_login input {
     background-image: url();
     width: 300px;
     background-color: rgb(240, 240, 240);
@@ -449,12 +410,12 @@ body{
     margin: 10px;
 }
 
-.container_login input::placeholder{
+.container_login input::placeholder {
     font-size: 15px;
     color: rgb(141, 141, 141);
 }
 
-.container_login hr{
+.container_login hr {
     color: white;
     width: 50%;
 }
@@ -469,34 +430,25 @@ body{
     margin: 10px;
 } */
 
-.container_login button{
+.container_login button {
     margin-top: 20px;
     margin-bottom: 20px;
-} 
+}
 
-.container_login button a{
+.container_login button a {
     text-decoration: none;
     color: white;
 }
 
-.span_login{
+.span_login {
     color: rgb(0, 0, 0);
     font-size: 13px;
 }
 
-.span_login a{
+.span_login a {
     color: rgb(0, 0, 0);
 }
 /*-------------------Fim Login-------------------*/
-
-
-
-
-
-
-
-
-
 
 /* -------------------Cadastro------------------- */
 /* .back{
@@ -515,14 +467,14 @@ body{
     border: none;
 } */
 
-.pg_cadastro{
+.pg_cadastro {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.body_cadastro{
-    background-image: url('img/wallpaper_sobre.png');
+.body_cadastro {
+    background-image: url("img/wallpaper_sobre.png");
     width: 100%;
     height: 100%;
     background-position: center;
@@ -538,10 +490,8 @@ body{
     background-repeat: no-repeat;
 }  */
 
-
-
-.container_cadastro{
-    background-image: url('img/background-white2.jpg');
+.container_cadastro {
+    background-image: url("img/background-white2.jpg");
     border-radius: 10px 10px 10px 10px;
     height: 550px;
     background-color: rgba(248, 248, 248, 0.8);
@@ -551,18 +501,18 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;  
-    float: right;  
+    flex-direction: column;
+    float: right;
 }
 
-.container_cadastro h1{
+.container_cadastro h1 {
     font-size: 45px;
     margin: 30px;
     color: rgb(0, 0, 0);
     height: 50px;
 }
 
-.container_cadastro input{
+.container_cadastro input {
     background-image: url();
     width: 300px;
     background-color: rgb(240, 240, 240);
@@ -572,40 +522,31 @@ body{
     margin: 10px;
 }
 
-.container_cadastro input::placeholder{
+.container_cadastro input::placeholder {
     padding: 10px;
     font-size: 15px;
     color: rgb(141, 141, 141);
 }
 
-.container_cadastro hr{
+.container_cadastro hr {
     color: white;
     width: 50%;
 }
 
-
-.container_cadastro button a{
+.container_cadastro button a {
     text-decoration: none;
     color: white;
 }
 
-.span_cadastro{
+.span_cadastro {
     color: rgb(0, 0, 0);
     font-size: 13px;
 }
 
-.span_cadastro a{
+.span_cadastro a {
     color: white;
 }
 /*-------------------Fim Cadastro-------------------*/
-
-
-
-
-
-
-
-
 
 /* -------------------Cadastro 2------------------- */
 /* .back{
@@ -624,8 +565,8 @@ body{
     border: none;
 } */
 
-.body_cadastro2{
-    background-image: url('img/wallpaper_sobre.png');
+.body_cadastro2 {
+    background-image: url("img/wallpaper_sobre.png");
     width: 100%;
     height: 100%;
     background-position: center;
@@ -633,8 +574,8 @@ body{
     background-repeat: no-repeat;
 }
 
-.body_cadastro3{
-    background-image: url('img/wallpaper_sobre.png');
+.body_cadastro3 {
+    background-image: url("img/wallpaper_sobre.png");
     width: 100%;
     height: 100%;
     background-position: center;
@@ -642,8 +583,8 @@ body{
     background-repeat: no-repeat;
 }
 
-.container_cadastro2{
-    background-image: url('img/background-white2.jpg');
+.container_cadastro2 {
+    background-image: url("img/background-white2.jpg");
     border-radius: 10px 10px 10px 10px;
     height: 600px;
     background-color: rgba(248, 248, 248, 0.8);
@@ -653,17 +594,17 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;  
-    float: right;  
+    flex-direction: column;
+    float: right;
 }
 
-.container_cadastro2 h1{
+.container_cadastro2 h1 {
     font-size: 45px;
     margin: 30px;
     color: rgb(0, 0, 0);
 }
 
-.container_cadastro2 input{
+.container_cadastro2 input {
     background-image: url();
     width: 300px;
     background-color: rgb(240, 240, 240);
@@ -673,13 +614,13 @@ body{
     margin: 10px;
 }
 
-.container_cadastro2 input::placeholder{
+.container_cadastro2 input::placeholder {
     padding: 10px;
     font-size: 15px;
     color: rgb(141, 141, 141);
 }
 
-.container_cadastro2 select{
+.container_cadastro2 select {
     background-image: url();
     width: 300px;
     background-color: rgb(240, 240, 240);
@@ -690,12 +631,12 @@ body{
     color: rgb(141, 141, 141);
 }
 
-.container_cadastro2 hr{
+.container_cadastro2 hr {
     color: white;
     width: 50%;
 }
 
-.container_cadastro2 button{
+.container_cadastro2 button {
     color: whitesmoke;
     width: 100px;
     background-color: rgb(23, 46, 23);
@@ -705,25 +646,20 @@ body{
     margin: 10px;
 }
 
-.container_cadastro2 button a{
+.container_cadastro2 button a {
     text-decoration: none;
     color: white;
 }
 
-.span_cadastro2{
+.span_cadastro2 {
     color: rgb(0, 0, 0);
     font-size: 13px;
 }
 
-.span_cadastro2 a{
+.span_cadastro2 a {
     color: white;
 }
 /*-------------------Fim Cadastro2-------------------*/
-
-
-
-
-
 
 /* -------------------Início Body Sobre------------------- */
 /* .body_sobre{
@@ -735,7 +671,7 @@ body{
 /* Fim Body Sobre */
 
 /* Início Quem somos */
-.conteudo_quem_somos{
+.conteudo_quem_somos {
     width: 80%;
     margin: auto;
     margin-top: 350px;
@@ -746,14 +682,14 @@ body{
     border-radius: 10px;
 }
 
-.quem_somos{
+.quem_somos {
     float: right;
     position: relative;
     text-align: center;
     padding: 50px;
 }
 
-.quem_somos_img img{
+.quem_somos_img img {
     border-radius: 50%;
     width: 200px;
     height: 200px;
@@ -764,41 +700,42 @@ body{
 /* Fim quem_somos */
 
 /* Início conteúdo sobre */
-.div_sobre{
+.div_sobre {
     width: 80%;
     height: 330px;
     text-align: center;
     margin: auto;
 }
 
-.box_sobre{
+.box_sobre {
     margin: 40px;
     border-radius: 10px;
     padding: 15px;
     display: inline-block;
     width: 30%;
     background-color: whitesmoke;
-    box-shadow: 0px  3px 9px rgb(27, 54, 30);
+    box-shadow: 0px 3px 9px rgb(27, 54, 30);
     border-bottom: solid rgb(27, 54, 30);
 }
 
-.box_sobre img{
+.box_sobre img {
     border-radius: 50%;
     width: 130px;
     height: 130px;
 }
 
-.box_sobre h3, .box_sobre p {
+.box_sobre h3,
+.box_sobre p {
     margin-top: 15px;
 }
 
-.box_sobre p{
+.box_sobre p {
     font-size: 15px;
 }
 /* Fim conteúdo sobre */
 
 /* Início Nosso objetivo */
-.nosso_objetivo{
+.nosso_objetivo {
     width: 80%;
     margin: auto;
     margin-top: 30px;
@@ -809,14 +746,14 @@ body{
     border-radius: 10px;
 }
 
-.objetivo_texto{
+.objetivo_texto {
     float: left;
     position: relative;
     text-align: center;
     padding: 50px;
 }
 
-.objetivo_img img{
+.objetivo_img img {
     object-fit: cover;
     border-radius: 50%;
     width: 300px;
@@ -827,7 +764,7 @@ body{
 /* Fim Nosso objetivo */
 
 /* Início Integrantes */
-.box_integrantes{
+.box_integrantes {
     width: 100%;
     height: 300px;
     margin: auto;
@@ -836,7 +773,7 @@ body{
     padding-bottom: 50px;
     margin-bottom: 80px;
 }
-.box_integrantes h2{
+.box_integrantes h2 {
     margin: auto;
     width: 400px;
     color: rgb(0, 0, 0);
@@ -844,19 +781,19 @@ body{
     padding: 15px;
 }
 
-.box-int{
+.box-int {
     margin: 15px;
     height: 150px;
     margin-top: 30px;
     border-radius: 50%;
-    box-shadow: 0px  1px 7px rgb(27, 54, 30);
+    box-shadow: 0px 1px 7px rgb(27, 54, 30);
     border-bottom: 6px solid rgb(27, 54, 30);
-    display: inline-block;    
+    display: inline-block;
     align-items: center;
     justify-content: center;
 }
 
-.box-int img{
+.box-int img {
     width: 150px;
     height: 150px;
     object-fit: cover;
@@ -864,16 +801,16 @@ body{
     -webkit-transition: 0.5s;
 }
 
-.box-int img:hover{
+.box-int img:hover {
     transform: scale(1.1);
     transition: 0.5s;
 }
 
-.box-int a{
+.box-int a {
     text-decoration: none;
 }
 
-.box-int h3{
+.box-int h3 {
     margin-top: 15px;
     color: rgb(0, 0, 0);
 }
@@ -881,12 +818,12 @@ body{
 
 /*-------------------Fim sobre-------------------*/
 
- /* Ancora (Botão que volta pro início da página) */
+/* Ancora (Botão que volta pro início da página) */
 
- .ancora{
+.ancora {
     left: 100%;
     bottom: 10px;
-    position: -webkit-sticky; 
+    position: -webkit-sticky;
     position: sticky; /* Fixa a ancora na posição nas linhas de cima */
     width: 50px;
     height: 50px;
@@ -900,34 +837,30 @@ body{
     -webkit-transition: 0.4s; /* Transição de volta */
 }
 
-.ancora:hover{ /* Efeito quando o mouse passa pela ancora */
+.ancora:hover {
+    /* Efeito quando o mouse passa pela ancora */
     transform: scale(1.08);
     transition: 0.4s;
 }
 
-.ancora img{
+.ancora img {
     width: 40px;
 }
 
 /* Fim da Ancora */
 
-
-
-
-
-
 /* Simulador Financeiro */
 
-.texto-vantagens{
-    text-indent: 40px;;
+.texto-vantagens {
+    text-indent: 40px;
     text-align: justify;
 }
 
-.vantagens-inicio{
+.vantagens-inicio {
     height: 500px;
 }
 
-.vantagens-input{
+.vantagens-input {
     background-color: rgba(196, 194, 194, 0.699);
     border-radius: 10px;
     width: 30%;
@@ -935,16 +868,16 @@ body{
     margin-top: 30px;
 }
 
-.vantagens-input label{
+.vantagens-input label {
     text-align: center;
 }
 
-.vantagens-input input{
+.vantagens-input input {
     width: 90%;
     text-align: center;
 }
 
-.card-simulador{
+.card-simulador {
     background-color: rgba(196, 194, 194, 0.699);
     border-radius: 10px;
     height: 300px;
@@ -952,7 +885,7 @@ body{
     text-align: center;
 }
 
-.card-simulador1{
+.card-simulador1 {
     background-color: rgba(75, 121, 63, 0.699);
     border-radius: 10px;
     height: 300px;
@@ -960,7 +893,7 @@ body{
     text-align: center;
 }
 
-.card-simulador5{
+.card-simulador5 {
     background-color: rgba(69, 190, 238, 0.493);
     border-radius: 10px;
     height: 300px;
@@ -968,7 +901,7 @@ body{
     text-align: center;
 }
 
-.card-simulador9{
+.card-simulador9 {
     background-color: rgba(196, 194, 194, 0.699);
     border-radius: 10px;
     height: 300px;
@@ -977,67 +910,68 @@ body{
     padding: 15px;
 }
 
-.simulador-result{
+.simulador-result {
     font-size: 30px;
     color: #10341c;
 }
 
-.simulador-result-ruim{
+.simulador-result-ruim {
     font-size: 30px;
     color: #7a0b0b;
 }
 
-.texto-azul{
+.texto-azul {
     color: #0f2091;
     font-size: 18px;
     font-weight: bold;
 }
 
-.texto-vermelho{
+.texto-vermelho {
     color: #7a0b0b;
     font-size: 18px;
     font-weight: bold;
 }
 
-.texto-verde{
+.texto-verde {
     color: #10341c;
     font-size: 18px;
     font-weight: bold;
 }
 
-.card-simulador span{
+.card-simulador span {
     font-size: 15px;
 }
 
-#camposSimulador{
+#camposSimulador {
     display: block;
     -webkit-animation: animate-div 1.5s;
 }
 
-#resultadoSimulador{
+#resultadoSimulador {
     display: none;
     -webkit-animation: animate-div 1.5s;
 }
 
 @-webkit-keyframes animate-div {
-    from { opacity: 0; margin-top: -150px;}
-    to { opacity: 1;margin-top: 0px;}
+    from {
+        opacity: 0;
+        margin-top: -150px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
 }
 
-.card-simulador sub{
-    font-size: 10px; 
+.card-simulador sub {
+    font-size: 10px;
 }
 
 /* Fim Simulador Financeiro */
 
-
-
-
-
-
 /* cards */
 
-.icone{
+.icone {
     background-color: #f8f8f8;
     padding: 50px;
     margin: 10px;
@@ -1048,20 +982,20 @@ body{
     height: 200px;
 }
 
-.icone:hover{
+.icone:hover {
     transform: scale(1.03);
     transition: 0.5s;
     box-shadow: 8px 8px 15px #9c9c9c;
 }
 
-.icone h3{
+.icone h3 {
     text-align: center;
     font-size: 15px;
     margin-top: 20px;
     color: #740202;
 }
 
-.icone img{
+.icone img {
     width: 30%;
     margin: 0 35% 0 35%;
 }
@@ -1070,7 +1004,7 @@ body{
 
 /* Email */
 
-.contato{
+.contato {
     width: 100%;
     height: 300px;
     background-image: url(img/estufa-wpp.jpg);
@@ -1080,27 +1014,26 @@ body{
     background-size: cover;
 }
 
-.emailContato{
+.emailContato {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    
 }
 
-.flex{
+.flex {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-.contato h2{
+.contato h2 {
     color: white;
     font-size: 30px;
 }
 
-.contato input{
+.contato input {
     background-color: transparent;
     width: 70%;
     color: white;
@@ -1114,7 +1047,7 @@ body{
     float: left;
 }
 
-.contato button{
+.contato button {
     width: 20%;
     height: 70px;
     color: white;
@@ -1129,7 +1062,7 @@ body{
     -webkit-transition: 0.5s;
 }
 
-.contato button:hover{
+.contato button:hover {
     transform: scale(1.1);
     transition: 0.5s;
 }
@@ -1137,24 +1070,24 @@ body{
 /* Fim email */
 
 /* Contato */
-.contato-equipe{
+.contato-equipe {
     margin-top: 50px;
 }
 
-.contato-equipe h3{
+.contato-equipe h3 {
     font-size: 28px;
     margin-bottom: 50px;
     text-align: center;
-    font-family: 'Mulish';
+    font-family: "Mulish";
 }
 
-.titulo-contato{
+.titulo-contato {
     width: 100%;
     text-align: center;
     margin-top: 50px;
 }
 
-.contato-imagem{
+.contato-imagem {
     width: 100%;
     height: 600px;
     background-image: url("img/morango-contato.jpg");
@@ -1162,29 +1095,29 @@ body{
     border-radius: 0px 20px 20px 0px;
 }
 
-.contato-contorno img{
+.contato-contorno img {
     width: 10%;
     transform: rotate(45deg);
 }
 
-.contato-contorno a{
+.contato-contorno a {
     text-decoration: none;
     -webkit-transition: 0.5s;
 }
 
-.contato-contorno a:hover{
+.contato-contorno a:hover {
     transform: scale(1.1);
     transition: 0.5s;
 }
 
-.contato-imagem h1{
+.contato-imagem h1 {
     font-size: 50px;
     color: #fff;
-    font-family: 'Mulish';
+    font-family: "Mulish";
     text-shadow: 3px 3px 5px #313131;
 }
 
-.contato-contorno{
+.contato-contorno {
     width: 85%;
     height: 85%;
     border: 1px #fff solid;
@@ -1195,7 +1128,7 @@ body{
     margin-bottom: 1rem;
 }
 
-.form-group textarea{
+.form-group textarea {
     font-size: 20px;
     padding: 10px 15px;
     height: 240px;
@@ -1205,17 +1138,8 @@ body{
 
 /* Fim Contato */
 
-
-
-
-
-
-
-
-
-
 /*-----------------DashBoard--------------------*/
-.body_dashboard{
+.body_dashboard {
     background-image: url(img/wallpaper_sobre.png);
 }
 
@@ -1227,44 +1151,40 @@ body{
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
-  }
-  
-  .dash {
+}
+
+.dash {
     margin: auto;
     text-align: center;
-  }
-  
-  .box {
-      color: #fff;
-      width: 28%;
-      height: 200px;
-      float: left;
-      margin: 25px 2% 2% 3%;
-  }
-  
-  .box h1 {
+}
+
+.box {
+    color: #fff;
+    width: 28%;
+    height: 200px;
+    float: left;
+    margin: 25px 2% 2% 3%;
+}
+
+.box h1 {
     font-size: 45px;
     margin: 40px 10px 0px 10px;
     border-bottom: solid #00000012 3px;
     font-weight: lighter;
-  }
-  .box h3 {
+}
+.box h3 {
     margin-bottom: 5px;
     margin-top: 15px;
-  }
-  
-  .color {
+}
+
+.color {
     background-color: rgb(27, 54, 30);
     border-radius: 10px;
-  }
+}
 
-  /*-----------------Fim DashBoard--------------------*/
+/*-----------------Fim DashBoard--------------------*/
 
-
-
-
-
-  /* ----------------------------Começo Sensors-------------------- */
+/* ----------------------------Começo Sensors-------------------- */
 .sectionDashBoard {
     padding: 5%;
     display: block;
@@ -1281,15 +1201,11 @@ body{
 }
 /* ------------------------------Fim Sensors------------------------- */
 
-
-
-
-
 /* ---------------------------------------------------------------------- */
-                            /* GRID */
+/* GRID */
 /* ---------------------------------------------------------------------- */
 
-.container-geral{
+.container-geral {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -1297,103 +1213,74 @@ body{
     height: auto;
 }
 
-.linha{
+.linha {
     display: flex;
     flex-wrap: wrap;
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
-.linha-dashboard{
+.linha-dashboard {
     display: flex;
     flex-wrap: wrap;
 }
 
-.col-1{
+.col-1 {
     width: 100%;
     flex: 0 0 auto;
 }
 
-.col-2{
+.col-2 {
     width: 50%;
     flex: 0 0 auto;
 }
 
-.col-3{
+.col-3 {
     width: 33.3333333333%;
     flex: 0 0 auto;
 }
 
-.col-3-3{
+.col-3-3 {
     width: 66.666666666%;
     flex: 0 0 auto;
 }
 
-.col-4{
+.col-4 {
     width: 25%;
     flex: 0 0 auto;
 }
 
-.col-5{
+.col-5 {
     width: 20%;
     flex: 0 0 auto;
 }
 
-.col-80{
+.col-80 {
     width: 80%;
     flex: 0 0 auto;
 }
 
 /* ---------------------------------------------------------------------- */
-                            /* FIM GRID */
+/* FIM GRID */
 /* ---------------------------------------------------------------------- */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Teste dashboard */
-.navbar-dashboard{
-    background-color: #fff;   
+.navbar-dashboard {
+    background-color: #fff;
     box-shadow: 5px 0 5px #888;
 }
 
-.navbar-fixed{
+.navbar-fixed {
     top: 10px;
-    left:0;
+    left: 0;
     position: sticky;
 }
 
-.navbar-dashboard a li:hover{
+.navbar-dashboard a li:hover {
     background-color: #f1f1f1;
 }
 
-.navbar-dashboard h1{
+.navbar-dashboard h1 {
     font-size: 30px;
     width: 100%;
     text-align: center;
@@ -1402,22 +1289,22 @@ body{
     -webkit-transition: 0.3s;
 }
 
-.navbar-dashboard h1:hover{
+.navbar-dashboard h1:hover {
     transition: 0.3s;
     transform: scale(1.1);
 }
 
-.navbar-dashboard h1 a{
+.navbar-dashboard h1 a {
     color: #313131;
     text-decoration: none;
 }
 
-.navbar-dashboard ul{
+.navbar-dashboard ul {
     margin-top: 30px;
     list-style: none;
 }
 
-.navbar-dashboard ul li{
+.navbar-dashboard ul li {
     height: 40px;
     padding-left: 30px;
     padding-top: 10px;
@@ -1425,26 +1312,26 @@ body{
     margin-top: 2px;
 }
 
-.navbar-dashboard ul .selected{
+.navbar-dashboard ul .selected {
     border-left: #7a0b0b solid 3px;
     padding-left: 25px;
 }
 
-.navbar-dashboard ul a{
+.navbar-dashboard ul a {
     text-decoration: none;
     color: #313131;
 }
 
-.navbar-dashboard ul a li i{
+.navbar-dashboard ul a li i {
     font-size: 20px;
     margin-right: 15px;
 }
 
-.navbar-dashboard .sair{
+.navbar-dashboard .sair {
     color: #e43131;
 }
 
-.header-dashboard{
+.header-dashboard {
     height: 60px;
     background-color: #7a0b0b;
     width: 100%;
@@ -1452,22 +1339,21 @@ body{
     padding-top: 20px;
 }
 
-
-.input-busca-dashboard{
-    width: 30%;    
+.input-busca-dashboard {
+    width: 30%;
     float: right;
 }
 
-.input-busca-dashboard input{
-    height: 30px; 
+.input-busca-dashboard input {
+    height: 30px;
     width: 85%;
 }
 
-.header-dashboard button{
+.header-dashboard button {
     float: right;
 }
 
-.header-dashboard img{
+.header-dashboard img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -1476,7 +1362,7 @@ body{
     margin-left: 15px;
 }
 
-.header-dashboard span{
+.header-dashboard span {
     float: right;
     color: white;
     margin-top: 8px;
@@ -1484,7 +1370,7 @@ body{
     margin-right: 50px;
 }
 
-.grafico-meses-dashboard{
+.grafico-meses-dashboard {
     background-color: rgb(247, 247, 247);
     width: 90%;
     height: 150px;
@@ -1492,68 +1378,69 @@ body{
     border-radius: 10px;
 }
 
-.grafico-meses-dashboard canvas{
+.grafico-meses-dashboard canvas {
     width: 50%;
     float: left;
 }
 
-.destaque-dashboard{
+.destaque-dashboard {
     height: 400px;
 }
 
-.historico-dashboard{
+.historico-dashboard {
     height: auto;
 }
 
-.historico-dashboard select{
+.historico-dashboard select {
     width: 30%;
     float: right;
     margin-right: 30px;
 }
 
-.table-historico-dashboard{
+.table-historico-dashboard {
     border-collapse: collapse;
     width: 100%;
 }
 
-.table-historico-dashboard td, th{
+.table-historico-dashboard td,
+th {
     border-bottom: 1px solid rgb(216, 216, 216);
     text-align: center;
 }
 
-.table-historico-dashboard th{
+.table-historico-dashboard th {
     font-weight: bold;
 }
 
-.table-historico-dashboard td{
+.table-historico-dashboard td {
     color: #313131;
 }
 
-.table-historico-dashboard tr{
+.table-historico-dashboard tr {
     height: 50px;
 }
 
-.id-historico-dashboard{
+.id-historico-dashboard {
     font-weight: bold;
 }
 
-.sensorTemperatura{
+.sensorTemperatura {
     color: #d8823c;
 }
 
-.sensorUmidade{
+.sensorUmidade {
     color: #364acf;
 }
 
-.gravidadeBaixa{
+.gravidadeBaixa {
     color: #166831;
 }
 
-.gravidadeMedia{
+.gravidadeMedia {
     color: orangered;
 }
 
-.gravidadeAlta{
+.gravidadeAlta {
     color: #cf1e1e;
     font-weight: bold;
 }

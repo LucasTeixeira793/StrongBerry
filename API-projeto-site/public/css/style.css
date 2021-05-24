@@ -1,13 +1,13 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 0;
-        /* SÓ COLOCAR QUANDO COLOCAR COR NO HEADER */
+    /* SÓ COLOCAR QUANDO COLOCAR COR NO HEADER */
     margin: 0;
-        /* SÓ COLOCAR QUANDO COLOCAR COR NO HEADER */
-        background-color: rgb(255, 95, 37);
+    /* SÓ COLOCAR QUANDO COLOCAR COR NO HEADER */
+    background-color: rgb(255, 95, 37);
 }
 
-.container { 
+.container {
     width: 80%;
     margin: auto;
 }
@@ -25,9 +25,9 @@ a {
 
 .header {
     background-color: #232323;
-        /*overflow: auto; /* cuidado*/
+    /*overflow: auto; /* cuidado*/
     height: 100px;
-        /*ATENÇÃO VOLTA A NAV AQUI SE SUMIR*/
+    /*ATENÇÃO VOLTA A NAV AQUI SE SUMIR*/
     border-bottom: 3px solid orangered;
 }
 
@@ -36,31 +36,31 @@ a {
 }
 
 .header .container .highlight {
-    color: orangered
+    color: orangered;
 }
 
 .header h1 {
     margin: 0;
     padding: 0;
     float: left;
-        /*ATENÇÃO - VAI SUMIR A NAV*/
+    /*ATENÇÃO - VAI SUMIR A NAV*/
     margin-top: 30px;
     color: white;
 }
 
 .header ul {
     list-style-type: none;
-        /*ATENÇÃO - NAO É NO NAV*/
+    /*ATENÇÃO - NAO É NO NAV*/
     float: right;
-        /*ATENÇÃO - VAI SUMIR A NAV*/
+    /*ATENÇÃO - VAI SUMIR A NAV*/
     margin-top: 40px;
 }
 
 .header li {
     float: left;
-        /*ATENÇÃO ORDENE OS ITENS NA MESMA ORDEM QUE ESTÃO NO HTML*/
+    /*ATENÇÃO ORDENE OS ITENS NA MESMA ORDEM QUE ESTÃO NO HTML*/
     margin-left: 18px;
-        /* FIM*/
+    /* FIM*/
 }
 
 .header a {
@@ -97,7 +97,6 @@ a {
     color: gray;
     text-align: center;
     padding-top: 150px;
-
 }
 
 .banner .titulo {
@@ -116,7 +115,6 @@ a {
     padding: 30px 0;
 }
 
-
 .novidades button {
     color: white;
     background-color: orangered;
@@ -134,7 +132,7 @@ a {
 
 .box {
     overflow: auto;
-    background-color: #fff ;
+    background-color: #fff;
 }
 
 .box .box-item {
@@ -171,7 +169,7 @@ a {
     padding-top: 30px;
     text-align: center;
     padding-bottom: 50px; /*aqui oh a diferença entre padding e margin*/
-    color: #3d3d3d
+    color: #3d3d3d;
 }
 
 .assuntos .assunto {
@@ -180,7 +178,7 @@ a {
     padding: 50px 15px;
     float: left;
     width: 40%;
-    margin-left: 5%; 
+    margin-left: 5%;
 }
 
 .assuntos h2 {
@@ -199,7 +197,7 @@ a {
     background-color: #232323;
     text-align: center;
     overflow: auto;
-} 
+}
 
 .nosso-time h2 {
     margin: 0;
@@ -214,7 +212,6 @@ a {
     margin-top: 30px;
     padding-bottom: 35px;
 }
-
 
 .nosso-time .integrantes .integrante {
     /*border: 3px solid cyan;*/
@@ -239,5 +236,5 @@ a {
     padding: 50px 30px;
     float: left;
     /* width: 450px; */
-    margin-left: 55px; 
+    margin-left: 55px;
 }

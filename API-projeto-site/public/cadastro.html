@@ -35,30 +35,35 @@
                 <h1>Faça aqui seu cadastro!</h1>
                 <div class="formulario">
                     <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-                        Nome completo
+                        Nome completo:
                         <input type="text" name="username" class="input-padrao" autofocus="autofocus" placeholder="Nome e sobrenome" required minlength="4">
                         
-                        Login
+                        Login:
                         <input type="text" name="email" class="input-padrao" placeholder="seu nome de usuário" required minlength="4">
                         
-                        Senha
+                        Senha:
                         <input type="password" name="password" class="input-padrao" placeholder="***************" required minlength="4">
     
-                        nomeEmpresa
+                        Nome da Empresa:
                         <input type="text" name="nomeEmpresa" class="input-padrao" placeholder="seu nome da empresa" required minlength="4">
                         
-                        cnpj
+                        cnpj:
                         <input type="text" name="cnpj" class="input-padrao" placeholder="Seu CNPJ" required minlength="4">
     
-                        Telefone
+                        Telefone:
                         <input type="text" name="telefone" class="input-padrao" placeholder="seu telefone" required minlength="4">
                         
-                        escalaProducao
+                        escalaProducao:
                         <input type="text" name="escalaProducao" class="input-padrao" placeholder="escala Producao" required minlength="4">
     
-                        Endereco
+                        Endereco:
                         <input type="number" name="endereco" class="input-padrao" placeholder="Endereco" required minlength="4">
                         
+                        Cep:
+                        <input type="number" name="cep" class="input-padrao" placeholder="cep" required minlength="4" >
+
+                        Numero da Casa:
+                        <input type="number" name="numero" class="input-padrao" placeholder="numero" required minlength="4" >
                             
                         <input type="submit" id="btn_entrar" value="Cadastrar" class="btn-green">
                     </form>
