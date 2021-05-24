@@ -52,7 +52,6 @@ CREATE TABLE tblSensores(
     FOREIGN KEY (estufa) REFERENCES tblEstufa(idEstufa)    
 );
 
-desc tblDados;
 CREATE TABLE tblDados(
 	idDados INT PRIMARY KEY AUTO_INCREMENT,
     sensores INT,
@@ -105,12 +104,10 @@ INSERT INTO tblDados (idDados, sensores, temperatura, umidade, dataColeta)
            (4, 5, 15.08, 60, '2021-10-20 05:40:30.945944'),
            (5, 1, 19.65, 69, '2021-11-01 02:10:20.554741');
            
-SELECT * FROM tblTipoPlantio;
-SELECT * FROM tblEndereco;
-SELECT * FROM tblCliente;
-SELECT * FROM tblEstufa;
-SELECT * FROM tblSensores;
-SELECT * FROM tblDados;
-
-
+-- SELECT * FROM tblTipoPlantio;
+-- SELECT * FROM tblEndereco;
+-- SELECT * FROM tblCliente;
+-- SELECT * FROM tblEstufa;
+-- SELECT * FROM tblSensores;
+-- SELECT * FROM tblDados;
 
