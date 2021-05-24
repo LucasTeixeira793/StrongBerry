@@ -36,34 +36,31 @@
                 <div class="formulario">
                     <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
                         Nome completo:
-                        <input type="text" name="username" class="input-padrao" autofocus="autofocus" placeholder="Nome e sobrenome" required minlength="4">
+                        <input type="text" name="username" class="input-padrao" autofocus="autofocus" placeholder="Nome e sobrenome" required minlength="4" maxlength="45">
                         
                         Login:
-                        <input type="text" name="email" class="input-padrao" placeholder="seu nome de usuário" required minlength="4">
+                        <input type="text" name="email" class="input-padrao" placeholder="Email" required minlength="4" maxlength="80">
                         
                         Senha:
-                        <input type="password" name="password" class="input-padrao" placeholder="***************" required minlength="4">
+                        <input type="password" name="password" class="input-padrao" placeholder="***************" required minlength="4" maxlength="45">
     
                         Nome da Empresa:
-                        <input type="text" name="nomeEmpresa" class="input-padrao" placeholder="seu nome da empresa" required minlength="4">
+                        <input type="text" name="nomeEmpresa" class="input-padrao" placeholder="seu nome da empresa" required minlength="4" maxlength="40">
                         
-                        cnpj:
-                        <input type="text" name="cnpj" class="input-padrao" placeholder="Seu CNPJ" required minlength="4">
+                        Cnpj:
+                        <input type="text" name="cnpj" class="input-padrao" placeholder="Seu CNPJ" required minlength="4" maxlength="14">
     
                         Telefone:
-                        <input type="text" name="telefone" class="input-padrao" placeholder="seu telefone" required minlength="4">
+                        <input type="text" name="telefone" class="input-padrao" placeholder="Seu telefone" required minlength="4" maxlength="11">
                         
-                        escalaProducao:
-                        <input type="text" name="escalaProducao" class="input-padrao" placeholder="escala Producao" required minlength="4">
-    
-                        Endereco:
-                        <input type="number" name="endereco" class="input-padrao" placeholder="Endereco" required minlength="4">
-                        
+                        EscalaProducao:
+                        <input type="text" name="escalaProducao" class="input-padrao" placeholder="escala Producao" required minlength="4" maxlength="40">
+                            
                         Cep:
                         <input type="number" name="cep" class="input-padrao" placeholder="cep" required minlength="4" >
 
                         Numero da Casa:
-                        <input type="number" name="numero" class="input-padrao" placeholder="numero" required minlength="4" >
+                        <input type="text" name="numero" class="input-padrao" placeholder="numero" required minlength="2" maxlength="8">
                             
                         <input type="submit" id="btn_entrar" value="Cadastrar" class="btn-green">
                     </form>
