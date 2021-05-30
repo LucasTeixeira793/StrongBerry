@@ -10,6 +10,14 @@
     margin: auto;
 }
 
+input {
+    outline: 0;
+}
+
+textarea {
+    outline: 0;
+}
+
 *{
     margin: 0;
     padding: 0;
