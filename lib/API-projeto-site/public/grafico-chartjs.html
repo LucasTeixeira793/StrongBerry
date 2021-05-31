@@ -1,47 +1,249 @@
 <!DOCTYPE html>
 <html lang="pt">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Projeto IoT - Gráficos</title>
-        <link rel="stylesheet" href="css/dashboards.css" />
 
-        <!-- script do google charts -->
-        <script
-            type="text/javascript"
-            src="https://www.gstatic.com/charts/loader.js"
-        ></script>
-        <script type="text/javascript" src="funcoes.js"></script>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto IoT - Gráficos</title>
+    <!-- <link rel="stylesheet" href="css/dashboards.css" /> -->
 
-        <!-- scripts do Chart.js -->
-        <script
-            type="text/javascript"
-            src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"
-        ></script>
-        <!-- <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script> -->
-        <script type="text/javascript" src="funcoes.js"></script>
+    <!-- script do google charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="funcoes.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        <style>
-            /* Classes CSS para exemplos de alertas */
+    <!-- scripts do Chart.js -->
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+    <!-- <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script> -->
+    <!-- <script type="text/javascript" src="funcoes.js"></script> -->
 
-            .normal {
-                background-color: white;
-            }
+    <style>
+        /* Classes CSS para exemplos de alertas */
 
-            .alerta-alto {
-                background-color: tomato;
-            }
+        .normal {
+            background-color: white;
+        }
 
-            .alerta-baixo {
-                background-color: aquamarine;
-            }
-        </style>
-    </head>
+        .alerta-alto {
+            background-color: tomato;
+        }
 
-    <body onload="obterDadosGraficoPrimeiraVez">
-        <!--header inicio-->
+        .alerta-baixo {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
 
-        <div class="header">
+<body onload="obterDadosGraficoPrimeiraVez">
+    <!--header inicio-->
+    <div class="linha-dashboard">
+        <!-- Navbar -->
+        <div class="col-5 navbar-dashboard">
+            <div class="navbar-fixed">
+                <h1><a href="dashboard.html">StrongBerry</a></h1>
+                <ul>
+                    <a href="">
+                        <li class="selected">
+                            <i class="fa fa-signal" aria-hidden="true"></i>
+                            Dashboard
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            Perfil
+                        </li>
+                    </a>
+
+                    <!-- <a href="../API/strongberry_api_4.0v/Graph_lm35_dht11.html">
+                        <li>
+                            <i class="fa fa-tint" aria-hidden="true"></i>
+                            Sensores
+                        </li>
+                    </a> -->
+                    <a href="tempo-real.html">
+                        <li>
+                            <i class="far fa-clock"></i>
+                            Tempo Real
+                        </li>
+                    </a>
+
+                    <a href="pagina-estatica-chartsjs.html">
+                        <li>
+                            <i class="far fa-chart-bar"></i>
+                            Gráfico Estático
+                        </li>
+                    </a>
+                    <!-- <a href="">
+                        <li>
+                            <i class="fa fa-history" aria-hidden="true"></i>
+                            Histórico
+                        </li>
+                    </a> -->
+                    <a href="">
+                        <li>
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                            Abrir chamado
+                        </li>
+                    </a>
+                    <!-- <a href="">
+                        <li>
+                            <i class="fa fa-cog" aria-hidden="true"></i>
+                            Configurações
+                        </li>
+                    </a> -->
+                    <a href="index.html" onclick="logoff()">
+                        <li class="sair">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Sair
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Conteudo -->
+        <div class="col-80">
+            <div class="header-dashboard">
+                <a href="">
+                    <span>Nome</span>
+                    <img src="img/perfil.jpg" alt="" />
+                </a>
+                <button class="button-padrao">Buscar</button>
+                <div class="input-busca-dashboard">
+                    <input type="text" placeholder="Buscar" class="input-padrao" />
+                </div>
+            </div>
+            <div class="linha">
+                <div class="col-2">
+                    <div class="flex">
+                        <h2>Média mensal de temperatura (ºC)</h2>
+                        <div class="grafico-meses-dashboard">
+                            <canvas id="miniGraficoTemp"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="flex">
+                        <h2>Média mensal de umidade (%)</h2>
+                        <div class="grafico-meses-dashboard flex">
+                            <canvas id="miniGraficoUmi"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 flex">
+                <div class="grafico-meses-dashboard destaque-dashboard">
+                    <div class="linha">
+                        <button id="botaoCaminhao1" class="button-monitoramento" onclick="chamargraficos(1)">
+                            Monitoramento 1
+                        </button>
+                        <button id="botaoCaminhao2" class="button-monitoramento" onclick="chamargraficos(2)">
+                            Monitoramento 2
+                        </button>
+                        <button id="botaoCaminhao3" class="button-monitoramento" onclick="chamargraficos(3)">
+                            Monitoramento 3
+                        </button>
+                        <button id="botaoCaminhao4" class="button-monitoramento" onclick="chamargraficos(4)">
+                            Monitoramento 4
+                        </button>
+                    </div>
+                    <div style="width: 75%; margin: auto">
+                        <div id="div_aguarde">Dados sendo obtidos...</div>
+                        <canvas id="canvas_grafico"></canvas>
+                    </div>
+                    <!-- <canvas id="graficoDestaque"> </canvas> -->
+                </div>
+            </div>
+            <div class="col-1 flex">
+                <div class="grafico-meses-dashboard historico-dashboard">
+                    <div class="linha-dashboard">
+                        <div class="col-3">
+                            <h3>Histórico de ocorrências</h3>
+                        </div>
+                        <div class="col-3-3">
+                            <select class="input-padrao" id="">
+                                <option value="">dezembro de 2020</option>
+                                <option value="">Janeiro de 2021</option>
+                                <option value="">Fevereiro de 2021</option>
+                                <option value="">Março de 2021</option>
+                                <option value="">Abril de 2021</option>
+                                <option value="" selected>Maio de 2021</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br />
+                    <table class="table-historico-dashboard">
+                        <tr>
+                            <th>#</th>
+                            <th>Ocorrência</th>
+                            <th>Setor</th>
+                            <th>Sensor</th>
+                            <th>Data e Hora</th>
+                            <th>Gravidade</th>
+                        </tr>
+                        <tr>
+                            <td class="id-historico-dashboard">150</td>
+                            <td>Aumento de 2ºC</td>
+                            <td>A</td>
+                            <td>
+                                <span class="sensorTemperatura">Temperatura</span>
+                            </td>
+                            <td>10/04/2021 16:43</td>
+                            <td>
+                                <span class="gravidadeBaixa">Baixa</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="id-historico-dashboard">151</td>
+                            <td>Umidade em 50%</td>
+                            <td>B</td>
+                            <td>
+                                <span class="sensorUmidade">Umidade</span>
+                            </td>
+                            <td>09/04/2021 14:16</td>
+                            <td>
+                                <span class="gravidadeAlta">Alta</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="id-historico-dashboard">152</td>
+                            <td>Umidade em 70%</td>
+                            <td>B</td>
+                            <td>
+                                <span class="sensorUmidade">Umidade</span>
+                            </td>
+                            <td>09/04/2021 11:00</td>
+                            <td>
+                                <span class="gravidadeBaixa">Baixa</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="id-historico-dashboard">153</td>
+                            <td>Aumento de 4ºC</td>
+                            <td>C</td>
+                            <td>
+                                <span class="sensorTemperatura">Temperatura</span>
+                            </td>
+                            <td>07/04/2021 18:10</td>
+                            <td>
+                                <span class="gravidadeMedia">Média</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="header">
             <div class="container">
                 <h1 class="titulo">
                     <span class="highlight">Projeto</span> IoT Revolucionário
@@ -53,42 +255,120 @@
                     <ul>
                         <li><a href="tempo-real.html">Tempo Real</a></li>
                         <li>
-                            <a href="#" class="highlight" onclick="logoff()"
-                                >LOGOUT</a
-                            >
+                            <a href="#" class="highlight" onclick="logoff()">LOGOUT</a>
                         </li>
                         <li>
                             <a href="pagina-estatica-chartsjs.html">
-                                <i class="show-on-hover"
-                                    >IR PARA PÁGINA GRÁFICO ESTÁTICO</i
-                                >
+                                <i class="show-on-hover">IR PARA PÁGINA GRÁFICO ESTÁTICO</i>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
-        </div>
-        <!--header fim-->
+        </div> 
+    </div> -->
+    <!--header fim-->
 
-        <div class="dashboard">
-            <button id="botaoCaminhao1" class="btn" onclick="chamargraficos(1)">
-                Caminhão 1
-            </button>
-            <button id="botaoCaminhao2" class="btn" onclick="chamargraficos(2)">
-                Caminhão 2
-            </button>
-            <button id="botaoCaminhao3" class="btn" onclick="chamargraficos(3)">
-                Caminhão 3
-            </button>
-            <button id="botaoCaminhao4" class="btn" onclick="chamargraficos(4)">
-                Caminhão 4
-            </button>
-            <div style="width: 75%; margin: auto">
-                <div id="div_aguarde">Dados sendo obtidos...</div>
-                <canvas id="canvas_grafico"></canvas>
+    <!-- <div class="dashboard">
+        <button id="botaoCaminhao1" class="btn" onclick="chamargraficos(1)">
+            Caminhão 1
+        </button>
+        <button id="botaoCaminhao2" class="btn" onclick="chamargraficos(2)">
+            Caminhão 2
+        </button>
+        <button id="botaoCaminhao3" class="btn" onclick="chamargraficos(3)">
+            Caminhão 3
+        </button>
+        <button id="botaoCaminhao4" class="btn" onclick="chamargraficos(4)">
+            Caminhão 4
+        </button>
+        <div style="width: 75%; margin: auto">
+            <div id="div_aguarde">Dados sendo obtidos...</div>
+            <canvas id="canvas_grafico"></canvas>
+        </div>
+    </div> -->
+    <!-- RODAPÉ -->
+    <div class="footer">
+        <div class="container-footer">
+            <div class="linha">
+                <div class="col-5">
+                    <!-- <a href="index.html"><img src="img/logo-light-text.png" alt=""></a> -->
+                    <a href="index.html">
+                        <h1>StrongBerry</h1>
+                    </a>
+                </div>
+                <div class="col-5">
+                    <ul>
+                        <li>
+                            <a href="index.html#navbar"><b>Início:</b></a>
+                        </li>
+                        <br />
+                        <li>
+                            <a href="index.html#quemSomos">Quem somos?</a>
+                        </li>
+                        <li>
+                            <a href="index.html#proposta">Nossa proposta</a>
+                        </li>
+                        <li>
+                            <a href="index.html#noticias">Receba notícias</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-5">
+                    <ul>
+                        <li><b>Páginas:</b></li>
+                        <br />
+                        <li><a href="">Para seu negócio</a></li>
+                        <li><a href="">Contato</a></li>
+                        <li><a href="">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-5">
+                    <ul>
+                        <br /><br />
+                        <li><a href="">Termos de uso</a></li>
+                        <li><a href="">Contratar</a></li>
+                        <!-- <li><a href=""></a></li>
+                                <li><a href=""></a></li> -->
+                    </ul>
+                </div>
+                <div class="col-5">
+                    <ul>
+                        <li><b>Informações:</b></li>
+                        <br />
+                        <li>
+                            <span>Email: </span><a href="">strongberry@email.com</a>
+                        </li>
+                        <li>
+                            <span>Contato: </span><a href="">11 91111-2222</a>
+                        </li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="linha">
+                <div class="col-1">
+                    <center>
+                        <a href="" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                        <a href="" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                    </center>
+                </div>
             </div>
         </div>
-    </body>
+    </div>
+    <div class="copyright">
+        <div class="linha">
+            <label>Copyright <a href="#">StrongBerry</a>, 2021</label>
+        </div>
+    </div>
+    <!-- FIM RODAPÉ -->
+
+    <script src="dashboard.js"></script>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/47509d94ad.js" crossorigin="anonymous"></script>
+</body>
+
 </html>
 <script>
     let proximaAtualizacao;
@@ -97,10 +377,10 @@
 
     function alterarCoresBotoes(idcaminhao) {
         console.log("executei alterarCoresBotoes");
-        botaoCaminhao1.className = "btn";
-        botaoCaminhao2.className = "btn";
-        botaoCaminhao3.className = "btn";
-        botaoCaminhao4.className = "btn";
+        botaoCaminhao1.className = "button-monitoramento";
+        botaoCaminhao2.className = "button-monitoramento";
+        botaoCaminhao3.className = "button-monitoramento";
+        botaoCaminhao4.className = "button-monitoramento";
 
         if (idcaminhao == "1") {
             botaoCaminhao1.className += " btn-now";
@@ -179,9 +459,7 @@
             .then(function (response) {
                 if (response.ok) {
                     response.json().then(function (resposta) {
-                        console.log(
-                            `Dados recebidos: ${JSON.stringify(resposta)}`
-                        );
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                         resposta.reverse();
 
                         var dados = {
@@ -190,16 +468,16 @@
                                 {
                                     yAxisID: "y-temperatura",
                                     label: "Temperatura",
-                                    borderColor: "rgba(255,0,0,1)",
-                                    backgroundColor: "rgba(255,0,0,1)",
+                                    borderColor: "#166831",
+                                    backgroundColor: "#166831",
                                     fill: false,
                                     data: [],
                                 },
                                 {
                                     yAxisID: "y-umidade",
                                     label: "Umidade",
-                                    borderColor: "rgba(255,0,255,1)",
-                                    backgroundColor: "rgba(255,0,255,1)",
+                                    borderColor: "#cf1e1e",
+                                    backgroundColor: "#cf1e1e",
                                     fill: false,
                                     data: [],
                                 },
@@ -235,9 +513,7 @@
                 console.log("Estou tentando pegar idcaminhao = ", idcaminhao);
                 if (response.ok) {
                     response.json().then(function (novoRegistro) {
-                        console.log(
-                            `Dados recebidos: ${JSON.stringify(novoRegistro)}`
-                        );
+                        console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
                         console.log(`Dados atuais do gráfico: ${dados}`);
 
                         // tirando e colocando valores no gráfico
@@ -297,328 +573,3 @@
         sendData();
     }, 2000);
 </script>
-
-<!--
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="style.css" />
-        <link rel="shortcut icon" href="img/favicon.png" />
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        
-        <title>StrongBerry</title>
-    </head>
-
-    <body>
-        <div class="linha-dashboard">
-           
-            <div class="col-5 navbar-dashboard">
-                <div class="navbar-fixed">
-                    <h1><a href="dashboard.html">StrongBerry</a></h1>
-                    <ul>
-                        <a href=""
-                            ><li class="selected">
-                                <i class="fa fa-signal" aria-hidden="true"></i>
-                                Dashboard
-                            </li></a
-                        >
-                        <a href=""
-                            ><li>
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                Perfil
-                            </li></a
-                        >
-                        <a
-                            href="../API/strongberry_api_4.0v/Graph_lm35_dht11.html"
-                            ><li>
-                                <i class="fa fa-tint" aria-hidden="true"></i>
-                                Sensores
-                            </li></a
-                        >
-                        <a href=""
-                            ><li>
-                                <i class="fa fa-history" aria-hidden="true"></i>
-                                Histórico
-                            </li></a
-                        >
-                        <a href=""
-                            ><li>
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                Abrir chamado
-                            </li></a
-                        >
-                        <a href=""
-                            ><li>
-                                <i class="fa fa-cog" aria-hidden="true"></i>
-                                Configurações
-                            </li></a
-                        >
-                        <a href="index.html"
-                            ><li class="sair">
-                                <i
-                                    class="fa fa-sign-out"
-                                    aria-hidden="true"
-                                ></i>
-                                Sair
-                            </li></a
-                        >
-                    </ul>
-                </div>
-            </div>
-
-           
-            <div class="col-80">
-                <div class="header-dashboard">
-                    <a href="">
-                        <span>Nome</span>
-                        <img src="img/perfil.jpg" alt="" />
-                    </a>
-                    <button class="button-padrao">Buscar</button>
-                    <div class="input-busca-dashboard">
-                        <input
-                            type="text"
-                            placeholder="Buscar"
-                            class="input-padrao"
-                        />
-                    </div>
-                </div>
-                <div class="linha">
-                    <div class="col-2">
-                        <div class="flex">
-                            <h2>Média mensal de temperatura (ºC)</h2>
-                            <div class="grafico-meses-dashboard">
-                                <canvas id="miniGraficoTemp"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="flex">
-                            <h2>Média mensal de umidade (%)</h2>
-                            <div class="grafico-meses-dashboard flex">
-                                <canvas id="miniGraficoUmi"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="linha">
-                    <div class="col-1 flex">
-                        <div class="grafico-meses-dashboard destaque-dashboard">
-                            <canvas id="graficoDestaque"> </canvas>
-                        </div>
-                    </div>
-                </div>
-                <div class="linha">
-                    <div class="col-1 flex">
-                        <div
-                            class="grafico-meses-dashboard historico-dashboard"
-                        >
-                            <div class="linha-dashboard">
-                                <div class="col-3">
-                                    <h3>Histórico de ocorrências</h3>
-                                </div>
-                                <div class="col-3-3">
-                                    <select class="input-padrao" id="">
-                                        <option value="">
-                                            dezembro de 2020
-                                        </option>
-                                        <option value="">
-                                            Janeiro de 2021
-                                        </option>
-                                        <option value="">
-                                            Fevereiro de 2021
-                                        </option>
-                                        <option value="">Março de 2021</option>
-                                        <option value="" selected>
-                                            Abril de 2021
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
-                            <br />
-                            <table class="table-historico-dashboard">
-                                <tr>
-                                    <th>#</th>
-                                    <th>Ocorrência</th>
-                                    <th>Setor</th>
-                                    <th>Sensor</th>
-                                    <th>Data e Hora</th>
-                                    <th>Gravidade</th>
-                                </tr>
-                                <tr>
-                                    <td class="id-historico-dashboard">150</td>
-                                    <td>Aumento de 2ºC</td>
-                                    <td>A</td>
-                                    <td>
-                                        <span class="sensorTemperatura"
-                                            >Temperatura</span
-                                        >
-                                    </td>
-                                    <td>10/04/2021 16:43</td>
-                                    <td>
-                                        <span class="gravidadeBaixa"
-                                            >Baixa</span
-                                        >
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="id-historico-dashboard">151</td>
-                                    <td>Umidade em 50%</td>
-                                    <td>B</td>
-                                    <td>
-                                        <span class="sensorUmidade"
-                                            >Umidade</span
-                                        >
-                                    </td>
-                                    <td>09/04/2021 14:16</td>
-                                    <td>
-                                        <span class="gravidadeAlta">Alta</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="id-historico-dashboard">152</td>
-                                    <td>Umidade em 70%</td>
-                                    <td>B</td>
-                                    <td>
-                                        <span class="sensorUmidade"
-                                            >Umidade</span
-                                        >
-                                    </td>
-                                    <td>09/04/2021 11:00</td>
-                                    <td>
-                                        <span class="gravidadeBaixa"
-                                            >Baixa</span
-                                        >
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="id-historico-dashboard">153</td>
-                                    <td>Aumento de 4ºC</td>
-                                    <td>C</td>
-                                    <td>
-                                        <span class="sensorTemperatura"
-                                            >Temperatura</span
-                                        >
-                                    </td>
-                                    <td>07/04/2021 18:10</td>
-                                    <td>
-                                        <span class="gravidadeMedia"
-                                            >Média</span
-                                        >
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-     
-        <div class="footer">
-            <div class="container-footer">
-                <div class="linha">
-                    <div class="col-5">
-                        
-                        <a href="index.html">
-                            <h1>StrongBerry</h1>
-                        </a>
-                    </div>
-                    <div class="col-5">
-                        <ul>
-                            <li>
-                                <a href="index.html#navbar"><b>Início:</b></a>
-                            </li>
-                            <br />
-                            <li>
-                                <a href="index.html#quemSomos">Quem somos?</a>
-                            </li>
-                            <li>
-                                <a href="index.html#proposta">Nossa proposta</a>
-                            </li>
-                            <li>
-                                <a href="index.html#noticias"
-                                    >Receba notícias</a
-                                >
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-5">
-                        <ul>
-                            <li><b>Páginas:</b></li>
-                            <br />
-                            <li><a href="">Para seu negócio</a></li>
-                            <li><a href="">Contato</a></li>
-                            <li><a href="">Login</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-5">
-                        <ul>
-                            <br /><br />
-                            <li><a href="">Termos de uso</a></li>
-                            <li><a href="">Contratar</a></li>
-                            
-                        </ul>
-                    </div>
-                    <div class="col-5">
-                        <ul>
-                            <li><b>Informações:</b></li>
-                            <br />
-                            <li>
-                                <span>Email: </span
-                                ><a href="">strongberry@email.com</a>
-                            </li>
-                            <li>
-                                <span>Contato: </span
-                                ><a href="">11 91111-2222</a>
-                            </li>
-                            <li></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="linha">
-                    <div class="col-1">
-                        <center>
-                            <a href="" target="_blank"
-                                ><i
-                                    class="fa fa-facebook-official"
-                                    aria-hidden="true"
-                                ></i
-                            ></a>
-                            <a href="" target="_blank"
-                                ><i class="fa fa-twitter" aria-hidden="true"></i
-                            ></a>
-                            <a href="" target="_blank"
-                                ><i class="fa fa-youtube" aria-hidden="true"></i
-                            ></a>
-                        </center>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <div class="linha">
-                <label>Copyright <a href="#">StrongBerry</a>, 2021</label>
-            </div>
-        </div>
-       
-
-        <script src="dashboard.js"></script>
-        <script src="script.js"></script>
-        <script
-            src="https://kit.fontawesome.com/47509d94ad.js"
-            crossorigin="anonymous"
-        ></script>
-    </body>
-</html>
-
-
--->
