@@ -486,14 +486,13 @@ body {
 }
 
 .body_cadastro {
-  background-image: url("img/wallpaper_sobre.png");
+  background-image: url("https://i2.wp.com/www.globaltrademag.com/wp-content/uploads/2020/02/shutterstock_image-2-3.jpg?fit=699%2C393&ssl=1");
   width: 100%;
-  height: 100%;
+  height: 1000px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-
 /*  
 .body_cadastro{
     background-image: url('img/wallpaper_strawberry.jpg');
