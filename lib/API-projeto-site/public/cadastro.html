@@ -37,52 +37,50 @@
             <h1>
                 Faça seu cadastro
             </h1>
-            <form id="form_email" method="post" onsubmit="return entrar()">
-                <div class="formulario">
-                    <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-                        <input type="text" name="username" class="input-padrao" autofocus="autofocus"
-                            placeholder="Nome Completo" required minlength="4" maxlength="45">
+            <div class="formulario">
+                <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                    <input type="text" name="username" class="input-padrao" autofocus="autofocus"
+                        placeholder="Nome Completo" required minlength="4" maxlength="45">
 
-                        <input type="text" name="email" class="input-padrao" placeholder="Email" required minlength="4"
-                            maxlength="80">
+                    <input type="text" name="email" class="input-padrao" placeholder="Email" required minlength="4"
+                        maxlength="80">
 
-                        <input type="password" name="password" class="input-padrao" placeholder="***************"
-                            required minlength="4" maxlength="45">
+                    <input type="password" name="password" class="input-padrao" placeholder="***************" required
+                        minlength="4" maxlength="45">
 
-                        <input type="text" name="nomeEmpresa" class="input-padrao" placeholder="Nome da Empresa"
-                            required minlength="4" maxlength="40">
+                    <input type="text" name="nomeEmpresa" class="input-padrao" placeholder="Nome da Empresa" required
+                        minlength="4" maxlength="40">
 
-                        <input type="text" name="cnpj" class="input-padrao" placeholder="CNPJ" required minlength="4"
-                            maxlength="14">
+                    <input type="text" name="cnpj" class="input-padrao" placeholder="CNPJ" required minlength="4"
+                        maxlength="14">
 
-                        <input type="text" name="telefone" class="input-padrao" placeholder="Telefone" required
-                            minlength="4" maxlength="11">
+                    <input type="text" name="telefone" class="input-padrao" placeholder="Telefone" required
+                        minlength="4" maxlength="11">
 
-                        <input type="text" name="escalaProducao" class="input-padrao" placeholder="Escala Produção"
-                            required minlength="4" maxlength="40">
+                    <input type="text" name="escalaProducao" class="input-padrao" placeholder="Escala Produção" required
+                        minlength="4" maxlength="40">
 
-                        <input type="number" name="cep" class="input-padrao" placeholder="Cep" required minlength="4">
+                    <input type="number" name="cep" class="input-padrao" placeholder="Cep" required minlength="4">
 
-                        <input type="text" name="numero" class="input-padrao" placeholder="Némero" required
-                            minlength="2" maxlength="8">
+                    <input type="text" name="numero" class="input-padrao" placeholder="Némero" required minlength="2"
+                        maxlength="8">
 
-                    </form>
 
                     <button type="submit" id="btn_entrar" value="Cadastrar" class="btn-green">
                         SIGN IN
                     </button><br>
-            </form>
-            <span class="span_login">Já possui cadastro? <a href="login.html">Entre aqui.</a><br>
-                <a href="">Esqueceu sua senha?</a></span>
+                </form>
+                <span class="span_login">Já possui cadastro? <a href="login.html">Entre aqui.</a><br>
+                    <a href="">Esqueceu sua senha?</a></span>
 
-            <div class="extra">
-                <div id="div_erro" class="msg_erro"></div>
+                <div class="extra">
+                    <div id="div_erro" class="msg_erro"></div>
+                </div>
+                <!-- FIm Login -->
             </div>
-            <!-- FIm Login -->
         </div>
-    </div>
 
-    <!-- <div class="contato">
+        <!-- <div class="contato">
                 <div class="container">
                     <h1>Faça aqui seu cadastro!</h1>
                     <div class="formulario">
@@ -141,13 +139,13 @@
 
 
 
-    <!--footer inicio-->
-    <!-- <div class="footer">
+        <!--footer inicio-->
+        <!-- <div class="footer">
                 <div class="container">
                     <h4>Feito com carinho por um aluno BandTec. Copyright © 2021</h4>
                 </div>
             </div> -->
-    <!--footer fim-->
+        <!--footer fim-->
 
 </body>
 
@@ -182,13 +180,13 @@
 
     function aguardar() {
         btn_entrar.disabled = true;
-        img_aguarde.style.display = 'block';
+        // img_aguarde.style.display = 'block';
         div_erro.style.display = 'none';
     }
 
     function finalizar_aguardar() {
         btn_entrar.disabled = false;
-        img_aguarde.style.display = 'none';
+        // img_aguarde.style.display = 'none';
         div_erro.style.display = 'block';
     }
 

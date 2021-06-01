@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projeto IoT - Gráficos</title>
+    <title>StrongBerry</title>
     <!-- <link rel="stylesheet" href="css/dashboards.css" /> -->
 
     <!-- script do google charts -->
@@ -55,12 +55,12 @@
                             Dashboard
                         </li>
                     </a>
-                    <a href="">
+                    <!-- <a href="">
                         <li>
                             <i class="fa fa-user" aria-hidden="true"></i>
                             Perfil
                         </li>
-                    </a>
+                    </a> -->
 
                     <!-- <a href="../API/strongberry_api_4.0v/Graph_lm35_dht11.html">
                         <li>
@@ -78,7 +78,7 @@
                     <a href="pagina-estatica-chartsjs.html">
                         <li>
                             <i class="far fa-chart-bar"></i>
-                            Gráfico Estático
+                            Gráfico
                         </li>
                     </a>
                     <!-- <a href="">
@@ -113,7 +113,7 @@
         <div class="col-80">
             <div class="header-dashboard">
                 <a href="">
-                    <span>Nome</span>
+                    <span id="nome_user"></span>
                     <img src="img/perfil.jpg" alt="" />
                 </a>
                 <button class="button-padrao">Buscar</button>
@@ -371,6 +371,7 @@
 
 </html>
 <script>
+    nome_user.innerHTML = sessionStorage.getItem("nome");
     let proximaAtualizacao;
 
     window.onload = obterDadosGraficoPrimeiraVez(1);

@@ -96,6 +96,7 @@
 </html>
 
 <script>
+    var nome_login;
     function entrar() {
         aguardar();
         var formulario = new URLSearchParams(new FormData(form_email));
@@ -105,10 +106,15 @@
         }).then((resposta) => {
             if (resposta.ok) {
                 resposta.json().then((json) => {
+                    nome_login = sessionStorage.username_usuario_meuapp = json.username;
+
                     sessionStorage.email_usuario_meuapp = json.email;
                     sessionStorage.username_usuario_meuapp = json.username;
 
+                    sessionStorage.setItem("nome", nome_login);
+
                     window.location = "grafico-chartjs.html";
+                    
                 });
             } else {
                 console.log("Erro de email!");
