@@ -62,7 +62,10 @@
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center; flex-direction:column;">
   <img alt="print" title="#print" src="./prints/home.jpg" width="300px">
   <img alt="print2" title="#print2" src="./prints/printSimulador.jpeg" width="300px">
-  <img alt="print" title="#print" src="./prints/dashboard.jpg" width="300px">
+  <img alt="print" title="#print" src="./prints/print_grafico1.PNG" width="300px">
+  <img alt="print" title="#print" src="./prints/print_grafico2.PNG" width="300px">
+  <img alt="print" title="#print" src="./prints/print_grafico3.PNG" width="300px">
+  <img alt="print" title="#print" src="./prints/print_grafico4.PNG" width="300px">
 </p>
 
 ---
