@@ -38,7 +38,7 @@ body {
   }
 }
 
-.centralizar{
+.centralizar {
   display: flex;
   justify-content: center;
   padding-bottom: 20px;
@@ -1310,7 +1310,7 @@ body {
 }
 
 .col-5 {
-  width: 20%;
+  width: 19%;
   flex: 0 0 auto;
 }
 
