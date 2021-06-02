@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StrongBerry</title>
+    <!-- <link rel="stylesheet" href="css/dashboards.css" /> -->
+
+    <!-- script do google charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="funcoes.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- scripts do Chart.js -->
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+    <!-- <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script> -->
+    <!-- <script type="text/javascript" src="funcoes.js"></script> -->
+
+    <style>
+        /* Classes CSS para exemplos de alertas */
+
+        .normal {
+            background-color: white;
+        }
+
+        .alerta-alto {
+            background-color: tomato;
+        }
+
+        .alerta-baixo {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body onload="obterDadosGraficoPrimeiraVez">
+    <!--header inicio-->
+    <div class="linha-dashboard">
+        <!-- Navbar -->
+        <div class="col-5 navbar-dashboard">
+            <div class="navbar-fixed">
+                <h1><a href="grafico-chartjs.html">StrongBerry</a></h1>
+                <ul>
+                    <a href="">
+                        <li class="selected">
+                            <i class="fa fa-signal" aria-hidden="true"></i>
+                            Dashboard
+                        </li>
+                    </a>
+                    <!-- <a href="">
+                        <li>
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            Perfil
+                        </li>
+                    </a> -->
+
+                    <!-- <a href="../API/strongberry_api_4.0v/Graph_lm35_dht11.html">
+                        <li>
+                            <i class="fa fa-tint" aria-hidden="true"></i>
+                            Sensores
+                        </li>
+                    </a> -->
+                    <a href="tempo-real.html">
+                        <li>
+                            <i class="far fa-clock"></i>
+                            Tempo Real
+                        </li>
+                    </a>
+
+                    <a href="pagina-estatica-chartsjs.html">
+                        <li>
+                            <i class="far fa-chart-bar"></i>
+                            Gráfico
+                        </li>
+                    </a>
+                    <!-- <a href="">
+                        <li>
+                            <i class="fa fa-history" aria-hidden="true"></i>
+                            Histórico
+                        </li>
+                    </a> -->
+                    <a href="">
+                        <li>
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                            Abrir chamado
+                        </li>
+                    </a>
+                    <!-- <a href="">
+                        <li>
+                            <i class="fa fa-cog" aria-hidden="true"></i>
+                            Configurações
+                        </li>
+                    </a> -->
+                    <a href="index.html" onclick="logoff()">
+                        <li class="sair">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Sair
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Conteudo -->
+        <div class="col-80">
+            <div class="header-dashboard">
+                <a href="">
+                    <span id="nome_user"></span>
+                    <img src="img/perfil.jpg" alt="" />
+                </a>
+                <button class="button-padrao">Buscar</button>
+                <div class="input-busca-dashboard">
+                    <input type="text" placeholder="Buscar" class="input-padrao" />
+                </div>
+            </div>
+            <div class="linha">
+                <div class="col-2">
+                    <div class="flex">
+                        <h2>Média mensal de temperatura (ºC)</h2>
+                        <div class="grafico-meses-dashboard">
+                            <canvas id="miniGraficoTemp"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="flex">
+                        <h2>Média mensal de umidade (%)</h2>
+                        <div class="grafico-meses-dashboard flex">
+                            <canvas id="miniGraficoUmi"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 flex">
+                <div class="grafico-meses-dashboard destaque-dashboard">
+                    <div class="linha">
+                        <button id="botaoCaminhao1" class="button-monitoramento" onclick="chamargraficos(1)">
+                            Estufa 1
+                        </button>
+                        <button id="botaoCaminhao2" class="button-monitoramento" onclick="chamargraficos(2)">
+                            Estufa 2
+                        </button>
+                        <button id="botaoCaminhao3" class="button-monitoramento" onclick="chamargraficos(3)">
+                            Estufa 3
+                        </button>
+                        <button id="botaoCaminhao4" class="button-monitoramento" onclick="chamargraficos(4)">
+                            Estufa 4
+                        </button>
+                    </div>
+                    <div style="width: 75%; margin: auto">
+                        <div id="div_aguarde">Dados sendo obtidos...</div>
+                        <canvas id="canvas_grafico"></canvas>
+                    </div>
+                    <!-- <canvas id="graficoDestaque"> </canvas> -->
+                </div>
+            </div>
+            <div class="col-1 flex">
+                <div class="grafico-meses-dashboard historico-dashboard">
+                    <div class="linha-dashboard">
+                        <div class="col-3">
+                            <h3>Histórico de ocorrências</h3>
+                        </div>
+                        <div class="col-3-3">
+                            <select class="input-padrao" id="">
+                                <option value="">dezembro de 2020</option>
+                                <option value="">Janeiro de 2021</option>
+                                <option value="">Fevereiro de 2021</option>
+                                <option value="">Março de 2021</option>
+                                <option value="">Abril de 2021</option>
+                                <option value="" selected>Maio de 2021</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br />
+                    <table class="table-historico-dashboard">
+                        <tr>
+                            <th>#</th>
+                            <th>Ocorrência</th>
+                            <th>Setor</th>
+                            <th>Sensor</th>
+                            <th>Data e Hora</th>
+                            <th>Gravidade</th>
+                        </tr>
+                        <tr>
+                            <td class="id-historico-dashboard">150</td>
+                            <td>Aumento de 2ºC</td>
+                            <td>A</td>
+                            <td>
+                                <span class="sensorTemperatura">Temperatura</span>
+                            </td>
+                            <td>10/04/2021 16:43</td>
+                            <td>
+                                <span class="gravidadeBaixa">Baixa</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="id-historico-dashboard">151</td>
+                            <td>Umidade em 50%</td>
+                            <td>B</td>
+                            <td>
+                                <span class="sensorUmidade">Umidade</span>
+                            </td>
+                            <td>09/04/2021 14:16</td>
+                            <td>
+                                <span class="gravidadeAlta">Alta</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="id-historico-dashboard">152</td>
+                            <td>Umidade em 70%</td>
+                            <td>B</td>
+                            <td>
+                                <span class="sensorUmidade">Umidade</span>
+                            </td>
+                            <td>09/04/2021 11:00</td>
+                            <td>
+                                <span class="gravidadeBaixa">Baixa</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="id-historico-dashboard">153</td>
+                            <td>Aumento de 4ºC</td>
+                            <td>C</td>
+                            <td>
+                                <span class="sensorTemperatura">Temperatura</span>
+                            </td>
+                            <td>07/04/2021 18:10</td>
+                            <td>
+                                <span class="gravidadeMedia">Média</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="header">
+            <div class="container">
+                <h1 class="titulo">
+                    <span class="highlight">Projeto</span> IoT Revolucionário
+                </h1>
+                <div class="usuario">
+                    <h3>Olá, <b id="b_usuario"></b></h3>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li><a href="tempo-real.html">Tempo Real</a></li>
+                        <li>
+                            <a href="#" class="highlight" onclick="logoff()">LOGOUT</a>
+                        </li>
+                        <li>
+                            <a href="pagina-estatica-chartsjs.html">
+                                <i class="show-on-hover">IR PARA PÁGINA GRÁFICO ESTÁTICO</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+    </div> -->
+    <!--header fim-->
+
+    <!-- <div class="dashboard">
+        <button id="botaoCaminhao1" class="btn" onclick="chamargraficos(1)">
+            Caminhão 1
+        </button>
+        <button id="botaoCaminhao2" class="btn" onclick="chamargraficos(2)">
+            Caminhão 2
+        </button>
+        <button id="botaoCaminhao3" class="btn" onclick="chamargraficos(3)">
+            Caminhão 3
+        </button>
+        <button id="botaoCaminhao4" class="btn" onclick="chamargraficos(4)">
+            Caminhão 4
+        </button>
+        <div style="width: 75%; margin: auto">
+            <div id="div_aguarde">Dados sendo obtidos...</div>
+            <canvas id="canvas_grafico"></canvas>
+        </div>
+    </div> -->
+    <!-- RODAPÉ -->
+    <div class="footer">
+        <div class="container-footer">
+            <div class="linha">
+                <div class="col-5">
+                    <!-- <a href="index.html"><img src="img/logo-light-text.png" alt=""></a> -->
+                    <a href="index.html">
+                        <h1>StrongBerry</h1>
+                    </a>
+                </div>
+                <div class="col-5">
+                    <ul>
+                        <li>
+                            <a href="index.html#navbar"><b>Início:</b></a>
+                        </li>
+                        <br />
+                        <li>
+                            <a href="index.html#quemSomos">Quem somos?</a>
+                        </li>
+                        <li>
+                            <a href="index.html#proposta">Nossa proposta</a>
+                        </li>
+                        <li>
+                            <a href="index.html#noticias">Receba notícias</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-5">
+                    <ul>
+                        <li><b>Páginas:</b></li>
+                        <br />
+                        <li><a href="">Para seu negócio</a></li>
+                        <li><a href="">Contato</a></li>
+                        <li><a href="">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-5">
+                    <ul>
+                        <br /><br />
+                        <li><a href="">Termos de uso</a></li>
+                        <li><a href="">Contratar</a></li>
+                        <!-- <li><a href=""></a></li>
+                                <li><a href=""></a></li> -->
+                    </ul>
+                </div>
+                <div class="col-5">
+                    <ul>
+                        <li><b>Informações:</b></li>
+                        <br />
+                        <li>
+                            <span>Email de Suporte: <br>
+                                suporte.strongberry@gmail.com
+                            </span>
+                        </li>
+                        <li>
+                            <span>Contato: </span><a href="">11 91111-2222</a>
+                        </li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="linha">
+                <div class="col-1">
+                    <center>
+                        <a href="" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                        <a href="" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="linha">
+            <label>Copyright <a href="#">StrongBerry</a>, 2021</label>
+        </div>
+    </div>
+    <!-- FIM RODAPÉ -->
+
+    <script src="dashboard.js"></script>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/47509d94ad.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
+<script>
+    nome_user.innerHTML = sessionStorage.getItem("nome");
+    let proximaAtualizacao;
+
+    window.onload = obterDadosGraficoPrimeiraVez(1);
+
+    function alterarCoresBotoes(idcaminhao) {
+        console.log("executei alterarCoresBotoes");
+        botaoCaminhao1.className = "button-monitoramento";
+        botaoCaminhao2.className = "button-monitoramento";
+        botaoCaminhao3.className = "button-monitoramento";
+        botaoCaminhao4.className = "button-monitoramento";
+
+        if (idcaminhao == "1") {
+            botaoCaminhao1.className += " btn-now";
+        } else if (idcaminhao == "2") {
+            botaoCaminhao2.className += " btn-now";
+        } else if (idcaminhao == "3") {
+            botaoCaminhao3.className += " btn-now";
+        } else if (idcaminhao == "4") {
+            botaoCaminhao4.className += " btn-now";
+        }
+    }
+
+    function chamargraficos(idcaminhao) {
+        console.log("executei chamargraficos");
+        obterDadosGraficoPrimeiraVez(idcaminhao);
+        //atualizarGrafico(idcaminhao)
+
+        alterarCoresBotoes(idcaminhao);
+    }
+
+    // verificar_autenticacao();
+
+    // neste JSON tem que ser 'labels', 'datasets' etc,
+    // porque é o padrão do Chart.js
+
+    // altere aqui as configurações do gráfico
+    // (tamanhos, cores, textos, etc)
+    function configurarGrafico() {
+        console.log("executei configurarGrafico");
+        var configuracoes = {
+            responsive: true,
+            animation: { duration: 500 },
+            hoverMode: "index",
+            stacked: false,
+            title: {
+                display: true,
+                text: "Histórico recente de temperatura e umidade",
+            },
+            scales: {
+                yAxes: [
+                    {
+                        type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                        display: true,
+                        position: "left",
+                        id: "y-temperatura",
+                    },
+                    {
+                        type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                        display: true,
+                        position: "right",
+                        id: "y-umidade",
+
+                        // grid line settings
+                        gridLines: {
+                            drawOnChartArea: false, // only want the grid lines for one axis to show up
+                        },
+                    },
+                ],
+            },
+        };
+
+        return configuracoes;
+    }
+
+    // altere aqui como os dados serão exibidos
+    // e como são recuperados do BackEnd
+    function obterDadosGraficoPrimeiraVez(idcaminhao) {
+        console.log("executei obterDadosGraficoPrimeiraVez");
+        alterarCoresBotoes(idcaminhao);
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/leituras/ultimas/${idcaminhao}`, { cache: "no-store" })
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        resposta.reverse();
+
+                        var dados = {
+                            labels: [],
+                            datasets: [
+                                {
+                                    yAxisID: "y-temperatura",
+                                    label: "Temperatura",
+                                    borderColor: "#f16a43",
+                                    backgroundColor: "#f16a43",
+                                    fill: false,
+                                    data: [],
+                                },
+                                {
+                                    yAxisID: "y-umidade",
+                                    label: "Umidade",
+                                    borderColor: "#2f9395",
+                                    backgroundColor: "#2f9395",
+                                    fill: false,
+                                    data: [],
+                                },
+                            ],
+                        };
+                        for (i = 0; i < resposta.length; i++) {
+                            var registro = resposta[i];
+                            dados.labels.push(registro.momento_grafico);
+                            dados.datasets[0].data.push(registro.temperatura);
+                            dados.datasets[1].data.push(registro.umidade);
+                        }
+                        console.log(JSON.stringify(dados));
+                        div_aguarde.style.display = "none";
+                        plotarGrafico(dados, idcaminhao);
+                    });
+                } else {
+                    console.error("Nenhum dado encontrado ou erro na API");
+                }
+            })
+            .catch(function (error) {
+                console.error(
+                    `Erro na obtenção dos dados p/ gráfico: ${error.message}`
+                );
+            });
+    }
+
+    // só mexer se quiser alterar o tempo de atualização
+    // ou se souber o que está fazendo!
+    function atualizarGrafico(idcaminhao, dados) {
+        console.log("executei atualizarGrafico");
+        fetch(`/leituras/tempo-real/${idcaminhao}`, { cache: "no-store" })
+            .then(function (response) {
+                console.log("Estou tentando pegar idcaminhao = ", idcaminhao);
+                if (response.ok) {
+                    response.json().then(function (novoRegistro) {
+                        console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                        console.log(`Dados atuais do gráfico: ${dados}`);
+
+                        // tirando e colocando valores no gráfico
+                        dados.labels.shift(); // apagar o primeiro
+                        dados.labels.push(novoRegistro.momento_grafico); // incluir um novo momento
+                        dados.datasets[0].data.shift(); // apagar o primeiro de temperatura
+                        dados.datasets[1].data.shift(); // apagar o primeiro de umidade
+                        dados.datasets[0].data.push(novoRegistro.temperatura); // incluir uma nova leitura de temperatura
+                        dados.datasets[1].data.push(novoRegistro.umidade); // incluir uma nova leitura de umidade
+
+                        console.log("meu caminhão é o " + idcaminhao);
+
+                        window.grafico_linha.update();
+
+                        proximaAtualizacao = setTimeout(
+                            () => atualizarGrafico(idcaminhao, dados),
+                            5000
+                        );
+                    });
+                } else {
+                    console.error("Nenhum dado encontrado ou erro na API");
+                    proximaAtualizacao = setTimeout(
+                        () => atualizarGrafico(idcaminhao, dados),
+                        5000
+                    );
+                }
+            })
+            .catch(function (error) {
+                console.error(
+                    `Erro na obtenção dos dados p/ gráfico: ${error.message}`
+                );
+            });
+    }
+
+    // só altere aqui se souber o que está fazendo!
+    function plotarGrafico(dados, idcaminhao) {
+        console.log("executei plotarGrafico");
+        console.log("iniciando plotagem do gráfico...");
+
+        var ctx = canvas_grafico.getContext("2d");
+        window.grafico_linha = Chart.Line(ctx, {
+            data: dados,
+            options: configurarGrafico(),
+        });
+
+        setTimeout(() => atualizarGrafico(idcaminhao, dados), 2000);
+    }
+
+    function sendData() {
+        var http = new XMLHttpRequest();
+        http.open("GET", "http://localhost:9001/api/sendData", false);
+        http.send(null);
+    }
+
+    // Descomente abaixo se quiser inserir dados a cada X segundos
+    setInterval(() => {
+        sendData();
+    }, 2000);
+</script>

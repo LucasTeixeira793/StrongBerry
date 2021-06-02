@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StrongBerry</title>
+
+    <!-- script do google charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="funcoes.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="css/dashboards.css" /> -->
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        /* Classes CSS para exemplos de alertas */
+        .sensorTemperatura {
+            color: #32df1b;
+        }
+
+        .sensorUmidade {
+            color: #2192dd;
+        }
+
+        .gravidadeBaixa {
+            color: #f8f409;
+        }
+
+        .gravidadeMedia {
+            color: rgb(255, 102, 0);
+        }
+
+        .gravidadeAlta {
+            color: #cf1e1e;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body onload="atualizacaoPeriodica()">
+    <!--header inicio-->
+    <div class="linha-dashboard">
+        <div class="col-5 navbar-dashboard">
+            <div class="navbar-fixed">
+                <h1><a href="tempo-real.html">StrongBerry</a></h1>
+                <ul>
+                    <a href="grafico-chartjs.html">
+                        <li>
+                            <i class="fa fa-signal" aria-hidden="true"></i>
+                            Dashboard
+                        </li>
+                    </a>
+                    <!-- <a href="">
+                        <li>
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            Perfil
+                        </li>
+                    </a> -->
+
+                    <!-- <a href="../API/strongberry_api_4.0v/Graph_lm35_dht11.html">
+                        <li>
+                            <i class="fa fa-tint" aria-hidden="true"></i>
+                            Sensores
+                        </li>
+                    </a> -->
+                    <a href="tempo-real.html">
+                        <li class="selected">
+                            <i class="far fa-clock"></i>
+                            Tempo Real
+                        </li>
+                    </a>
+
+                    <a href="pagina-estatica-chartsjs.html">
+                        <li>
+                            <i class="far fa-chart-bar"></i>
+                            Gráfico
+                        </li>
+                    </a>
+                    <!-- <a href="">
+                        <li>
+                            <i class="fa fa-history" aria-hidden="true"></i>
+                            Histórico
+                        </li>
+                    </a> -->
+                    <a href="">
+                        <li>
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                            Abrir chamado
+                        </li>
+                    </a>
+                    <!-- <a href="">
+                        <li>
+                            <i class="fa fa-cog" aria-hidden="true"></i>
+                            Configurações
+                        </li>
+                    </a> -->
+                    <a href="index.html" onclick="logoff()">
+                        <li class="sair">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Sair
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+
+        <!--header fim-->
+
+        <div class="col-80">
+
+
+            <div class="header-dashboard">
+                <a href="">
+                    <span id="nome_user"></span>
+                    <img src="img/perfil.jpg" alt="" />
+                </a>
+                <button class="button-padrao">Buscar</button>
+                <div class="input-busca-dashboard">
+                    <input type="text" placeholder="Buscar" class="input-padrao" />
+                </div>
+            </div>
+            <div class="estufa_tudo">
+                <div class="caminhao">
+                    <h4>
+                        Estufa
+                        <span name="namecaminhao" id="idcaminhao" value="1">1</span>
+                    </h4>
+                    <div class="valores">
+                        <div class="valor" id="div_temperatura">
+                            Temperatura sendo obtida...
+                        </div>
+                        <div class="valor" id="div_umidade">
+                            Umidade sendo obtida...
+                        </div>
+                    </div>
+                    <div class="alertas">
+                        <div class="alerta" id="div_alerta_temperatura"></div>
+                        <div class="alerta_umidd" id="div_alerta_umidade"></div>
+                    </div>
+                </div>
+
+                <div class="caminhao">
+                    <h4>
+                        Estufa
+                        <span name="namecaminhao" id="idcaminhao" value="2">2</span>
+                    </h4>
+                    <div class="valores">
+                        <div class="valor" id="div_temperatura2">
+                            Temperatura sendo obtida...
+                        </div>
+                        <div class="valor" id="div_umidade2">
+                            Umidade sendo obtida...
+                        </div>
+                    </div>
+
+                    <div class="alertas">
+                        <div class="alerta" id="div_alerta_temperatura2"></div>
+                        <div class="alerta_umidd" id="div_alerta_umidade2"></div>
+                    </div>
+                </div>
+
+                <div class="caminhao">
+                    <h4>
+                        Estufa
+                        <span name="namecaminhao" id="idcaminhao" value="3">3</span>
+                    </h4>
+                    <div class="valores">
+                        <div class="valor" id="div_temperatura3">
+                            Temperatura sendo obtida...
+                        </div>
+                        <div class="valor" id="div_umidade3">
+                            Umidade sendo obtida...
+                        </div>
+                    </div>
+                    <div class="alertas">
+                        <div class="alerta" id="div_alerta_temperatura3"></div>
+                        <div class="alerta_umidd" id="div_alerta_umidade3"></div>
+                    </div>
+                </div>
+
+                <div class="caminhao">
+                    <h4>
+                        Estufa
+                        <span name="namecaminhao" id="idcaminhao" value="4">4</span>
+                    </h4>
+                    <div class="valores">
+                        <div class="valor" id="div_temperatura4">
+                            Temperatura sendo obtida...
+                        </div>
+                        <div class="valor" id="div_umidade4">
+                            Umidade sendo obtida...
+                        </div>
+                    </div>
+
+                    <div class="alertas">
+                        <div class="alerta" id="div_alerta_temperatura4"></div>
+                        <div class="alerta_umidd" id="div_alerta_umidade4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- RODAPÉ -->
+    <div class="footer">
+        <div class="container-footer">
+            <div class="linha">
+                <div class="col-5">
+                    <!-- <a href="index.html"><img src="img/logo-light-text.png" alt=""></a> -->
+                    <a href="index.html">
+                        <h1>StrongBerry</h1>
+                    </a>
+                </div>
+                <div class="col-5">
+                    <ul>
+                        <li>
+                            <a href="index.html#navbar"><b>Início:</b></a>
+                        </li>
+                        <br />
+                        <li>
+                            <a href="index.html#quemSomos">Quem somos?</a>
+                        </li>
+                        <li>
+                            <a href="index.html#proposta">Nossa proposta</a>
+                        </li>
+                        <li>
+                            <a href="index.html#noticias">Receba notícias</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-5">
+                    <ul>
+                        <li><b>Páginas:</b></li>
+                        <br />
+                        <li><a href="">Para seu negócio</a></li>
+                        <li><a href="">Contato</a></li>
+                        <li><a href="">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-5">
+                    <ul>
+                        <br /><br />
+                        <li><a href="">Termos de uso</a></li>
+                        <li><a href="">Contratar</a></li>
+                        <!-- <li><a href=""></a></li>
+                                <li><a href=""></a></li> -->
+                    </ul>
+                </div>
+                <div class="col-5">
+                    <ul>
+                        <li><b>Informações:</b></li>
+                        <br />
+                        <li>
+                            <span>Email de Suporte: <br>
+                                suporte.strongberry@gmail.com
+                            </span>
+                        </li>
+                        <li>
+                            <span>Contato: </span><a href="">11 91111-2222</a>
+                        </li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="linha">
+                <div class="col-1">
+                    <center>
+                        <a href="" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                        <a href="" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="linha">
+            <label>Copyright <a href="#">StrongBerry</a>, 2021</label>
+        </div>
+    </div>
+    <!-- FIM RODAPÉ -->
+
+    <script src="dashboard.js"></script>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/47509d94ad.js" crossorigin="anonymous"></script>
+</body>
+
+<script>
+    nome_user.innerHTML = sessionStorage.getItem("nome");
+    let usuario;
+
+    // verificar_autenticacao();
+
+    // só mexer se quiser alterar o tempo de atualização
+    // ou se souber o que está fazendo!
+    function atualizacaoPeriodica() {
+        obterdadosporcaminhao(1);
+        obterdadosporcaminhao(2);
+        obterdadosporcaminhao(3);
+        obterdadosporcaminhao(4);
+        setTimeout(atualizacaoPeriodica, 5000);
+    }
+
+    function obterdadosporcaminhao(idcaminhao) {
+        //aguardar();
+        fetch(`/leituras/tempo-real/${idcaminhao}`)
+            .then((resposta) => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(
+                            `Dados recebidos: ${JSON.stringify(resposta)}`
+                        );
+
+                        // aqui, após registro. use os nomes
+                        // dos atributos que vem no JSON
+                        var dados = {
+                            temperatura: resposta.temperatura,
+                            umidade: resposta.umidade,
+                        };
+
+                        alertar(
+                            resposta.temperatura,
+                            resposta.umidade,
+                            idcaminhao
+                        );
+                        atualizarTela(dados, idcaminhao);
+                    });
+                } else {
+                    console.error("Nenhum dado encontrado ou erro na API");
+                }
+            })
+            .catch(function (error) {
+                console.error(
+                    `Erro na obtenção dos dados do caminhao p/ gráfico: ${error.message}`
+                );
+            });
+    }
+
+    function alertar(temperatura, umidade, idcaminhao) {
+        // padrão para meu alerta
+        var limites = {
+            max_temperatura: 31.2,
+            min_temperatura: 13.57,
+            max_umidade: 75,
+            min_umidade: 60,
+            max_emergencia_temp: 28.9,
+            min_emergencia_temp: 16.1,
+            max_emergencia_umi: 73,
+            min_emergencia_umi: 62,
+            max_alerta_temp: 26.3,
+            min_alerta_temp: 18.7,
+            max_alerta_umi: 71,
+            min_alerta_umi: 64,
+            temp_ideal: 22.28,
+            umi_ideal: 68,
+        };
+
+        // zerar aviso de mensagem
+        var mensagem_temperatura = "";
+        var mensagem_umidade = "";
+        var classe_temperatura = "sensorTemperatura";
+        var classe_umidade = "sensorUmidade";
+
+        // comparando
+        if (temperatura > limites.max_temperatura) {
+            mensagem_temperatura += "Temperatura alta demais! <br>";
+            classe_temperatura = "sensorTemperatura gravidadeAlta";
+        }
+        if (umidade > limites.max_umidade) {
+            mensagem_umidade += "Umidade alta demais! <br>";
+            classe_umidade = "sensorUmidade gravidadeAlta";
+        }
+        if (temperatura < limites.min_temperatura) {
+            mensagem_temperatura = "Temperatura baixa demais! <br>";
+            classe_temperatura = "sensorTemperatura gravidadeAlta";
+        }
+        if (umidade < limites.min_umidade) {
+            mensagem_umidade = "Umidade baixa demais! <br>";
+            classe_umidade = "sensorUmidade gravidadeAlta";
+        }
+
+
+
+        // --------------------------------------------------------------------
+        if (temperatura > limites.max_alerta_temp && temperatura < limites.max_temperatura) {
+            mensagem_temperatura += "Temperatura alta! <br>";
+            classe_temperatura = "gravidadeMedia";
+        }
+        if (temperatura < limites.min_alerta_temp && temperatura > limites.min_temperatura) {
+            mensagem_temperatura += "Temperatura baixa!  <br>";
+            classe_temperatura = "gravidadeMedia";
+        }
+        if (temperatura > limites.max_alerta_temp && temperatura < limites.max_emergencia_temp) {
+            mensagem_temperatura = "Temperatura um pouco alta!  <br>";
+            classe_temperatura = "gravidadeBaixa";
+        }
+        if (temperatura < limites.min_alerta_temp && temperatura > limites.min_emergencia_temp) {
+            mensagem_temperatura = "Temperatura um pouco baixa!<br>";
+            classe_temperatura = "gravidadeBaixa ";
+        }
+
+        // --------------------------------------------------------------------
+
+
+        if (umidade > limites.max_alerta_umi && umidade < limites.max_umidade) {
+            mensagem_umidade += "Umidade alta! <br>";
+            classe_umidade = "gravidadeMedia";
+        }
+        if (umidade < limites.min_alerta_umi && umidade > limites.min_umidade) {
+            mensagem_umidade += "Umidade baixa! <br>";
+            classe_umidade = "gravidadeMedia";
+        }
+        if (umidade > limites.max_alerta_umi && umidade < limites.max_emergencia_umi) {
+            mensagem_umidade = "Umidade um pouco alta! <br>";
+            classe_umidade = "gravidadeBaixa";
+        }
+        if (umidade < limites.min_alerta_umi && umidade > limites.min_emergencia_umi) {
+            mensagem_umidade = "Umidade um pouco baixa! <br>";
+            classe_umidade = "gravidadeBaixa";
+        }
+
+        // ------------------------------------------------------------------
+
+        if (umidade > limites.min_alerta_umi && umidade < limites.max_alerta_umi) {
+            mensagem_umidade = "Umidade ideal! <br>";
+            classe_umidade = "sensorUmidade";
+        }
+        if (temperatura > limites.min_alerta_temp && temperatura < limites.max_alerta_temp) {
+            mensagem_temperatura = "Temperatura ideal! <br>";
+            classe_temperatura = "sensorTemperatura";
+        }
+
+
+        // escolhendo qual alterar
+        var div_temperatura_alterar;
+        var div_umidade_alterar;
+
+        if (idcaminhao == 1) {
+            div_temperatura_alterar = div_alerta_temperatura;
+            div_umidade_alterar = div_alerta_umidade;
+        } else if (idcaminhao == 2) {
+            div_temperatura_alterar = div_alerta_temperatura2;
+            div_umidade_alterar = div_alerta_umidade2;
+        } else if (idcaminhao == 3) {
+            div_temperatura_alterar = div_alerta_temperatura3;
+            div_umidade_alterar = div_alerta_umidade3;
+        } else if (idcaminhao == 4) {
+            div_temperatura_alterar = div_alerta_temperatura4;
+            div_umidade_alterar = div_alerta_umidade4;
+        }
+
+        // alterando
+        div_temperatura_alterar.innerHTML = mensagem_temperatura;
+        div_temperatura_alterar.className = classe_temperatura;
+
+        div_umidade_alterar.innerHTML = mensagem_umidade;
+        div_umidade_alterar.className = classe_umidade;
+    }
+
+    // só altere aqui se souber o que está fazendo!
+    function atualizarTela(dados, idcaminhao) {
+        console.log("iniciando atualização da tela...");
+
+        // escolhendo qual alterar
+        var div_temperatura_alterar;
+        var div_umidade_alterar;
+
+        if (idcaminhao == 1) {
+            div_temperatura_alterar = div_temperatura;
+            div_umidade_alterar = div_umidade;
+        } else if (idcaminhao == 2) {
+            div_temperatura_alterar = div_temperatura2;
+            div_umidade_alterar = div_umidade2;
+        } else if (idcaminhao == 3) {
+            div_temperatura_alterar = div_temperatura3;
+            div_umidade_alterar = div_umidade3;
+        } else if (idcaminhao == 4) {
+            div_temperatura_alterar = div_temperatura4;
+            div_umidade_alterar = div_umidade4;
+        }
+
+        div_temperatura_alterar.innerHTML = `Temperatura: ${dados.temperatura}º`;
+
+        div_umidade_alterar.innerHTML = `Umidade: ${dados.umidade}%`;
+    }
+
+    function sendData() {
+        var http = new XMLHttpRequest();
+        http.open("GET", "http://localhost:9001/api/sendData", false);
+        http.send(null);
+    }
+
+    // Descomente abaixo se quiser inserir dados a cada X segundos
+    setInterval(() => {
+        sendData();
+    }, 1000);
+</script>
+
+</html>
