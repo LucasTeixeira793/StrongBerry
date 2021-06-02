@@ -70,14 +70,9 @@ INSERT INTO tblEstufa (cliente, nomeEstufa, tipoPlantio)
            ('54123698745632','Moranguinho1',4),
            ('15984726332145','Safro1',1);
            
-INSERT INTO tblDados (temperatura, umidade, dataColeta, estufa)
-	VALUES (22.90, 80, '2021-05-10 01:40:50.995000', 1),
-		   (25.80, 75, '2021-06-10 10:06:36.999900', 2),
-           (30.09, 79, '2021-12-25 12:00:00.955451', 3),
-           (15.08, 60, '2021-10-20 05:40:30.945944', 4),
-           (19.65, 69, '2021-11-01 02:10:20.554741', 5);
 
- SELECT * FROM tblTipoPlantio;
- SELECT * FROM tblCliente;
- SELECT * FROM tblEstufa;
- SELECT * FROM tblDados;
+
+-- SELECT * FROM tblTipoPlantio;
+-- SELECT * FROM tblCliente;
+-- SELECT * FROM tblEstufa;
+-- SELECT * FROM tblDados;
