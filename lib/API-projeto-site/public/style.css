@@ -38,6 +38,12 @@ body {
   }
 }
 
+.centralizar{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
 .input-padrao {
   outline: none;
   display: block;
@@ -83,7 +89,7 @@ body {
 .button-monitoramento {
   font-family: "Poppins", sans-serif;
   height: 40px;
-  padding: 5px;
+  padding: 20px;
   border: none;
   background-color: #093b10;
   color: #fff;
@@ -92,10 +98,12 @@ body {
   margin-left: 100px;
   float: left;
   -webkit-transition: 2s;
+  display: flex;
+  align-items: center;
 }
 
 #botaoCaminhao1 {
-  margin-left: 75px;
+  margin-left: 110px;
 }
 
 .button-padrao:hover {
@@ -452,7 +460,7 @@ body {
   width: 50%;
 }
 
-.container_login button {
+/* .container_login button {
   color: whitesmoke;
   width: 100px;
   background-color: rgb(23, 46, 23);
@@ -460,7 +468,7 @@ body {
   border: none;
   height: 30px;
   margin: 10px;
-}
+} */
 
 .container_login button a {
   text-decoration: none;
@@ -1307,6 +1315,7 @@ body {
 }
 
 .col-80 {
+  padding-bottom: 100px;
   width: 80%;
   flex: 0 0 auto;
 }
@@ -1478,19 +1487,19 @@ body {
 }
 
 .sensorTemperatura {
-  color: #d8823c;
+  color: #32df1b;
 }
 
 .sensorUmidade {
-  color: #364acf;
+  color: #2192dd;
 }
 
 .gravidadeBaixa {
-  color: #166831;
+  color: #f8f409;
 }
 
 .gravidadeMedia {
-  color: orangered;
+  color: rgb(255, 102, 0);
 }
 
 .gravidadeAlta {
@@ -1583,6 +1592,11 @@ body {
   float: left;
   text-align: center;
   background-color: #ffffff;
+}
+
+.estufa_tudo {
+  margin-top: 100px;
+  /* margin-bottom: 600px; */
 }
 
 .caminhao .valores {

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projeto IoT - Tempo Real</title>
+    <title>StrongBerry</title>
 
     <!-- script do google charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -18,17 +18,25 @@
 
     <style>
         /* Classes CSS para exemplos de alertas */
-
-        .normal {
-            background-color: white;
+        .sensorTemperatura {
+            color: #32df1b;
         }
 
-        .alerta-alto {
-            color: tomato;
+        .sensorUmidade {
+            color: #2192dd;
         }
 
-        .alerta-baixo {
-            color: rgb(38, 0, 255);
+        .gravidadeBaixa {
+            color: #f8f409;
+        }
+
+        .gravidadeMedia {
+            color: rgb(255, 102, 0);
+        }
+
+        .gravidadeAlta {
+            color: #cf1e1e;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -38,7 +46,7 @@
     <div class="linha-dashboard">
         <div class="col-5 navbar-dashboard">
             <div class="navbar-fixed">
-                <h1><a href="grafico-chartjs.html">StrongBerry</a></h1>
+                <h1><a href="tempo-real.html">StrongBerry</a></h1>
                 <ul>
                     <a href="grafico-chartjs.html">
                         <li>
@@ -100,10 +108,12 @@
             </div>
         </div>
 
+
         <!--header fim-->
 
+        <div class="col-80">
 
-        <div class="container">
+
             <div class="header-dashboard">
                 <a href="">
                     <span id="nome_user"></span>
@@ -114,81 +124,83 @@
                     <input type="text" placeholder="Buscar" class="input-padrao" />
                 </div>
             </div>
-            <div class="caminhao">
-                <h4>
-                    Estufa
-                    <span name="namecaminhao" id="idcaminhao" value="1">1</span>
-                </h4>
-                <div class="valores">
-                    <div class="valor" id="div_temperatura">
-                        Temperatura sendo obtida...
+            <div class="estufa_tudo">
+                <div class="caminhao">
+                    <h4>
+                        Estufa
+                        <span name="namecaminhao" id="idcaminhao" value="1">1</span>
+                    </h4>
+                    <div class="valores">
+                        <div class="valor" id="div_temperatura">
+                            Temperatura sendo obtida...
+                        </div>
+                        <div class="valor" id="div_umidade">
+                            Umidade sendo obtida...
+                        </div>
                     </div>
-                    <div class="valor" id="div_umidade">
-                        Umidade sendo obtida...
-                    </div>
-                </div>
-                <div class="alertas">
-                    <div class="alerta" id="div_alerta_temperatura"></div>
-                    <div class="alerta_umidd" id="div_alerta_umidade"></div>
-                </div>
-            </div>
-
-            <div class="caminhao">
-                <h4>
-                    Estufa
-                    <span name="namecaminhao" id="idcaminhao" value="2">2</span>
-                </h4>
-                <div class="valores">
-                    <div class="valor" id="div_temperatura2">
-                        Temperatura sendo obtida...
-                    </div>
-                    <div class="valor" id="div_umidade2">
-                        Umidade sendo obtida...
+                    <div class="alertas">
+                        <div class="alerta" id="div_alerta_temperatura"></div>
+                        <div class="alerta_umidd" id="div_alerta_umidade"></div>
                     </div>
                 </div>
 
-                <div class="alertas">
-                    <div class="alerta" id="div_alerta_temperatura2"></div>
-                    <div class="alerta_umidd" id="div_alerta_umidade2"></div>
-                </div>
-            </div>
+                <div class="caminhao">
+                    <h4>
+                        Estufa
+                        <span name="namecaminhao" id="idcaminhao" value="2">2</span>
+                    </h4>
+                    <div class="valores">
+                        <div class="valor" id="div_temperatura2">
+                            Temperatura sendo obtida...
+                        </div>
+                        <div class="valor" id="div_umidade2">
+                            Umidade sendo obtida...
+                        </div>
+                    </div>
 
-            <div class="caminhao">
-                <h4>
-                    Estufa
-                    <span name="namecaminhao" id="idcaminhao" value="3">3</span>
-                </h4>
-                <div class="valores">
-                    <div class="valor" id="div_temperatura3">
-                        Temperatura sendo obtida...
-                    </div>
-                    <div class="valor" id="div_umidade3">
-                        Umidade sendo obtida...
-                    </div>
-                </div>
-                <div class="alertas">
-                    <div class="alerta" id="div_alerta_temperatura3"></div>
-                    <div class="alerta_umidd" id="div_alerta_umidade3"></div>
-                </div>
-            </div>
-
-            <div class="caminhao">
-                <h4>
-                    Estufa
-                    <span name="namecaminhao" id="idcaminhao" value="4">4</span>
-                </h4>
-                <div class="valores">
-                    <div class="valor" id="div_temperatura4">
-                        Temperatura sendo obtida...
-                    </div>
-                    <div class="valor" id="div_umidade4">
-                        Umidade sendo obtida...
+                    <div class="alertas">
+                        <div class="alerta" id="div_alerta_temperatura2"></div>
+                        <div class="alerta_umidd" id="div_alerta_umidade2"></div>
                     </div>
                 </div>
 
-                <div class="alertas">
-                    <div class="alerta" id="div_alerta_temperatura4"></div>
-                    <div class="alerta_umidd" id="div_alerta_umidade4"></div>
+                <div class="caminhao">
+                    <h4>
+                        Estufa
+                        <span name="namecaminhao" id="idcaminhao" value="3">3</span>
+                    </h4>
+                    <div class="valores">
+                        <div class="valor" id="div_temperatura3">
+                            Temperatura sendo obtida...
+                        </div>
+                        <div class="valor" id="div_umidade3">
+                            Umidade sendo obtida...
+                        </div>
+                    </div>
+                    <div class="alertas">
+                        <div class="alerta" id="div_alerta_temperatura3"></div>
+                        <div class="alerta_umidd" id="div_alerta_umidade3"></div>
+                    </div>
+                </div>
+
+                <div class="caminhao">
+                    <h4>
+                        Estufa
+                        <span name="namecaminhao" id="idcaminhao" value="4">4</span>
+                    </h4>
+                    <div class="valores">
+                        <div class="valor" id="div_temperatura4">
+                            Temperatura sendo obtida...
+                        </div>
+                        <div class="valor" id="div_umidade4">
+                            Umidade sendo obtida...
+                        </div>
+                    </div>
+
+                    <div class="alertas">
+                        <div class="alerta" id="div_alerta_temperatura4"></div>
+                        <div class="alerta_umidd" id="div_alerta_umidade4"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -329,35 +341,97 @@
     function alertar(temperatura, umidade, idcaminhao) {
         // padrão para meu alerta
         var limites = {
-            max_temperatura: 28.9,
-            min_temperatura: 16.1,
-            max_umidade: 80,
-            min_umidade: 50,
+            max_temperatura: 31.2,
+            min_temperatura: 13.57,
+            max_umidade: 75,
+            min_umidade: 60,
+            max_emergencia_temp: 28.9,
+            min_emergencia_temp: 16.1,
+            max_emergencia_umi: 73,
+            min_emergencia_umi: 62,
+            max_alerta_temp: 26.3,
+            min_alerta_temp: 18.7,
+            max_alerta_umi: 71,
+            min_alerta_umi: 64,
+            temp_ideal: 22.28,
+            umi_ideal: 68,
         };
 
         // zerar aviso de mensagem
         var mensagem_temperatura = "";
         var mensagem_umidade = "";
-        var classe_temperatura = "alerta";
-        var classe_umidade = "alerta_umidd";
+        var classe_temperatura = "sensorTemperatura";
+        var classe_umidade = "sensorUmidade";
 
         // comparando
         if (temperatura > limites.max_temperatura) {
             mensagem_temperatura += "Temperatura alta demais! <br>";
-            classe_temperatura = "alerta alerta-alto";
+            classe_temperatura = "sensorTemperatura gravidadeAlta";
         }
         if (umidade > limites.max_umidade) {
             mensagem_umidade += "Umidade alta demais! <br>";
-            classe_umidade = "alerta_umidd alerta-alto";
+            classe_umidade = "sensorUmidade gravidadeAlta";
         }
         if (temperatura < limites.min_temperatura) {
             mensagem_temperatura = "Temperatura baixa demais! <br>";
-            classe_temperatura = "alerta alerta-baixo";
+            classe_temperatura = "sensorTemperatura gravidadeAlta";
         }
         if (umidade < limites.min_umidade) {
             mensagem_umidade = "Umidade baixa demais! <br>";
-            classe_umidade = "alerta_umidd alerta-baixo";
+            classe_umidade = "sensorUmidade gravidadeAlta";
         }
+
+
+
+        // --------------------------------------------------------------------
+        if (temperatura > limites.max_alerta_temp && temperatura < limites.max_temperatura) {
+            mensagem_temperatura += "Temperatura alta! <br>";
+            classe_temperatura = "gravidadeMedia";
+        }
+        if (temperatura < limites.min_alerta_temp && temperatura > limites.min_temperatura) {
+            mensagem_temperatura += "Temperatura baixa!  <br>";
+            classe_temperatura = "gravidadeMedia";
+        }
+        if (temperatura > limites.max_alerta_temp && temperatura < limites.max_emergencia_temp) {
+            mensagem_temperatura = "Temperatura um pouco alta!  <br>";
+            classe_temperatura = "gravidadeBaixa";
+        }
+        if (temperatura < limites.min_alerta_temp && temperatura > limites.min_emergencia_temp) {
+            mensagem_temperatura = "Temperatura um pouco baixa!<br>";
+            classe_temperatura = "gravidadeBaixa ";
+        }
+
+        // --------------------------------------------------------------------
+
+
+        if (umidade > limites.max_alerta_umi && umidade < limites.max_umidade) {
+            mensagem_umidade += "Umidade alta! <br>";
+            classe_umidade = "gravidadeMedia";
+        }
+        if (umidade < limites.min_alerta_umi && umidade > limites.min_umidade) {
+            mensagem_umidade += "Umidade baixa! <br>";
+            classe_umidade = "gravidadeMedia";
+        }
+        if (umidade > limites.max_alerta_umi && umidade < limites.max_emergencia_umi) {
+            mensagem_umidade = "Umidade um pouco alta! <br>";
+            classe_umidade = "gravidadeBaixa";
+        }
+        if (umidade < limites.min_alerta_umi && umidade > limites.min_emergencia_umi) {
+            mensagem_umidade = "Umidade um pouco baixa! <br>";
+            classe_umidade = "gravidadeBaixa";
+        }
+
+        // ------------------------------------------------------------------
+
+        if (umidade > limites.min_alerta_umi && umidade < limites.max_alerta_umi) {
+            mensagem_umidade = "Umidade ideal! <br>";
+            classe_umidade = "sensorUmidade";
+        }
+        if (temperatura > limites.min_alerta_temp && temperatura < limites.max_alerta_temp) {
+            mensagem_temperatura = "Temperatura ideal! <br>";
+            classe_temperatura = "sensorTemperatura";
+        }
+
 
         // escolhendo qual alterar
         var div_temperatura_alterar;
@@ -421,7 +495,7 @@
     // Descomente abaixo se quiser inserir dados a cada X segundos
     setInterval(() => {
         sendData();
-    }, 5000);
+    }, 1000);
 </script>
 
 </html>

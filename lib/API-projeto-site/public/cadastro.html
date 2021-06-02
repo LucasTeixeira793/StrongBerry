@@ -25,7 +25,6 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="vantagens.html">Vantagens</a></li>
-                <li><a href="cadastro-parte-1.html"><span class="text-a">Cadastro</span></a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
         </div>
@@ -39,37 +38,44 @@
             </h1>
             <div class="formulario">
                 <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-                    <input type="text" name="username" class="input-padrao" autofocus="autofocus"
+                    <input id="id_user_name" type="text" name="username" class="input-padrao" autofocus="autofocus"
                         placeholder="Nome Completo" required minlength="4" maxlength="45">
 
-                    <input type="text" name="email" class="input-padrao" placeholder="Email" required minlength="4"
-                        maxlength="80">
+                    <input id="id_email" type="text" name="email" class="input-padrao" placeholder="Email" required
+                        minlength="4" maxlength="80">
 
-                    <input type="password" name="password" class="input-padrao" placeholder="***************" required
+                    <input id="id_senha" type="password" name="password" class="input-padrao"
+                        placeholder="***************" required minlength="4" maxlength="45">
+
+                    <input id="id_senha2" type="password" class="input-padrao" placeholder="***************" required
                         minlength="4" maxlength="45">
 
-                    <input type="text" name="nomeEmpresa" class="input-padrao" placeholder="Nome da Empresa" required
-                        minlength="4" maxlength="40">
+                    <input id="id_empresa" type="text" name="nomeEmpresa" class="input-padrao"
+                        placeholder="Nome da Empresa" required minlength="4" maxlength="40">
 
-                    <input type="text" name="cnpj" class="input-padrao" placeholder="CNPJ" required minlength="4"
+                    <input type="number" name="cnpj" class="input-padrao" placeholder="CNPJ" required minlength="4"
                         maxlength="14">
 
-                    <input type="text" name="telefone" class="input-padrao" placeholder="Telefone" required
-                        minlength="4" maxlength="11">
+                    <input id="id_telefone" type="number" name="telefone" class="input-padrao" placeholder="Telefone"
+                        required minlength="4" maxlength="11">
 
-                    <input type="text" name="escalaProducao" class="input-padrao" placeholder="Escala Produção" required
-                        minlength="4" maxlength="40">
+                    <input type="number" name="escalaProducao" class="input-padrao" placeholder="Escala Produção Trimestral (Kg)" required
+                        minlength="4" maxlength="14">
 
                     <input type="number" name="cep" class="input-padrao" placeholder="Cep" required minlength="4">
 
-                    <input type="text" name="numero" class="input-padrao" placeholder="Némero" required minlength="2"
+                    <input type="number" name="numero" class="input-padrao" placeholder="Número" required minlength="2"
                         maxlength="8">
 
 
-                    <button type="submit" id="btn_entrar" value="Cadastrar" class="btn-green">
+                    <button style="display: none;" type="submit" id="btn_entrar" value="Cadastrar" class="button-padrao">
                         SIGN IN
                     </button><br>
                 </form>
+                <div class="centralizar">
+                    <button onclick="verificar_cadastro()" value="Cadastrar" class="button-padrao">Cadastrar</button><br>
+                </div>
+
                 <span class="span_login">Já possui cadastro? <a href="login.html">Entre aqui.</a><br>
                     <a href="">Esqueceu sua senha?</a></span>
 
@@ -80,72 +86,7 @@
             </div>
         </div>
 
-        <!-- <div class="contato">
-                <div class="container">
-                    <h1>Faça aqui seu cadastro!</h1>
-                    <div class="formulario">
-                        <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-                            Nome completo:
-                            <input type="text" name="username" class="input-padrao" autofocus="autofocus"
-                                placeholder="Nome e sobrenome" required minlength="4" maxlength="45">
 
-                            Login:
-                            <input type="text" name="email" class="input-padrao" placeholder="Email" required
-                                minlength="4" maxlength="80">
-
-                            Senha:
-                            <input type="password" name="password" class="input-padrao" placeholder="***************"
-                                required minlength="4" maxlength="45">
-
-                            Nome da Empresa:
-                            <input type="text" name="nomeEmpresa" class="input-padrao" placeholder="seu nome da empresa"
-                                required minlength="4" maxlength="40">
-
-                            Cnpj:
-                            <input type="text" name="cnpj" class="input-padrao" placeholder="Seu CNPJ" required
-                                minlength="4" maxlength="14">
-
-                            Telefone:
-                            <input type="text" name="telefone" class="input-padrao" placeholder="Seu telefone" required
-                                minlength="4" maxlength="11">
-
-                            EscalaProducao:
-                            <input type="text" name="escalaProducao" class="input-padrao" placeholder="escala Producao"
-                                required minlength="4" maxlength="40">
-
-                            Cep:
-                            <input type="number" name="cep" class="input-padrao" placeholder="cep" required
-                                minlength="4">
-
-                            Numero da Casa:
-                            <input type="text" name="numero" class="input-padrao" placeholder="numero" required
-                                minlength="2" maxlength="8">
-
-                            <input type="submit" id="btn_entrar" value="Cadastrar" class="btn-green">
-                        </form>
-
-                        <img src="aguarde-orange.gif" id="img_aguarde" style="display: none; width:100px">
-
-                        <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
-                            Erro no cadastro
-                        </div>
-
-                    </div>
-                    <div class="imagem-lateral">
-                        <img src="img/side-img-contato_orange.jpg">
-                    </div>
-                </div>
-            </div> -->
-
-
-
-        <!--footer inicio-->
-        <!-- <div class="footer">
-                <div class="container">
-                    <h4>Feito com carinho por um aluno BandTec. Copyright © 2021</h4>
-                </div>
-            </div> -->
-        <!--footer fim-->
 
 </body>
 
@@ -153,7 +94,80 @@
 
 <script>
 
+    function verificar_cadastro() {
+        var nome_usuario = id_user_name.value;
+        var nome_empresa = id_empresa.value;
+        var telefone = id_telefone.value;
+        var email = id_email.value;
+        var senha = id_senha.value;
+        var senha2 = id_senha2.value;
+        var confirmRegister = false;
+
+        if (nome_usuario == "") {
+            alert("Insira um nome de usuário !");
+        }
+
+        else if (nome_usuario.length < 4) {
+            alert("O nome de usuário deve conter pelo menos 4 caracteres !");
+        }
+
+        else if (nome_empresa == "") {
+            alert("Insira o nome da empresa !");
+        }
+
+        else if (nome_empresa.length < 4) {
+            alert("O nome da empresa deve conter pelo menos 4 caracteres !");
+        }
+
+        else if (telefone == "") {
+            alert("Insira um número de telefone !");
+        }
+
+        else if (telefone.length < 11) {
+            alert("Insira um número de telefone válido !");
+        }
+
+        else if (email == "") { // CAMPO DE E-MAIL VAZIO
+            alert("Insira algum e-mail !");
+        }
+
+        else if (email.indexOf("@") < 0) {  // E-MAIL NÃO TEM ARROBA
+            alert("E-mail inválido: Não possui @");
+        }
+
+        else if (email.indexOf(".com") < 0) { //E-MAIL NÃO POSSUI A FRASE (.com.br)
+            alert("E-mail inválido: Não possui (.com)");
+        }
+
+        else if (email.length < 15) { //E-MAIL CURTO COM MENOS DE 15 CARACTERES
+            alert("E-mail muito curto !");
+        }
+
+        else if (senha == "") { // CAMPO DE SENHA VAZIO
+            alert("Insira alguma senha !")
+        }
+
+        else if (senha.length < 8) { //SENHA CURTA COM MENOS DE 8 CARACTERES
+            alert("A senha deve conter no mínimo 8 caracteres !")
+        }
+
+        // else if (senha.indexOf("@") < 0 && senha.indexOf("!") < 0 && senha.indexOf("#") < 0 ){ // VERIFICACAO DE CARACTERE ESPECIAL NA SENHA
+        //     alert ("Insira algum caractere especial em sua senha, como:  @ ou ! ou #");
+        // }
+
+        else if (senha != senha2) {
+            alert("As confirmação de senha deve ser igual a primeira !");
+        }
+
+        else {
+            cadastrar();
+        }
+    }
+
+
     function cadastrar() {
+        // let funciono = verificar_cadastro_parte1();
+        // console.log(funciono);
         aguardar();
         var formulario = new URLSearchParams(new FormData(form_cadastro));
         fetch("/usuarios/cadastrar", {
@@ -173,6 +187,7 @@
                 });
                 finalizar_aguardar();
             }
+
         });
 
         return false;
