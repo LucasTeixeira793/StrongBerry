@@ -8,7 +8,7 @@
     "dependencies": {
         "cookie-parser": "~1.4.4",
         "debug": "~2.6.9",
-        "express": "~4.16.1",
+        "express": "~4.17.3",
         "mssql": "^6.2.0",
         "mysql": "^2.18.1",
         "mysql2": "^2.2.5",
