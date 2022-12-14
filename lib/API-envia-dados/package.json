@@ -9,7 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "mssql": "^6.2.0",
     "mysql": "^2.18.1",
     "serialport": "^9.0.0",
